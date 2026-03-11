@@ -23,6 +23,9 @@ Which simply comes from the coulomb's law. The integral is written with a genera
     \mathbf{E}(\vec x_0)=-\frac{1}{4\pi \epsilon_0 }\sum_{i,j,k\in \{-1,1\}}\frac{(x_0-i,y_0-j,z_0-k)^T}{\|\vec (x_0-i,y_0-j,z_0-k)\|^3}
 \end{equation}
 Which can be easily simulated:
+
+:::
+
 ```{code-cell}
     def compute_field_for_point_charge(x0, X, Y, Z):
         """compute the field induced by the unit point charge x in the scope
@@ -56,4 +59,3 @@ for i in (-1/2,  1/2):
 ax.quiver(X, Y, Z,  final_field[0], final_field[1], final_field[2], normalize=True, length=1e-1)
 plt.show()
 ```
-:::
