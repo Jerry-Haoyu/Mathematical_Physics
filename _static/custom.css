@@ -1,0 +1,4 @@
+/* Remove "Made with MyST" footer */
+.myst-made-with-myst {
+    display: none !important;
+}
