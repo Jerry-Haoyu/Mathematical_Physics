@@ -3,6 +3,8 @@ scipy
 tqdm
 pandas
 matplotlib
+pytorch
+torchvision
 ipywidgets
 ipympl
 ipyleaflet

@@ -1,0 +1,19 @@
+name: notebook
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.9
+  - pytorch
+  - torchvision
+  - cpuonly # Use this if you don't need GPU
+  - jupyter
+  - numpy
+  - scipy
+  - tqdm
+  - pandas
+  - matplotlib
+  - ipywidgets
+  - ipympl
+  - ipyleaflet
+  - jupyterlab
