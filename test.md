@@ -1,3 +1,0 @@
-```{code-cell}
-print("heiHai!")
-```
