@@ -33,6 +33,7 @@ project:
           children:
             - file: pde/elementary_methods/conservation_laws/conservation_laws.md
             - file: pde/elementary_methods/wave_equation/wave_equation.md
+            - file: pde/elementary_methods/poisson_equation/poisson_equation.md
 
     - title: Complex Variable
       children:
