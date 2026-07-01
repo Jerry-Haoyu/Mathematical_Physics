@@ -5,18 +5,35 @@ kernelspec:
 ---
 
 # Poisson Equation 
+:::{tip} Interactive Visualization !
+This notebook contain interactive visualization that needs binder connection. Please click the **power button on the top right corner** before you start reading ! Establishing the connection and building the container takes a while, so clicking it before you read would make sure the interactive code to be ready to run when you scroll on to them.
+:::
+## 2D Poisson Equation 
+Let $\Omega \subset \mathbb{R}^2$, we consider the Poisson equation with homogenous boundary condition:
+:::{prf:definition} 2D Poisson Equation with Homogenous Boundary Condition
+:::{math} 
+:label: 2dpoihb
+  -\Delta u &= f(x,y) \qquad (x,y)\in \Omega \\
+
+:::
 
 ## Finite-Element Method(FEM)
 ### The Tent Function 
+We consider the 
 
-
-
-```{code-cell}
+#### Viualizing the Tent Basis 
+:::{tip} 
+If you have not do so, click the power button on the top right corner. 
+After everything builds up, you can click the start button ▶️. You should see two sliders showing up below.
+- The resolution slider determines how "dense" these tent basis are in filling the domain. Lower resolution means larger and less tents and vice versa. 
+- The position slider let you adjust which particular basis function you are watching. In otherword, where the "tent" is located in the domain $\Omega$ 
+:::
+```{code-cell} 
+:tags: ["hide-input"]
 import sys
 from pathlib import Path
 import ipywidgets as wdgt
 
-# Calculates the absolute path to your 'src' directory
 sys.path.append("src")
 
 from src.twoDPoissonFEM import twoDPoisson
