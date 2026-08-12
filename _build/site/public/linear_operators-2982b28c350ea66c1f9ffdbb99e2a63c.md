@@ -1,0 +1,22 @@
+# Linear Operators 
+
+## Triangularization
+
+:::{prf:proposition} Existence of eigenvalue in vector spaces on algebraically closed field
+Suppose $V$ is a finite-dimensional vector space over an algebraically closed field $\mathbb{F}$, and $T\in \mathcal L(V)$, then $T$ has at least one eigenvalue
+:::
+
+With this key proposition in hand, we can already algorithmically construct a triangular matrix representation for $T\in \mathcal L(V)$ where $V$ is over algebraically closed $\mathbb{F}$.The idea being we can **recursively** find an eigenvalue and factor it out:
+:::{note} Algorithm
+1. $m\gets n, T_m\gets T$
+2. A list of eigenpairs of lenght $n$ : $E[n]$
+3. While $m > 0$:
+   1. Find an eigenvalue, eigenvector pair $(\lambda_{m-1},v_{m-1})$ of $T_m$ and its coresponding eigenvector $v$
+   2. Record it : $E[m]=(\lambda_m,v_m)$
+   3. Factor out $\lambda$ : $T_{m-1}\gets T_m-\lambda I$.
+   4. $m\gets m-1$
+:::
+
+:::{prf:theorem} Algebraically closed field guarantees triangularizability
+Suppose $V$ is a finite-dimensional vector space over an algebraically closed field $\mathbb{F}$, and $T\in \mathcal L(V)$, then $T$ is always triangularizable. 
+:::
