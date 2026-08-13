@@ -2,7 +2,7 @@
 version: 1
 project:
   id: 5d92fa03-bd69-4fe3-976e-251013fd746b
-  title: Mathematical and Computational Physics
+  title: Mathematical Physics and Computation 
   # description:
   # keywords: []
   authors: Haoyu Tang
@@ -22,10 +22,6 @@ project:
       children: 
         - file: calculus_of_variation/euler_lagrange_equation.md
         - file: calculus_of_variation/generalizations.md
-    - title: Ordinary Differential Equations 
-      children:
-        - file : ode/first_order_equations.ipynb
-        - file: ode/sturm_liouville.md
     - title: Function Space
       children:
         - file: function_space/c2p_space.md
@@ -45,7 +41,8 @@ project:
 
     - title: Complex Variable
       children:
-        - file: complex_variable/analytical_function.ipynb
+        - file: complex_variable/analytical_function.md
+        - file: complex_variable/complex_integrals.md
     
     - title: Miscellaneous
       children:
@@ -71,7 +68,7 @@ site:
     favicon: _static/favicon.ico
     logo: _static/site_logo.png
     logo_dark: _static/site_logo_dark.png
-    logo_text: Mathematical and Computational Physics
+    logo_text: Mathematical Physics and Computation 
     hide_footer: true
     hide_attribution: true
 
