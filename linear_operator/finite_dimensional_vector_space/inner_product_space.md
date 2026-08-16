@@ -1,0 +1,81 @@
+# Inner Product Space 
+
+*Note:The development of concepts need to keep extension to infinite analog in mind*
+
+# The identity operator and the Kroncker's Delta
+Let $V$ be a vector space endorsed with an inner product $\langle\cdot| \cdot \rangle$ of dimension $n$ and $\beta = \{e_\nu\}$ be an orthonormal basis. Then we can compute the inner product between arbitrary $x,y\in V$ as follows:
+$$\langle x | y \rangle  &= \langle e_{\nu} | x \rangle^* \langle e_{\nu} | y\rangle \\ 
+&= \langle x | e_{\nu} \rangle \langle e_{\nu} | y\rangle \\
+&= \langle x \lvert |e_{\nu} \rangle \langle e_{\nu}|  \rvert y\rangle 
+$$
+But $\langle x | y \rangle = \langle x | I | y \rangle$, hence we get that 
+:::{prf:lemma} Outer-product decomposition of the identity operator
+Let $\{e_{\nu}\}$ be an orthonormal basis for $V$, then:
+$$|e_{\nu} \rangle \langle e_{\nu}|=I$$
+:::
+:::{tip} *Help!* What is happening here?
+:class: dropdown
+*Step 1* We first rewrite inner product as a sum of component-component product. In $\mathbb{C}^3$ for instance,
+$$
+\langle x | y\rangle &= \sum_{\nu} (x^{\nu})^* y^{\nu} \\
+&= \sum_{\nu} \langle e_{\nu} | x \rangle^*  \langle e_{\nu} | y \rangle 
+$$
+Note in the last step we envicted orthonormality of $\{e_\nu\}$. Adopting Einstein notaiton we get the first equality.
+
+*Step 2* We are bascially writing two consecutive inner product $\langle x, \alpha \rangle \langle \beta, y \rangle$ as a bilinear form $\langle x, A y\rangle $ where $A=| \alpha \rangle \langle \beta | $. Consider this example in $\mathbb{R^3}$:
+
+$$
+\langle x, \alpha \rangle \langle \beta, y \rangle &=
+\begin{pmatrix}
+x^1 & x^2 & x^3
+\end{pmatrix}
+\begin{pmatrix}
+\alpha^1 \\ \alpha^2 \\ \alpha^3
+\end{pmatrix}
+\begin{pmatrix}
+\beta^1 & \beta^2 & \beta^3
+\end{pmatrix}
+\begin{pmatrix}
+y^1 \\ y^2 \\ y^3
+\end{pmatrix} \\
+&= 
+\begin{pmatrix}
+x^1 & x^2 & x^3
+\end{pmatrix}
+\begin{pmatrix}
+\alpha^1 \beta^1 & \cdots & \alpha^1\beta^3 \\
+\vdots & & \vdots \\
+\alpha^3 \beta^1 & \cdots & \alpha^3\beta^3
+\end{pmatrix}
+\begin{pmatrix}
+y^1 \\ y^2 \\ y^3
+\end{pmatrix} \\
+$$
+In otherword, we are just invoking associative law(which holds in vector space):
+$$
+(x\alpha^T) (\beta y^T)&=x(\alpha^T \beta) y^T
+$$
+where the outer product $\alpha^T \beta=A$.
+
+We denote bilinear forms $x^TAy$ in sandwich notations: $\langle x |A|y\rangle $
+
+*(Step 3)* The only possble opeartor to be sandwitched without changing the result:
+$$
+\langle x|Ay\rangle &= \langle x | y\rangle
+$$
+is when $A=I$. We therefore conclude that the outer product $|e_{\nu}\rangle \langle e_{\nu}|$ is the identity. In math notation, this is saying:
+- For orthonormal basis $\{e_{\nu}\}$, we have
+$$
+\sum_{\nu=1}^n e_{\nu}e_{\nu}^T=I
+$$
+:::
+
+Now we consider representing $|x\rangle $ in $\beta$:
+$$
+|x\rangle &= (|e_{\nu} \rangle \langle e_{\nu}|) |x\rangle \\
+&= |e_{\nu}\rangle \langle e_{\nu}|x\rangle
+$$
+Now consider taking the inner product with another basis $e_{\mu}$:
+$$
+\langle e_{\mu}|x\rangle  &=\langle e_{\mu}|e_{\nu}\rangle \langle e_{\nu}|x\rangle
+$$
