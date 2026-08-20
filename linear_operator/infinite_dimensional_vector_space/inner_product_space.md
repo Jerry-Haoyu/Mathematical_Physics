@@ -1,10 +1,115 @@
 # Inner Product Space
 
-## Formal adjoint 
+# Distribution and Test Functions
+## Continous Indexing
 
-## Concrete Adjoint 
+## Duality Pairing
 
-### The Sturm-Liouville Operator 
+## Exercises
+:::{exercise} $\delta$ is a ring homomorphism
+:label: delta_as_ring_homomorphism
+
+Consider $\mathcal T$ and $\mathbb{R}$ as two rings. 
+
+**1. Prove that $\delta$ preserves ring multiplication**
+$$
+f\delta(x)=f(0)\delta(x)
+$$
+```{figure} media/T'_as_module.png
+```
+
+**2. Distribution Derivative of $f\delta$**
+
+Show that the distribution derivative of $f\delta$ is $$
+\delta[-fg'] &= f(0)\delta'[g]
+$$
+or, alternatively,
+$$
+\delta[-fg']= \delta[f'g]+\delta'[fg]
+$$
+:::
+
+
+
+
+:::{solution} delta_as_ring_homomorphism
+:class: dropdown 
+1. $\forall g\in \mathcal T$, we have:
+$$(f\delta)[g] &= \delta[fg] \\
+&=f(0)g(0) \\
+&= f(0)\delta
+$$
+As desired. 
+1. We can direclty compute the derivative:
+$$
+\delta[f\phi] = f(0)\delta[\phi] \overset{\phi=-g'}{\Longrightarrow} \delta[f(-g')] = f(0)\delta[-g'] = f(0)\delta'(g)
+$$
+where the last equality used the definition of distribution derivative. 
+Now we show that $\delta[f'g]+\delta'[fg]=f(0)\delta'(g)$. We use ring homomorphism property to establish:
+$$
+\delta[f'g]+\delta'[fg] &= \delta[f']\delta[g]+\delta[-(fg')] \\
+&= \delta[f']\delta[g]-(\delta[f']\delta[g]+\delta[f]\delta[g']) \\
+&= -\underbrace{\delta[f]}_{f(0)}\delta[g'] \\
+&= f(0)\delta'[g] \\
+$$
+
+
+:::
+
+:::{exercise} $\delta^{(1/2)}$ 
+:label: delta_1over2
+We can define the distribution $\delta^{(1/2)}$  as a fourier transform of $|k|^{1/2}$:
+$$
+\delta^{(1/2)}=\frac{1}{2\pi}\int_{-\infty}^{\infty} |k|^{1/2}\exp(ikx)dk
+$$
+
+The fourier transform is clearly divergent, hence we can add a regulator. Define:
+$$
+\delta^{(1/2)}_{\mu}&=\frac{1}{2\pi}\int_{-\infty}^{\infty} |k|^{1/2}\exp(ikx)\exp(-\mu|k|)dk \\
+&= \frac{1}{2\pi}\int_{-\infty}^{\infty} |k|^{1/2}\exp(ikx-\mu|k|)dk
+$$
+1. Evaluate the integral get a closed form expression of $\delta_{\mu}^{(1/2)}$ by:
+   - Splitting $k<0$ and $k>0$
+   - Change variable to $y=|k|^{1/2}$
+   - Write the result as $\frac{d}{d\mu}$ of a Gaussian integral
+   - Use the trignometric relation
+$$
+\arctan(z)=\frac{i}{2}\log\left(\frac{1-iz}{1+iz}\right)
+$$
+2. Investigate $\delta^{(1/2)}_{\mu}$ by:
+   - Sketch $\delta^{(1/2)}_{\mu}$ for different $\mu$
+   - Compute the zeros of $\delta^{(1/2)}_{\mu}$
+3. Show that $\delta^{(1/2)}_{\mu}$ is the fourier transform of a function that vanishes at $k=0$. What property of $\delta^{(1/2)}_{\mu}$ can we infer?
+4. Compute the limit
+$
+\lim_{\mu \to 0^+}\delta^{(1/2)}_{\mu}
+$ 
+1. Assuming that for $|x|>\max|\{x_0: \delta^{(1/2)}_{\mu}(x_0)=0\}|$, the convergence of
+   $$
+       \delta^{(1/2)}_{\mu} \rightarrow \delta^{(1/2)}
+   $$
+   is pointwise. Deduce:
+$$
+\int_{-\infty}^{\infty}\delta^{(1/2)}=-\sqrt{\frac{1}{8\pi}} \int_{-\infty}^{\infty} \frac{1}{|x|^{3/2}}\{\phi(x)-\phi(0)\}dx
+$$
+:::
+
+:::{solution} delta_1over2
+1. Following the guide:
+$$
+\delta^{(1/2)}_{\mu} &= \frac{1}{2\pi}\left\{\int_{-\infty}^0 (-k)^{1/2} \exp(ikx+\mu k)dk + \int_{0}^{\infty} (k)^{1/2} \exp(ikx-\mu k)dk 
+\right\} \\
+&= 
+\frac{1}{2\pi}\left\{\underbrace{\int_{-\infty}^0 y \exp(-iy^2x-\mu y^2)dk}_{A} + \underbrace{\int_{0}^{\infty} y\exp(iy^2x-\mu y^2)dk}_{B} 
+\right\} \\
+$$
+:::
+
+# Formal adjoint 
+
+# Concrete Adjoint 
+
+## The Sturm-Liouville Operator 
 The **Sturm-Liouville operator** is a linear differential operator of the form
 $$
 \mathcal L=-\frac{d}{dx}\left(p\frac{d}{dx}y\right)+q\frac{d}{dx}
@@ -16,7 +121,7 @@ $$
 $$
 hence it is analgous to self-adjoint operator in finite-dimensional vector spaces, which as symmetric matrix representation when the underlying field is real. We now make this connection explicit, i.e., actually constructing the discretized, finite-dimensional matrix representation of the Sturm-Liouville Operator.
 
-#### A Discrete Analog
+### A Discrete Analog
 Let's consider a concrete SL opeartor defined on $[0,1]$ with Dirchlet boundary condition $y(0)=y(1)=0$. Instead of directly discretizing $\mathcal L$, we aim to find a matrix $L$ such that discretizes the quadratic form:
 $$
 F(y)=\int y\mathcal Ly dx \rightarrow \hat y^TL\hat y
@@ -193,7 +298,7 @@ and solving the matrix eigenvalue problem $$L\hat y &= \lambda \hat y$$ gets us:
 
 :::
 
-:::{attention} Exercise
+:::{exercise} 
 1. We discretized $L$ based on the quadratic form $\int_0^1 y\mathcal L y dx$, hence $\hat y^T L\hat y$ should coincide with $\int_0^1 y\mathcal L y dx$. Come up with at least 2 functions and 2 operators that satisfy the requirment($L^2(0,1),y(0)=y(1)=0$). Compute the quadratic form analytically and numericaly. Cheeck that the results are the same.
 2. Remove the masking code snippet(which implements Dirchlet boundary condition) in the naive SL class `SturmLiouville`. What is the resulting eigenvectors? Explain the result.
 3. Try coming up with different discretization with center difference or back difference. Implemet it in `python`

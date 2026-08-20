@@ -45,7 +45,101 @@ If the coefficients are in $C^{\infty}$ then $y\in \mathrm{Null}(L)$ are in $C^{
 :::
 #### Nullspace of $L$ is an $n$-dimensional subspace of $C^{\infty}$
 
+## Linear Independence: Wronskian 
+
+
 ## Solving $Ly=0$ with constant coefficients 
 
 ## $Ly=0$ with general $a_\nu(x)$
 
+
+:::{exercise} 1-dimensional Scattering Problem
+:label: 1dscat
+Consider the 1d Schrodinger equation:
+$$
+-\frac{d^2\psi}{dx^2}+V\psi = E\psi 
+$$
+This is an eigenvalue problem of the operator $H=-\frac{d^2}{dx^2}+V$:
+$$
+H\psi = E\psi 
+$$
+Where $V$ has finite support $[-a, a], a\in \mathbb{R}$. Denote:
+1. $L:=\{x\in \mathbb{R}:x<-a\}$
+2. $R:=\{x\in \mathbb{R}:x>a\}$
+
+**Problems**:
+1. Show that in $L,R$, the general solution to the formal operator $H-E$ where $E=k^2$ is:
+$$
+\psi_k &=A\exp(ikx)+B\exp(-ikx) \quad x\in L  \\
+\psi_k &=C\exp(ikx)+D\exp(-ikx) \quad x\in R
+$$
+2. Now consider two asymptotic boundary condition:
+$$
+\begin{cases}
+\Pi_L: D=0, x\to \infty \\
+\Pi_R: C=0, x\to -\infty
+\end{cases}
+$$
+where $\Pi_L$ depicts a left-incident wave with no incoming wave from the right and $\Pi_R$ is the opposite. Show that the solution(in $L,R$) for the BC $\Pi_1$ and $k>0$ is:
+$$
+\psi_k^L(x) = \begin{cases}
+\exp(ikx)+ r_L(k)\exp(-ikx) & x\in L \\
+t_L(k)\exp(ikx) & x\in R
+\end{cases}
+$$
+Similarily, for $\Pi_2$, $k<0$:
+$$
+\psi_k^R(x)=\begin{cases}
+t_R(k)\exp(ikx)& x\in L \\
+\exp(ikx) + r_R(k)\exp(-ikx) & x\in R
+\end{cases}
+$$
+where $t, r$ denotes the *transmission* and *reflection* coefficient.
+3. Note that $\psi_k^*$ is also a solution. Use properties of Wronskian to shwo that:
+   $$
+    |t_{L/R}|^2 + |r_{L/R}|^2=1
+   $$
+:::
+
+:::{solution} 1dscat
+1. Fix a $k$. Consider the basis $\psi_k^L, {\psi_k^L}^*$. Form the Wronskian in $L$:
+$$
+W_L=\begin{vmatrix}
+\exp(ikx)+r_L\exp(-ikx) &   \exp(-ikx)+r_L^*\exp(ikx) \\
+ik\exp(ikx)-ikr_L\exp(-ikx) & -ik\exp(-ikx)+ikr_L^*\exp(ikx)
+\end{vmatrix} 
+$$
+Evaluate the determinant:
+$$
+W_L &= (-ik)\cancel{-ikr_L\exp(-2ikx) + ikr_L\exp(2ikx)}+ik|r_L|^2  \\
+&-[ik\cancel{-ikr_K\exp(-2ikx)+ikr_L\exp(2ikx)}-ik|r_L|^2]  \\
+&= 2ik(|r_L|^2-1)
+$$
+Next form Wronskian in $R$:
+$$
+W_R = \begin{vmatrix}
+t_L\exp(ikx) & t_L\exp(-ikx) \\
+ikt_L\exp(ikx) & -ikt_L\exp(-ikx) 
+\end{vmatrix} = -2ik|t_L|^2
+$$
+Since we would expect $W_R=W_L=0$, henece:
+$$
+W_R-W_L&=0 \\
+2ik(|r_L|^2+|t_L|^2-1) &=0
+$$
+Since $k>0$ we get as desired.
+
+4.Fix $k$. We repeat the same procedure with $\{\psi_k^L,\psi_{(-k)}^R\}$. We evaluate $W_L$:
+$$
+W_L &= \begin{vmatrix}
+\exp(ikx)+r_L(k)\exp(-ikx) & t_R(-k)\exp(-ikx) \\
+ik\exp(ikx)-ikr_L(k)\exp(-ikx) & -ikt_R(-k)\exp(-ikx)
+\end{vmatrix} \\
+&= -2ikt_R(-k)
+$$
+Similarily,
+$$
+W_R = -2ikt_L(k)
+$$
+Again, $W_L=W_R=0$ so we get as desired.
+:::
