@@ -1,0 +1,182 @@
+{
+  "input": {
+    "files": [
+      "measure_theory"
+    ],
+    "opts": {
+      "execute": false,
+      "executeParallel": 7,
+      "pdf": true,
+      "tex": false,
+      "typst": false,
+      "docx": false,
+      "md": false,
+      "xml": false,
+      "meca": false,
+      "cff": false,
+      "site": false,
+      "html": false,
+      "all": false,
+      "doiBib": false,
+      "watch": false,
+      "force": false,
+      "checkLinks": false,
+      "strict": false,
+      "ci": false,
+      "maxSizeWebp": 1572864,
+      "keepHost": false
+    }
+  },
+  "exports": [
+    {
+      "format": "pdf",
+      "output": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/_build/exports/measure-theory.pdf",
+      "articles": [
+        {
+          "level": 1,
+          "title": "Linear Operator"
+        },
+        {
+          "level": 2,
+          "title": "Finite-dimensional Vector Space"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/linear_operator/finite_dimensional_vector_space/linear_operators.md",
+          "level": 3,
+          "slug": "linear-operators"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/linear_operator/finite_dimensional_vector_space/inner_product_space.md",
+          "level": 3,
+          "slug": "inner-product-space"
+        },
+        {
+          "level": 2,
+          "title": "Infinite-dimensional Vector Space"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/linear_operator/infinite_dimensional_vector_space/linear_operators.md",
+          "level": 3,
+          "slug": "linear-operators-1"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/linear_operator/infinite_dimensional_vector_space/linear_differential_operator.md",
+          "level": 3,
+          "slug": "linear-differential-operator"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/linear_operator/infinite_dimensional_vector_space/inner_product_space.md",
+          "level": 3,
+          "slug": "inner-product-space-1"
+        },
+        {
+          "level": 1,
+          "title": "Calculus of Variation"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/calculus_of_variation/euler_lagrange_equation.md",
+          "level": 2,
+          "slug": "euler-lagrange-equation"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/calculus_of_variation/generalizations.md",
+          "level": 2,
+          "slug": "generalizations"
+        },
+        {
+          "level": 1,
+          "title": "Function Space"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/function_space/c2p_space.md",
+          "level": 2,
+          "slug": "c2p-space"
+        },
+        {
+          "level": 1,
+          "title": "Measure Theory"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/measure_theory/measure.md",
+          "level": 2,
+          "slug": "measure"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/measure_theory/measurable_functions.md",
+          "level": 2,
+          "slug": "measurable-functions"
+        },
+        {
+          "level": 1,
+          "title": "Partial Differential Euqations"
+        },
+        {
+          "level": 2,
+          "title": "Introduction"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/pde/introduction/introduction.md",
+          "level": 3,
+          "slug": "introduction"
+        },
+        {
+          "level": 2,
+          "title": "Elementary Methods"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/pde/elementary_methods/conservation_laws/conservation_laws.md",
+          "level": 3,
+          "slug": "conservation-laws"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/pde/elementary_methods/wave_equation/wave_equation.md",
+          "level": 3,
+          "slug": "wave-equation"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/pde/elementary_methods/poisson_equation/poisson_equation.md",
+          "level": 3,
+          "slug": "poisson-equation"
+        },
+        {
+          "level": 1,
+          "title": "Complex Variable"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/complex_variable/analytical_function.md",
+          "level": 2,
+          "slug": "analytical-function"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/complex_variable/complex_integrals.md",
+          "level": 2,
+          "slug": "complex-integrals"
+        },
+        {
+          "level": 1,
+          "title": "Miscellaneous"
+        },
+        {
+          "level": 2,
+          "title": "Baisc Numerics"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/basic_numerics/least_square.md",
+          "level": 3,
+          "slug": "least-square"
+        },
+        {
+          "level": 2,
+          "title": "Classical Experiments in Physics"
+        },
+        {
+          "file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/miscellaneous/stern_gerlach_experiment.ipynb",
+          "level": 3,
+          "slug": "stern-gerlach-experiment"
+        }
+      ],
+      "$file": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics/measure_theory",
+      "$project": "/Users/jerrytang/Documents/Mathematics/Mathematical_Physics"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+No existing .aux file, so I'll make a simple one, and require run of *latex.
+Latexmk: applying rule 'xelatex'...
+Rule 'xelatex':  Reasons for rerun
+Category 'other':
+  Rerun of 'xelatex' forced or previously required:
+    Reason or flag: 'Initial setup'
+
+------------
+Run number 1 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -synctex=1 -interaction=batchmode -file-line-error -shell-escape -recorder  "mathematical-physics.tex"'
+------------
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex)
+ \write18 enabled.
+entering extended mode
+
+SyncTeX written on mathematical-physics.synctex.gz.Latexmk: Getting log file 'mathematical-physics.log'
+Latexmk: Examining 'mathematical-physics.fls'
+Latexmk: Examining 'mathematical-physics.log'
+Latexmk: References changed.
+Latexmk: Log file says output to 'mathematical-physics.xdv'
+Latexmk: applying rule 'xelatex'...
+Rule 'xelatex':  Reasons for rerun
+Changed files or newly in use/created:
+  mathematical-physics.aux
+
+------------
+Run number 2 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -synctex=1 -interaction=batchmode -file-line-error -shell-escape -recorder  "mathematical-physics.tex"'
+------------
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex)
+ \write18 enabled.
+entering extended mode
+
+SyncTeX written on mathematical-physics.synctex.gz.Latexmk: Getting log file 'mathematical-physics.log'
+Latexmk: Examining 'mathematical-physics.fls'
+Latexmk: Examining 'mathematical-physics.log'
+Latexmk: Log file says output to 'mathematical-physics.xdv'
+Latexmk: applying rule 'xelatex'...
+Rule 'xelatex':  Reasons for rerun
+Changed files or newly in use/created:
+  mathematical-physics-euler-lagrange-equation.aux
+  mathematical-physics-inner-product-space-1.aux
+  mathematical-physics-inner-product-space.aux
+  mathematical-physics-linear-differential-operator.aux
+  mathematical-physics-linear-operators-1.aux
+  mathematical-physics-linear-operators.aux
+  mathematical-physics.out
+
+------------
+Run number 3 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -synctex=1 -interaction=batchmode -file-line-error -shell-escape -recorder  "mathematical-physics.tex"'
+------------
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex)
+ \write18 enabled.
+entering extended mode
+
+SyncTeX written on mathematical-physics.synctex.gz.Latexmk: Getting log file 'mathematical-physics.log'
+Latexmk: Examining 'mathematical-physics.fls'
+Latexmk: Examining 'mathematical-physics.log'
+Latexmk: Log file says output to 'mathematical-physics.xdv'
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Changed files or newly in use/created:
+  mathematical-physics.xdv
+Category 'changed_source_rules':
+  xelatex
+Category 'no_dest':
+  xdvipdfmx
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o "mathematical-physics.pdf"  "mathematical-physics.xdv"'
+------------
+mathematical-physics.xdv -> mathematical-physics.pdf
+[1][2][3][4][5][6][7][8][9][10][11][12][13][14][15][16][17][18][19][20]
+272721 bytes written
+Latexmk: Errors, in force_mode: so I tried finishing targets
+Collected error summary (may duplicate other messages):
+  xelatex: Command for 'xelatex' gave return code 1
+      Refer to 'mathematical-physics.log' and/or above output for details
+

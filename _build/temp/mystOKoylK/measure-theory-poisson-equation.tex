@@ -1,0 +1,77 @@
+\subsubsection{Poisson Equation}
+
+\begin{framed}
+\textbf{Interactive Visualization !}\\
+This notebook contain interactive visualization that needs binder connection. Please click the \textbf{power button on the top right corner} before you start reading ! Establishing the connection and building the container takes a while, so clicking it before you read would make sure the interactive code to be ready to run when you scroll on to them.
+\end{framed}
+
+\paragraph{2D Poisson Equation}
+
+Let $\Omega \subset \mathbb{R}^2$, we consider the Poisson equation with homogenous boundary condition:
+
+\begin{definition}[2D Poisson Equation with Homogenous Boundary Condition]\begin{equation}
+\label{2dpoihb}
+  -\Delta u &= f(x,y) \qquad (x,y)\in \Omega \\
+  u(x,y) &= 0 \qquad (x,y)\in \Gamma_1 \\
+  \frac{\partial u}{\partial \nu}(x,y) &= 0 \qquad (x,y)\in \Gamma_1
+\end{equation}
+
+\end{definition}where $\Gamma_1\cup \Gamma_2 = \partial \Omega$ such that both $\Gamma_1, \Gamma_2$ is measure-zero. $\nu$ is the outward normal vector.
+
+\paragraph{Spectral Method}
+
+Let
+\begin{equation}
+u(x,y)=\sum_{-\infty<p,q<\infty} a_{pq}  \exp(i(px +qy))
+\end{equation}
+Which has:
+\begin{equation}
+\Delta u = \sum_{-\infty<p,q<\infty} a_{pq}
+\end{equation}
+Also let the fourier transform of $f(x,y)$ be $\mathcal F (f(x,y))=F(p,q)$.
+
+\paragraph{Finite-Element Method(FEM)}
+
+\subparagraph{The Tent Function}
+
+We consider the
+
+\subparagraph{Viualizing the Tent Basis}
+
+\begin{framed}
+\textbf{Tip}\\
+If you have not do so, click the power button on the top right corner.
+After everything builds up, you can click the start button ▶️. You should see two sliders showing up below.
+
+\begin{itemize}
+\item The resolution slider determines how ``dense'' these tent basis are in filling the domain. Lower resolution means larger and less tents and vice versa.
+\item The position slider let you adjust which particular basis function you are watching. In otherword, where the ``tent'' is located in the domain $\Omega$
+\end{itemize}
+\end{framed}
+
+%  We define:
+% :::{prf:definition} Dirchlet Integral
+% Let $u\in C^2(\Omega), v\in C^{\infty}(\Omega)$, define the bilinear form on $H^1(\Omega)$ to be
+% $$
+% a(u,v) := \int_{\Omega}\nabla u \nabla v
+% $$
+% :::
+
+We can show that:
+
+\begin{proposition}Suppose $u \in C^2(\bar \Omega)$ is a solution of (\ref{2dpoihb}), then $\forall v \in H^1_{\Gamma_1}(\Omega)$, we have:
+\begin{equation}
+\int_{\Omega}\nabla u \nabla v=\int_{\Omega} fv
+\end{equation}
+
+\end{proposition}\begin{proof}We first show \textit{Green's Formula}(change of variable):
+\begin{equation}
+\int_{\Omega}v \Delta u = \int_{\partial \Omega} v \frac{\partial u}{\partial \nu} - \int_{\Omega} \nabla u \nabla v
+\end{equation}
+
+\end{proof}This motivates us to define a solution in a weaker sense. Since $a(u,v)=(f,v)$ is a necessary condition of $u$, how about making every $u$ that satisfies this equation a ``weak solution''(or generalized solution)?
+
+We first define the space that our weak solution would reside:
+\begin{equation}
+H^1_{\Gamma_1}(\Omega)=\{f\in H^1(\Omega): f=0 \text{ on } \Gamma_1 \}
+\end{equation}

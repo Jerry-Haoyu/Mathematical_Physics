@@ -1,0 +1,74 @@
+\subsubsection{Linear Operators}
+
+\paragraph{Change of basis}
+
+Let $V$ be a finite-dimensional vector space of dimesnion $n$. Let $\beta=\{e_1,...,e_n\}$ and $\beta'=\{e_1',...,e'_n\}$ be both basis for $V$. We are interested in change reprentation of $x\in V$ from using $\beta$ to $\beta'$. To do this we need to know how $e_j\in \beta$ can be represented using $\beta'$:
+\begin{equation}
+e_\nu = a_{\nu}^{\mu} e_{\mu}'
+\end{equation}
+Here coefficientcs $a_{\nu}^{\mu}$ can be orgainized into a matrix. The matrix $a_{\nu}^{\mu}$ looks like:
+
+\begin{equation}
+\begin{pmatrix}
+a_1^1 & a_2^1 & \cdots & a_n^1\\
+\vdots &\vdots  & &\vdots\\
+a_n^1 & a_n^1 & \cdots & a_n^1\\
+\end{pmatrix}
+\end{equation}
+
+\subparagraph{Contravariant Transformation}
+
+There are two interpretations of $a_{\nu}^{\mu}$:
+
+\begin{enumerate}
+\item \textbf{($a_{\nu}^{\mu}$ transform $\beta'$ to $\beta$)} This is the definition above:
+
+\begin{equation}
+e_\nu = a_{\nu}^{\mu} e_{\mu}'
+\end{equation}
+
+
+\item \textbf{($a_{\nu}^{\mu}$ transform representation in $\beta$ to $\beta'$)}
+Now for arbitrary $x\in V$, we have:
+
+\begin{equation}
+x=c'_{\nu}e'_{\nu}=c_{\nu}e_{\nu} =c_\nu (a_{\nu}^{\mu} e_{\mu}' )=(c_\nu a_{\nu}^{\mu}) e_{\mu}'
+\end{equation}
+
+
+from which we recognize:
+
+\begin{equation}
+c_{\nu}'=(c_{\nu}a_{\nu}^{\mu})
+\end{equation}
+\end{enumerate}
+
+We note that the matrix has \textit{opposite} effect on basis and representation. This is actually intuitive: in order to represent the vector in new basis $\beta'$, we will have to write the old basis $e_\nu \in \beta$ using linear combinations of the new basis $e_{\mu}'$. The later which effectively transforms basis in $\beta'$ to $\beta$. For this reason, the representation is said to be transformed \textbf{contravariantly}.
+
+\begin{framed}
+\textbf{Notation}\\
+The matrix $a_{\nu}^{\mu}$ is commonly denoted by $[I]_{\beta}^{\beta'}$ in math textbooks. Therefore:
+
+\begin{itemize}
+\item Transform in represenation is denoted by:
+
+\begin{equation}
+[x]_{\beta'}=[I]_{\beta}^{\beta'}[x]_{\beta}
+\end{equation}
+
+
+\item Transform in matrix representation of operator is given by:
+
+\begin{equation}
+[T]_{\beta}=[I]_{\beta'}^{\beta}[T]_{\beta'}[I]_{\beta}^{\beta'}
+\end{equation}
+\end{itemize}
+\end{framed}
+
+\paragraph{Triangularization}
+
+\begin{proposition}[Existence of eigenvalue in vector spaces on algebraically closed field]Suppose $V$ is a finite-dimensional vector space over an algebraically closed field $\mathbb{F}$, and $T\in \mathcal L(V)$, then $T$ has at least one eigenvalue
+
+\end{proposition}\begin{theorem}[Algebraically closed field guarantees triangularizability]Suppose $V$ is a finite-dimensional vector space over an algebraically closed field $\mathbb{F}$, and $T\in \mathcal L(V)$, then $T$ is always triangularizable.
+
+\end{theorem}
