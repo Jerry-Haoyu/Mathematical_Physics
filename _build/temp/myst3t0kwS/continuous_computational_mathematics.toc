@@ -1,0 +1,89 @@
+\contentsline {section}{\numberline {I}Measure Theory}{1}{section*.2}%
+\contentsline {subsection}{\numberline {1.1}Measure}{2}{subsection.0.1.1}%
+\contentsline {paragraph}{$\sigma $-Algebra}{2}{section*.3}%
+\contentsline {subparagraph}{Motivation}{2}{section*.4}%
+\contentsline {subsubsection}{Construction of Measure}{5}{section*.5}%
+\contentsline {paragraph}{The big picture}{5}{section*.6}%
+\contentsline {paragraph}{Outer Measure}{6}{section*.8}%
+\contentsline {paragraph}{Carathéodory Family $\mathcal M_{\mu ^*}$}{7}{section*.9}%
+\contentsline {paragraph}{Premeasure and The Extension Theorem}{8}{section*.10}%
+\contentsline {subsubsection}{Casestudy: Lebesgue-Stieltjes Measure}{11}{section*.11}%
+\contentsline {paragraph}{Starting Point: The half-intervals}{11}{section*.12}%
+\contentsline {paragraph}{Step 1: Construction of a premeasure}{12}{section*.13}%
+\contentsline {subsection}{\numberline {1.2}Measurable Functions}{14}{subsection.0.1.2}%
+\contentsline {section}{\numberline {II}Vector Space}{15}{section*.14}%
+\contentsline {subsection}{\numberline {2.1}Finite-dimensional Vector Space}{15}{subsection.0.2.1}%
+\contentsline {subsubsection}{Linear Operators}{16}{section*.15}%
+\contentsline {paragraph}{Change of basis}{16}{section*.16}%
+\contentsline {subparagraph}{Contravariant Transformation}{16}{section*.17}%
+\contentsline {paragraph}{Triangularization}{16}{tcb@cnt@mystthmproposition.0.2.1}%
+\contentsline {subsubsection}{Inner Product Space}{17}{section*.19}%
+\contentsline {paragraph}{The identity operator and the Kroncker's Delta}{17}{section*.20}%
+\contentsline {subsection}{\numberline {2.2}Infinite-dimensional Vector Space}{19}{subsection.0.2.2}%
+\contentsline {subsubsection}{Linear Operators}{20}{section*.21}%
+\contentsline {paragraph}{$L^p$ Space}{20}{equation.0.2.64}%
+\contentsline {paragraph}{Linear Operators}{20}{equation.0.2.65}%
+\contentsline {paragraph}{The Uniform Boundedness Theorem}{21}{section*.24}%
+\contentsline {subparagraph}{Baire Category Theorem}{21}{Item.50}%
+\contentsline {subsubsection}{Linear Differential Operator}{22}{section*.26}%
+\contentsline {paragraph}{The Formal Linear Differential Operator}{22}{section*.27}%
+\contentsline {subparagraph}{Nullspace of formal operator}{22}{section*.28}%
+\contentsline {subparagraph}{The Bootstrapping Lemma}{22}{tcb@cnt@mystthmlemma.0.2.2}%
+\contentsline {subparagraph}{Nullspace of $L$ is an $n$-dimensional subspace of $C^{\infty }$}{23}{section*.30}%
+\contentsline {paragraph}{Linear Independence: Wronskian}{23}{section*.31}%
+\contentsline {paragraph}{Solving $Ly=0$ with constant coefficients}{23}{section*.32}%
+\contentsline {paragraph}{$Ly=0$ with general $a_\nu (x)$}{23}{equation.0.2.84}%
+\contentsline {subsubsection}{Hilbert Space}{25}{section*.34}%
+\contentsline {paragraph}{The Riez Representation Theorem}{25}{equation.0.2.93}%
+\contentsline {paragraph}{The Basis Theorem}{25}{equation.0.2.94}%
+\contentsline {paragraph}{The Sturm-Liouville Operator}{26}{section*.37}%
+\contentsline {subparagraph}{A Discrete Analog}{26}{section*.38}%
+\contentsline {section}{\numberline {III}Calculus of Variation}{31}{section*.40}%
+\contentsline {subsection}{\numberline {3.1}Euler-Lagrange Equation}{32}{subsection.0.3.1}%
+\contentsline {subsubsection}{Differential Equation from Physics}{32}{section*.41}%
+\contentsline {subsubsection}{Functional : A global optimization objective}{32}{section*.42}%
+\contentsline {subsubsection}{Euler-Lagrange Equation}{33}{section*.44}%
+\contentsline {subsubsection}{Discretized Euler-Lagrange Equation}{34}{section*.45}%
+\contentsline {subsubsection}{First Integral}{34}{section*.46}%
+\contentsline {subsubsection}{Exercises}{35}{section*.47}%
+\contentsline {paragraph}{Euler-Lagrange Equation for Multiple Independent Variables}{35}{section*.48}%
+\contentsline {paragraph}{Fermat's Principle }{35}{section*.49}%
+\contentsline {paragraph}{Drums and Membranes }{37}{section*.50}%
+\contentsline {subsection}{\numberline {3.2}Generalizations}{40}{subsection.0.3.2}%
+\contentsline {subsubsection}{Multiple Constraint}{40}{section*.51}%
+\contentsline {subsubsection}{Variable Endpoints}{40}{section*.52}%
+\contentsline {subsubsection}{Constraint Optimization}{40}{section*.53}%
+\contentsline {subsubsection}{Exercises}{40}{section*.54}%
+\contentsline {paragraph}{Elastic Rods}{40}{section*.58}%
+\contentsline {subparagraph}{Problem 0}{40}{section*.56}%
+\contentsline {subparagraph}{Problem 1}{40}{section*.57}%
+\contentsline {section}{\numberline {IV}Partial Differential Euqations}{45}{section*.61}%
+\contentsline {subsection}{\numberline {4.1}Introduction}{45}{subsection.0.4.1}%
+\contentsline {subsubsection}{Definition}{46}{section*.62}%
+\contentsline {subsection}{\numberline {4.2}Elementary Methods}{47}{subsection.0.4.2}%
+\contentsline {subsubsection}{Conservation Laws}{48}{section*.63}%
+\contentsline {paragraph}{The Method of Characteristics}{48}{section*.64}%
+\contentsline {subparagraph}{Integral Surface}{48}{section*.65}%
+\contentsline {paragraph}{The Finite Volume Method}{48}{section*.67}%
+\contentsline {subparagraph}{Hyperbolic Conservation Law}{49}{section*.68}%
+\contentsline {subparagraph}{The idea behind finite volume}{50}{section*.69}%
+\contentsline {subsubsection}{Wave Equation}{51}{section*.70}%
+\contentsline {paragraph}{The Vibrating String}{51}{section*.71}%
+\contentsline {subparagraph}{The Lagrangian Way}{51}{section*.72}%
+\contentsline {subsubsection}{Poisson Equation}{52}{section*.73}%
+\contentsline {paragraph}{2D Poisson Equation}{52}{section*.74}%
+\contentsline {paragraph}{Spectral Method}{52}{section*.75}%
+\contentsline {paragraph}{Finite-Element Method(FEM)}{52}{section*.76}%
+\contentsline {subparagraph}{The Tent Function}{52}{section*.77}%
+\contentsline {subparagraph}{Viualizing the Tent Basis}{52}{section*.78}%
+\contentsline {section}{\numberline {V}Complex Variable}{54}{section*.79}%
+\contentsline {subsection}{\numberline {5.1}Analytical Function}{55}{subsection.0.5.1}%
+\contentsline {subsubsection}{Real Derivative and Complex Derivative}{55}{section*.80}%
+\contentsline {subsubsection}{Cauchy-Riemann Condition}{56}{section*.81}%
+\contentsline {subsubsection}{Analytical Function}{58}{section*.82}%
+\contentsline {subsection}{\numberline {5.2}Complex Integrals}{60}{subsection.0.5.2}%
+\contentsline {section}{\numberline {VI}Miscellaneous}{61}{section*.83}%
+\contentsline {subsection}{\numberline {6.1}Baisc Numerics}{61}{subsection.0.6.1}%
+\contentsline {subsubsection}{Least Square}{62}{section*.84}%
+\contentsline {subsection}{\numberline {6.2}Classical Experiments in Physics}{63}{subsection.0.6.2}%
+\contentsline {subsubsection}{Stern-Gerlach Experiment}{64}{section*.85}%

@@ -1,0 +1,73 @@
+\subsubsection{Linear Operators}
+
+\paragraph{Changeundefinedofundefinedbasis}
+
+Letundefined$V$undefinedbeundefinedaundefinedfinite-dimensionalundefinedvectorundefinedspaceundefinedofundefineddimesnionundefined$n$.undefinedLetundefined$\beta=\{e_1,...,e_n\}$undefinedandundefined$\beta'=\{e_1',...,e'_n\}$undefinedbeundefinedbothundefinedbasisundefinedforundefined$V$.undefinedWeundefinedareundefinedinterestedundefinedinundefinedchangeundefinedreprentationundefinedofundefined$x\in V$undefinedfromundefinedusingundefined$\beta$undefinedtoundefined$\beta'$.undefinedToundefineddoundefinedthisundefinedweundefinedneedundefinedtoundefinedknowundefinedhowundefined$e_j\in \beta$undefinedcanundefinedbeundefinedrepresentedundefinedusingundefined$\beta'$:
+\begin{equation}
+e_\nu = a_{\nu}^{\mu} e_{\mu}'
+\end{equation}
+Hereundefinedcoefficientcsundefined$a_{\nu}^{\mu}$undefinedcanundefinedbeundefinedorgainizedundefinedintoundefinedaundefinedmatrix.undefinedTheundefinedmatrixundefined$a_{\nu}^{\mu}$undefinedlooksundefinedlike:
+
+\begin{equation}
+\begin{pmatrix}
+a_1^1 & a_2^1 & \cdots & a_n^1\\
+\vdots &\vdots  & &\vdots\\
+a_n^1 & a_n^1 & \cdots & a_n^1\\
+\end{pmatrix}
+\end{equation}
+
+\subparagraph{ContravariantundefinedTransformation}
+
+Thereundefinedareundefinedtwoundefinedinterpretationsundefinedofundefined$a_{\nu}^{\mu}$:
+
+\begin{enumerate}
+\item \textbf{($a_{\nu}^{\mu}$undefinedtransformundefined$\beta'$undefinedtoundefined$\beta$)}undefinedThisundefinedisundefinedtheundefineddefinitionundefinedabove:
+
+\begin{equation}
+e_\nu = a_{\nu}^{\mu} e_{\mu}'
+\end{equation}
+
+
+\item \textbf{($a_{\nu}^{\mu}$undefinedtransformundefinedrepresentationundefinedinundefined$\beta$undefinedtoundefined$\beta'$)}
+Nowundefinedforundefinedarbitraryundefined$x\in V$,undefinedweundefinedhave:
+
+\begin{equation}
+x=c'_{\nu}e'_{\nu}=c_{\nu}e_{\nu} =c_\nu (a_{\nu}^{\mu} e_{\mu}' )=(c_\nu a_{\nu}^{\mu}) e_{\mu}'
+\end{equation}
+
+
+fromundefinedwhichundefinedweundefinedrecognize:
+
+\begin{equation}
+c_{\nu}'=(c_{\nu}a_{\nu}^{\mu})
+\end{equation}
+\end{enumerate}
+
+Weundefinednoteundefinedthatundefinedtheundefinedmatrixundefinedhasundefined\textit{opposite}undefinedeffectundefinedonundefinedbasisundefinedandundefinedrepresentation.undefinedThisundefinedisundefinedactuallyundefinedintuitive:undefinedinundefinedorderundefinedtoundefinedrepresentundefinedtheundefinedvectorundefinedinundefinednewundefinedbasisundefined$\beta'$,undefinedweundefinedwillundefinedhaveundefinedtoundefinedwriteundefinedtheundefinedoldundefinedbasisundefined$e_\nu \in \beta$undefinedusingundefinedlinearundefinedcombinationsundefinedofundefinedtheundefinednewundefinedbasisundefined$e_{\mu}'$.undefinedTheundefinedlaterundefinedwhichundefinedeffectivelyundefinedtransformsundefinedbasisundefinedinundefined$\beta'$undefinedtoundefined$\beta$.undefinedForundefinedthisundefinedreason,undefinedtheundefinedrepresentationundefinedisundefinedsaidundefinedtoundefinedbeundefinedtransformedundefined\textbf{contravariantly}.
+
+\begin{mystadmonition}{mystBlue}{Notation}Theundefinedmatrixundefined$a_{\nu}^{\mu}$undefinedisundefinedcommonlyundefineddenotedundefinedbyundefined$[I]_{\beta}^{\beta'}$undefinedinundefinedmathundefinedtextbooks.undefinedTherefore:
+
+\begin{itemize}
+\item Transformundefinedinundefinedrepresenationundefinedisundefineddenotedundefinedby:
+
+\begin{equation}
+[x]_{\beta'}=[I]_{\beta}^{\beta'}[x]_{\beta}
+\end{equation}
+
+
+\item Transformundefinedinundefinedmatrixundefinedrepresentationundefinedofundefinedoperatorundefinedisundefinedgivenundefinedby:
+
+\begin{equation}
+[T]_{\beta}=[I]_{\beta'}^{\beta}[T]_{\beta'}[I]_{\beta}^{\beta'}
+\end{equation}
+\end{itemize}
+
+\end{mystadmonition}
+\paragraph{Triangularization}
+
+\begin{mystthmproposition}{Existenceundefinedofundefinedeigenvalueundefinedinundefinedvectorundefinedspacesundefinedonundefinedalgebraicallyundefinedclosedundefinedfield}{proposition-linearoperators-1}Supposeundefined$V$undefinedisundefinedaundefinedfinite-dimensionalundefinedvectorundefinedspaceundefinedoverundefinedanundefinedalgebraicallyundefinedclosedundefinedfieldundefined$\mathbb{F}$,undefinedandundefined$T\in \mathcal L(V)$,undefinedthenundefined$T$undefinedhasundefinedatundefinedleastundefinedoneundefinedeigenvalue
+
+\end{mystthmproposition}
+\begin{mystthmtheorem}{Algebraicallyundefinedclosedundefinedfieldundefinedguaranteesundefinedtriangularizability}{theorem-linearoperators-2}Supposeundefined$V$undefinedisundefinedaundefinedfinite-dimensionalundefinedvectorundefinedspaceundefinedoverundefinedanundefinedalgebraicallyundefinedclosedundefinedfieldundefined$\mathbb{F}$,undefinedandundefined$T\in \mathcal L(V)$,undefinedthenundefined$T$undefinedisundefinedalwaysundefinedtriangularizable.
+
+\end{mystthmtheorem}

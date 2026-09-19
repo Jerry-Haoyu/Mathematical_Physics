@@ -1,0 +1,204 @@
+\subsubsection{Linear Differential Operator}
+
+\paragraph{TheundefinedFormalundefinedLinearundefinedDifferentialundefinedOperator}
+
+Weundefineddefineundefinedtheundefineddifferentianundefinedopeartorundefinedas:
+
+\begin{mystthmdefinition}{DifferentiationundefinedOpeartor}{definition-lineardifferentialoperator-1}Letundefined$D:L^2[a,b]\to L^2[a,b]$undefinedbeundefinedtheundefinedmappingundefineddefinedundefinedby:
+\begin{equation}
+D(u)=\frac{d}{dx}u
+\end{equation}
+forundefinedallundefined$u\in L^2[a,b]$
+
+\end{mystthmdefinition}
+Nowundefinedweundefinedcanundefineddefineundefinedtheundefined\textit{formalundefinedlinearundefinedoperator}undefinedbyundefinedsomeundefinedopeartorundefinedalgebra:
+
+\begin{mystthmdefinition}{Formalundefinedlinearundefineddifferentialundefinedoperator}{definition-lineardifferentialoperator-2}Letundefined$p(x)$undefinedbeundefinedanyundefinedpolynomialundefinedoverundefined$\mathbb{C}$undefinedofundefinedpositiveundefineddegree:
+\begin{equation}
+p(x)=a_\nu x^\nu
+\end{equation}
+whereundefined$a_{\nu}$undefinedareundefinedfunctionsundefinedofundefined$x$.undefinedDefineundefined$L:=p(D)$undefinedasundefinedtheundefined\textbf{formalundefinedlinearundefineddifferentialundefinedoperator}undefinedthatundefinedcorrespondundefinedtoundefinedtheundefined\textbf{auxillaryundefinedpolynomialundefined$p$}:
+\begin{equation}
+L=a_\nu D^{\nu}
+\end{equation}
+Theundefined\textbf{order}undefinedofundefined$L$undefinedisundefinedgivenundefinedbyundefinedtheundefinedorderundefinedofundefined$p$.
+
+\end{mystthmdefinition}
+Weundefinedcallundefineditundefined\textit{formal}undefinedsinceundefinedweundefinedwantundefinedtoundefinedcontrastundefinedwithundefined\textit{concrete}undefinedlinearundefineddifferentialundefinedopeartorundefinedwhichundefinedisundefinedaundefinedformalundefinedopeartorundefinedendorsedundefinedwithundefinedboundaryundefinedconditions(Thisundefinedconventionundefinedisundefinedusedundefinedinundefined\textit{MathematicalundefinedPhysicsundefinedbyundefinedMichaelundefinedStoneundefinedandundefinedPaulundefinedGoldbart}).undefinedWeundefinedcanundefinedthinkundefinedofundefinedtheundefineddifferenceundefinedbetweenundefinedthemundefinedas:
+
+\begin{itemize}
+\item Theundefined\textbf{nullspaceundefinedofundefinedformalundefinedopeartor}undefinedisundefinedtheundefinedspaceundefinedofundefinedgeneralundefinedsolutionundefinedofundefinedhomogenousundefineddiffferentialundefinedequation
+\item Theundefined\textbf{nullspaceundefinedofundefinedconcreteundefinedoperator}undefinedisundefinedtheundefinedspaceundefinedofundefinedparticularundefinedsolutionundefinedtoundefinedhomogenousundefineddifferentialundefinedequationundefinedwithundefinedboundaryundefinedconditions
+\end{itemize}
+
+We'llundefinedexploreundefinedtheundefinednullspaceundefinedofundefinedformalundefinedoperatorsundefinedwithundefinedaundefinedbitundefinedmoreundefineddetailundefinednow.
+
+\subparagraph{Nullspaceundefinedofundefinedformalundefinedoperator}
+
+Weundefinedfirstundefinedobserveundefinedsomethingundefinedveryundefinedniceundefinedaboutundefinedsolutionsundefinedtoundefinedhomogenousundefineddifferentialundefinedequations:undefinedtheyundefinedbelongundefinedtoundefined$C^{\infty}$(infinitelyundefineddifferentiable).
+
+\subparagraph{TheundefinedBootstrappingundefinedLemma}
+
+\begin{mystthmlemma}{}{lemma-lineardifferentialoperator-3}Letundefined$L$undefinedbeundefinedaundefinedformalundefinedoperatorundefinedofundefinedorderundefined$n$.undefinedSupposeundefinedtheundefinedcoefficientsundefinedofundefinedtheundefinedauxillaryundefinedpolynomialundefinedareundefined$k$undefinedtimesundefinedcontinouslyundefineddifferentiable($a_{\nu}\in C^k$)undefinedthenundefined$\forall y\in \mathrm{Null}(L)$,undefined$y$undefinedisundefinedatundefinedleastundefined$k+n$undefinedtimesundefinedcontiouslyundefineddifferentiable.
+
+\end{mystthmlemma}
+\begin{mystthmproof}{}{proof-lineardifferentialoperator-4}Supposeundefined$y\in \mathrm{Null}(L)$,undefinednoteundefinedtriviallyundefined$y\in C^n$.undefinedThen:
+\begin{equation}
+\begin{aligned}
+a_0y+a_1y^{(1)}+a_2y^{(2)}...+a_n y^{(n)} &=0 \\
+y^{(n)} &= -(b_0y+b_1y^{(1)}+b_2y^{(2)}...\underbrace{b_{n-1}{y}^{n-1}}_{\in C^{\min(k, 1)}})
+\end{aligned}
+\end{equation}
+Whereundefined$b_{\nu}=a_{\nu}/a_{n}$.undefinedNowundefined$b_{\nu}\in C^k$undefinedbyundefinedclosednessundefinedunderundefinedpolynomialundefineddivision.undefinedAlsoundefined$y^{(\nu)} \in C^{n -\nu}$undefinedhenceundefinedtheundefinedR.H.Sundefinedisundefinedatundefinedleastundefinedoneundefinedtimeundefinedcontinouslyundefineddifferentiable(theundefinedbottleundefinedneckundefinedbeingundefined$a_{n -1}y^{(n -1)} \in C^{\min(k, 1)}$).undefinedThereforeundefined$y^{(n)}\in C^1$.undefinedButundefinedthisundefinedimpliesundefined$y\in C^{n+1}$undefinedhenceundefinedweundefinedrepeatundefinedtheundefinedaboveundefinedargumentundefinedtoundefinedgetundefined$y^{(\nu)}\in C^{n+1 -\nu}$.undefinedTheundefinedR.H.Sundefinedhasundefinedtheundefinedbottleneckundefined$a_{n -1}y^{(n -1)}\in C^{\min(k, n+1 -(n -1))}=C^{\min(k, 2)}$.undefinedWeundefinedcanundefinedrepeatundefinedthisundefinedprocedureundefined$m$undefinedtimesundefinedandundefinedyieldundefinedthatundefined$y^{(n)}\in C^{\min(k, m)}$.undefinedThisundefinedmeansundefinedtheundefinedbestundefinedweundefinedcanundefinedgetundefinedisundefined$y^{(n)}\in C^k$undefinedorundefined$y\in C^{n+k}$(afterundefinedwhichundefinedtheundefinedcoeficientundefinedbecomesundefinedtheundefinedbottleneck).
+
+\end{mystthmproof}
+\begin{mystthmcorollary}{}{corollary-lineardifferentialoperator-5}Ifundefinedtheundefinedcoefficientsundefinedareundefinedinundefined$C^{\infty}$undefinedthenundefined$y\in \mathrm{Null}(L)$undefinedareundefinedinundefined$C^{\infty}$.
+
+\end{mystthmcorollary}
+\subparagraph{Nullspaceundefinedofundefined$L$undefinedisundefinedanundefined$n$-dimensionalundefinedsubspaceundefinedofundefined$C^{\infty}$}
+
+\paragraph{LinearundefinedIndependence:undefinedWronskian}
+
+\paragraph{Solvingundefined$Ly=0$undefinedwithundefinedconstantundefinedcoefficients}
+
+\paragraph{$Ly=0$undefinedwithundefinedgeneralundefined$a_\nu(x)$}
+
+\begin{mystexercise}{1-dimensionalundefinedScatteringundefinedProblem}{1dscat}\label{1dscat}Considerundefinedtheundefined1dundefinedSchrodingerundefinedequation:
+\begin{equation}
+-\frac{d^2\psi}{dx^2}+V\psi = E\psi
+\end{equation}
+Thisundefinedisundefinedanundefinedeigenvalueundefinedproblemundefinedofundefinedtheundefinedoperatorundefined$H= -\frac{d^2}{dx^2}+V$:
+\begin{equation}
+H\psi = E\psi
+\end{equation}
+Whereundefined$V$undefinedhasundefinedfiniteundefinedsupportundefined$[ -a, a], a\in \mathbb{R}$.undefinedDenote:
+
+\begin{enumerate}
+\item $L:=\{x\in \mathbb{R}:x< -a\}$
+\item $R:=\{x\in \mathbb{R}:x>a\}$
+\end{enumerate}
+
+\textbf{Problems}:
+
+\begin{enumerate}
+\item Showundefinedthatundefinedinundefined$L,R$,undefinedtheundefinedgeneralundefinedsolutionundefinedtoundefinedtheundefinedformalundefinedoperatorundefined$H -E$undefinedwhereundefined$E=k^2$undefinedis:
+
+\begin{equation}
+\begin{aligned}
+\psi_k &=A\exp(ikx)+B\exp(-ikx) \quad x\in L  \\
+\psi_k &=C\exp(ikx)+D\exp(-ikx) \quad x\in R
+\end{aligned}
+\end{equation}
+
+
+\item Nowundefinedconsiderundefinedtwoundefinedasymptoticundefinedboundaryundefinedcondition:
+
+\begin{equation}
+\begin{cases}
+\Pi_L: D=0, x\to \infty \\
+\Pi_R: C=0, x\to -\infty
+\end{cases}
+\end{equation}
+
+
+whereundefined$\Pi_L$undefineddepictsundefinedaundefinedleft-incidentundefinedwaveundefinedwithundefinednoundefinedincomingundefinedwaveundefinedfromundefinedtheundefinedrightundefinedandundefined$\Pi_R$undefinedisundefinedtheundefinedopposite.undefinedShowundefinedthatundefinedtheundefinedsolution(inundefined$L,R$)undefinedforundefinedtheundefinedBCundefined$\Pi_1$undefinedandundefined$k>0$undefinedis:
+
+\begin{equation}
+\begin{aligned}
+\psi_k^L(x) = \begin{cases}
+\exp(ikx)+ r_L(k)\exp(-ikx) & x\in L \\
+t_L(k)\exp(ikx) & x\in R
+\end{cases}
+\end{aligned}
+\end{equation}
+
+
+Similarily,undefinedforundefined$\Pi_2$,undefined$k<0$:
+
+\begin{equation}
+\begin{aligned}
+\psi_k^R(x)=\begin{cases}
+t_R(k)\exp(ikx)& x\in L \\
+\exp(ikx) + r_R(k)\exp(-ikx) & x\in R
+\end{cases}
+\end{aligned}
+\end{equation}
+
+
+whereundefined$t, r$undefineddenotesundefinedtheundefined\textit{transmission}undefinedandundefined\textit{reflection}undefinedcoefficient.
+
+
+\item Noteundefinedthatundefined$\psi_k^*$undefinedisundefinedalsoundefinedaundefinedsolution.undefinedUseundefinedpropertiesundefinedofundefinedWronskianundefinedtoundefinedshwoundefinedthat:
+
+\begin{equation}
+|t_{L/R}|^2 + |r_{L/R}|^2=1
+\end{equation}
+\end{enumerate}
+
+\end{mystexercise}
+\begin{mystsolution}{SolutionundefinedtoundefinedExercise~\ref{1dscat}}\begin{enumerate}
+\item Fixundefinedaundefined$k$.undefinedConsiderundefinedtheundefinedbasisundefined$\psi_k^L, {\psi_k^L}^*$.undefinedFormundefinedtheundefinedWronskianundefinedinundefined$L$:
+
+\begin{equation}
+\begin{aligned}
+W_L=\begin{vmatrix}
+\exp(ikx)+r_L\exp(-ikx) &   \exp(-ikx)+r_L^*\exp(ikx) \\
+ik\exp(ikx)-ikr_L\exp(-ikx) & -ik\exp(-ikx)+ikr_L^*\exp(ikx)
+\end{vmatrix}
+\end{aligned}
+\end{equation}
+
+
+Evaluateundefinedtheundefineddeterminant:
+
+\begin{equation}
+\begin{aligned}
+W_L &= (-ik)\cancel{-ikr_L\exp(-2ikx) + ikr_L\exp(2ikx)}+ik|r_L|^2  \\
+&-[ik\cancel{-ikr_K\exp(-2ikx)+ikr_L\exp(2ikx)}-ik|r_L|^2]  \\
+&= 2ik(|r_L|^2-1)
+\end{aligned}
+\end{equation}
+
+
+NextundefinedformundefinedWronskianundefinedinundefined$R$:
+
+\begin{equation}
+\begin{aligned}
+W_R = \begin{vmatrix}
+t_L\exp(ikx) & t_L\exp(-ikx) \\
+ikt_L\exp(ikx) & -ikt_L\exp(-ikx) 
+\end{vmatrix} = -2ik|t_L|^2
+\end{aligned}
+\end{equation}
+
+
+Sinceundefinedweundefinedwouldundefinedexpectundefined$W_R=W_L=0$,undefinedhenece:
+
+\begin{equation}
+\begin{aligned}
+W_R-W_L&=0 \\
+2ik(|r_L|^2+|t_L|^2-1) &=0
+\end{aligned}
+\end{equation}
+
+
+Sinceundefined$k>0$undefinedweundefinedgetundefinedasundefineddesired.
+\end{enumerate}
+
+4.Fixundefined$k$.undefinedWeundefinedrepeatundefinedtheundefinedsameundefinedprocedureundefinedwithundefined$\{\psi_k^L,\psi_{( -k)}^R\}$.undefinedWeundefinedevaluateundefined$W_L$:
+\begin{equation}
+\begin{aligned}
+W_L &= \begin{vmatrix}
+\exp(ikx)+r_L(k)\exp(-ikx) & t_R(-k)\exp(-ikx) \\
+ik\exp(ikx)-ikr_L(k)\exp(-ikx) & -ikt_R(-k)\exp(-ikx)
+\end{vmatrix} \\
+&= -2ikt_R(-k)
+\end{aligned}
+\end{equation}
+Similarily,
+\begin{equation}
+W_R = -2ikt_L(k)
+\end{equation}
+Again,undefined$W_L=W_R=0$undefinedsoundefinedweundefinedgetundefinedasundefineddesired.
+
+\end{mystsolution}

@@ -1,0 +1,153 @@
+% Created with jtex v.1.0.20
+\documentclass[a4paper,11pt,oneside]{book}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{natbib}
+\usepackage{xcolor}
+\usepackage{changepage}
+\usepackage{framed}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\bibliographystyle{abbrvnat}
+
+% Make list items more compact
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%  imports  %%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amsthm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%  theorem  %%%%%%%%%%%%%%%%%%%
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{observation}{Observation}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\hypersetup{
+  colorlinks,
+  linkcolor={black},
+  citecolor={black},
+  urlcolor={black}
+}
+
+% Style quotes
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+\definecolor{quoteshade}{rgb}{0.95, 0.95, 1}
+\renewenvironment{quote}{%
+  \def\FrameCommand{%
+    \hspace{1pt}%
+    {\color{darkblue}\vrule width 2pt}%
+    {\color{quoteshade}\vrule width 4pt}%
+    \colorbox{quoteshade}%
+  }%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}%
+  \noindent\hspace{-8pt}% disable indenting first paragraph
+  \begin{adjustwidth}{0pt}{0pt}% adjust as needed
+  \vspace{2pt}\vspace{2pt}%
+}
+{%
+  \vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+\title{\Huge \textbf{Mathematical Physics and Computation}}
+\author{\textsc{Haoyu Tang}}
+
+\begin{document}
+\sloppy
+
+\frontmatter
+\maketitle
+
+\tableofcontents
+% \listoffigures
+% \listoftables
+
+\mainmatter
+
+% \include{preface.tex}
+% \include{acknowledgements.tex}
+
+\section{Linear Operator}
+
+\subsection{Finite-dimensional Vector Space}
+
+\include{mathematical_physics_and_computation-linear-operators}
+
+\include{mathematical_physics_and_computation-inner-product-space}
+
+\subsection{Infinite-dimensional Vector Space}
+
+\include{mathematical_physics_and_computation-linear-operators-1}
+
+\include{mathematical_physics_and_computation-linear-differential-operator}
+
+\include{mathematical_physics_and_computation-inner-product-space-1}
+
+\section{Calculus of Variation}
+
+\include{mathematical_physics_and_computation-euler-lagrange-equation}
+
+\include{mathematical_physics_and_computation-generalizations}
+
+\section{Function Space}
+
+\include{mathematical_physics_and_computation-c2p-space}
+
+\section{Measure Theory}
+
+\include{mathematical_physics_and_computation-measure}
+
+\include{mathematical_physics_and_computation-measurable-functions}
+
+\section{Partial Differential Euqations}
+
+\subsection{Introduction}
+
+\include{mathematical_physics_and_computation-introduction}
+
+\subsection{Elementary Methods}
+
+\include{mathematical_physics_and_computation-conservation-laws}
+
+\include{mathematical_physics_and_computation-wave-equation}
+
+\include{mathematical_physics_and_computation-poisson-equation}
+
+\section{Complex Variable}
+
+\include{mathematical_physics_and_computation-analytical-function}
+
+\include{mathematical_physics_and_computation-complex-integrals}
+
+\section{Miscellaneous}
+
+\subsection{Baisc Numerics}
+
+\include{mathematical_physics_and_computation-least-square}
+
+\subsection{Classical Experiments in Physics}
+
+\include{mathematical_physics_and_computation-stern-gerlach-experiment}
+
+
+
+
+
+\end{document}

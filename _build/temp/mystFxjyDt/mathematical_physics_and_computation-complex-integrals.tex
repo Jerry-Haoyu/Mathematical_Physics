@@ -1,0 +1,23 @@
+\subsection{Complex Integrals}
+
+Inundefinedlieuundefinedwithundefinedtheundefinedflowundefinedfieldundefinedinterpretationundefinedofundefinedcomplexundefinedfunctions,undefinedgeneralizingundefinedtheundefinedlineundefinedintegralundefinedforundefinedcomplexundefinedfunctionsundefinedisundefinedveryundefinednatural:
+
+\begin{mystthmdefinition}{ComplexundefinedIntegral}{definition-complexintegrals-1}Letundefined$f:\mathbb{C}\to \mathbb{C}$undefinedbeundefinedaundefinedcontinousundefinedcomplexundefinedfunctionundefinedandundefined$\Gamma$undefinedisundefinedaundefinedsmoothundefinedpathundefinedinundefined$\mathbb{C}$,undefinedthenundefinedtheundefinedlimitundefinedonundefinedtheundefinedR.H.SundefinedexistsundefinedandundefinedweundefineddefineundefinedtheundefinedL.H.S
+integralundefinedbyundefinedtheundefinedlimit.
+\begin{equation}
+\int_{\Gamma} f(z)dz:=\lim_{\Delta z_i\to 0}\sum f(\xi_i)(z_{i+1}-z_i)
+\end{equation}
+whereundefined$\xi_i \in (z_i,z_{i+1})$
+
+\end{mystthmdefinition}
+Weundefinedcanundefinedcompteundefinedtheundefinedintegralundefinedbyundefinedcomputingundefinedtwoundefinedstandardundefinedrealundefinedlineundefinedintegrals:
+\begin{equation}
+\begin{aligned}
+\int_{\Gamma} f(z)dz &=\int_{\Gamma} (u+iv)(dx+idy) \\
+&=\int_{\Gamma} (udx-vdy) + i\int_{\Gamma} (vdx+udy)
+\end{aligned}
+\end{equation}
+Weundefinedcanundefineddefineundefined$A=(u, -v)$undefinedandundefined$B=(v,u)$undefinedandundefined$r=(dx,dy)$:
+\begin{equation}
+\int_{\Gamma} f(z)dz = \int_{\Gamma} A\cdot dr + i\int_{\Gamma}B\cdot dr
+\end{equation}

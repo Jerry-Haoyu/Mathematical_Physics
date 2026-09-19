@@ -1,0 +1,472 @@
+\subsection{Measure}
+
+Itundefinedwillundefinedbeundefinedinevitableundefinedtoundefinedstepundefinedonundefinedsomeundefinedmeasureundefined\&undefinedintegrationundefinedtheoryundefinedinundefineddealingundefinedwithundefined\textit{PartialundefinedDifferentialundefinedEquations}undefinedandundefined\textit{StochasticundefinedProcesses}.undefinedThisundefinedchapterundefinedactsundefinedasundefinedaundefinedbriefundefinedintroduction.
+
+\paragraph{$\sigma$-Algebra}
+
+\subparagraph{Motivation}
+
+Inundefinedphysics,undefinedtheundefinedtaskundefinedofundefinedfinidingundefined``volume''undefinedisundefinedubquitous.undefinedForundefinedinstanceundefinedinundefinedcomputingundefinedmass,undefinedcharge,undefinedtheundefinedintegralundefinedwouldundefinedresemble:
+\begin{equation}
+\int (\cdot ) dV
+\end{equation}
+Inundefinedsomeundefinedsense,undefinedthisundefined$dV$undefinedisundefinedaundefinedfunctionundefined$dV:E\to \mathbb{R}$undefinedwhichundefinedcomputesundefinedtheundefinedvolumeundefinedofundefined$E\subset \mathbb{R}^n$,undefinedaundefinedtinyundefinedcontrolundefinedvolumeundefinedweundefinedareundefinedinterestedundefinedin.undefinedundefinedItundefinedwouldundefinedbeundefinedveryundefinednaturalundefinedtoundefinedaskundefinedforundefinedthisundefinedfunctionundefinedtoundefinedsatisfy:
+
+\begin{mystthmdefinition}{Measure}{definition-measure-1}Supposeundefined$X$undefinedisundefinedaundefinedset.undefinedLetundefined$\mu: A \to \mathbb{R}$undefinedwhereundefined$A\in P(X)$undefinedsuchundefinedthat:
+
+\begin{itemize}
+\item \begin{equation}
+\mu(\varnothing)=0
+\end{equation}
+
+
+\item \textbf{(countableundefinedadditivity)}undefined$E_1,E_2,....$undefinedisundefinedaundefinedcountableundefinedinifniteundefinedsequenceundefinedofundefineddisjoint,undefinedthen:
+
+\begin{equation}
+\mu(\cup_j E_j)=\sum_j \mu(E_j)
+\end{equation}
+
+
+Thenundefinedweundefinedcallundefined$\mu$undefinedaundefinedmeasure.
+\end{itemize}
+
+\end{mystthmdefinition}
+Theundefinedquestionundefinedwouldundefinedbe,undefinedwhenundefinedcanundefinedweundefinedfindundefinedsuchundefinedaundefinedfunction.undefinedTriviallyundefinedweundefinedcanundefinedobtainundefinedsuchundefinedpropertyundefinedbyundefinedsendingundefinedeveryundefined$A$undefinedtoundefined0.undefinedHowever,undefinedforundefinedmoreundefinedpracticalundefinedpurposesundefinedofundefinedmodelingundefinedtheundefinedworld,undefinedweundefinedwouldundefinedlikeundefinednicerundefinedproperties.undefinedInundefinedparticular,undefinedlet'sundefinedconsiderundefinedthisundefinedcompeletlyundefinedreasonableundefineddemandundefinedonundefined$\mathbb{R}^n$.
+
+\begin{mystexercise}{OpenundefinedSetundefinedasundefinedaundefinedTopologyundefined}{open-set-as-a-topology}\label{Open Set as a Topology}\label{open set as a topology}\begin{enumerate}
+\item Letundefined$\mathcal{B}$undefinedbeundefinedtheundefinedfamilyundefinedofundefinedallundefinedopenundefinedintervalsundefinedinundefined$\mathbb{R}$,undefinedi.e.undefinedsubsetsundefinedofundefinedtheundefinedform
+\begin{equation}
+(a, b) := \{c \in \mathbb{R} \mid a < c < b\}
+\end{equation}
+forundefinedallundefined$a, b \in \mathbb{R}$undefinedwithundefined$a < b$.undefinedLetundefined$\mathcal{T}(\mathcal{B})$undefinedbeundefinedtheundefinedfamilyundefinedofundefinedallundefinedarbitraryundefinedunionsundefinedofundefinedelementsundefinedinundefined$\mathcal{B}$,undefinedi.e.,
+\begin{equation}
+\mathcal{T}(\mathcal{B}) := \left\{ \bigcup_{B \in \mathcal{B}'} B \mathrel{\Big\vert{}} \mathcal{B}' \subseteq \mathcal{B} \right\}
+\end{equation}
+Proveundefinedthatundefined$\mathcal{T}(\mathcal{B})$undefinedisundefinedaundefinedtopologyundefinedonundefined$\mathbb{R}$.undefined(Thisundefined``$\mathcal{B}$''undefinedstandsundefinedforundefinedaundefined``base''undefined=undefined``basis''undefinedofundefinedaundefinedtopology.)
+
+
+\item Forundefined$\mathcal{B}$undefinedandundefined$\mathcal{T}(\mathcal{B})$undefinedasundefinedaboveundefinedandundefinedanyundefined$U \in \mathcal{T}(\mathcal{B})$undefined(i.e.,undefinedanyundefinedopenundefinedset),undefinedproveundefinedthatundefinedthereundefinedexistsundefinedaundefinedcountableundefinedfamilyundefined$\mathcal{B}'' \subseteq \mathcal{B}$undefined(ofundefinedopenundefinedintervals)undefinedsuchundefinedthatundefined$U = \bigcup_{B \in \mathcal{B}''} B$.undefined(Hint:undefineditundefinedmightundefinedhelpundefinedtoundefinedproveundefinedfirstundefinedthatundefinedtheundefinedunionundefinedofundefinedanyundefinedfamilyundefinedofundefinedopenundefinedintervalsundefinedcontainingundefinedaundefinedgivenundefined$x \in \mathbb{R}$undefinedisundefinedaundefinedgeneralizedundefinedopenundefinedintervalundefinedinundefinedtheundefinedsenseundefinedthatundefineditundefinedisundefinedofundefinedtheundefinedformundefined$(a, b)$,undefined$( -\infty, a)$undefinedorundefined$(a, \infty)$undefinedforundefinedsomeundefined$a, b \in \mathbb{R}$.undefinedOrundefineddoundefinedthisundefinedanyundefinedotherundefinedway.)
+\item Forundefined$\mathcal{T}(\mathcal{B})$undefinedasundefinedabove,undefinedproveundefinedthatundefined$\mathcal{T}(\mathcal{B}) \subseteq \mathcal{B}_{\mathbb{R}}$,undefinedtheundefinedBorelundefined$\sigma$-algebraundefinedonundefined$\mathbb{R}$.undefined(Thisundefined``$\mathcal{B}$'',undefinedconfusingly,undefinedstandsundefinedforundefined``Borel''.)
+\item UseundefinedtheundefinedaboveundefinedtoundefinedgiveundefinedaundefinedfullundefinedproofundefinedofundefinedPropositionundefined1.2undefinedonundefinedp.undefined22undefinedinundefined[F].
+\item Alsoundefineddeduceundefinedthatundefined$\mathcal{M}(\mathcal{B}) = \mathcal{M}(\mathcal{T}(\mathcal{B})) = \mathcal{B}_{\mathbb{R}}$.
+\end{enumerate}
+
+\end{mystexercise}
+\begin{mystsolution}{SolutionundefinedtoundefinedExercise~\ref{Open Set as a Topology}}\begin{enumerate}
+\item Weundefinedproveundefinedthatundefined$\mathcal{T}(\mathcal{B})$undefinedisundefinedaundefinedtopologyundefinedonundefined$\mathbb{R}$.
+\end{enumerate}
+
+\begin{itemize}
+\item \textbf{Propertyundefined1:undefined$\emptyset, \mathbb{R} \in \mathcal{T}(\mathcal{B})$}
+
+\begin{itemize}
+\item $\emptyset = \cup_{B \in \emptyset} B$undefined(emptyundefinedunion),undefinedsoundefined$\emptyset \in \mathcal{T}(\mathcal{B})$
+\item $\mathbb{R} = ( -\infty, \infty)$undefinedisundefinedaundefinedgeneralizedundefinedopenundefinedinterval,undefinedhenceundefined$\mathbb{R} \in \mathcal{T}(\mathcal{B})$.undefinedMoreundefinedexplicitly,undefinedweundefinedcanundefinedcoverundefineditundefinedbyundefined$\cup_{a=0}^{\infty} \{(a,a+1),( -a -1, -a)\}$
+\end{itemize}
+
+
+\item \textbf{Propertyundefined2:undefinedClosedundefinedunderundefinedarbitraryundefinedunions}
+
+\begin{itemize}
+\item Letundefined$\mathcal{U} \subseteq \mathcal{T}(\mathcal{B})$undefinedbeundefinedanundefinedarbitraryundefinedcollectionundefinedofundefinedsetsundefinedinundefined$\mathcal{T}(\mathcal{B})$.undefinedForundefinedeachundefined$U \in \mathcal{U}$,undefinedweundefinedhaveundefined$U = \cup_{B \in \mathcal{B}_U} B$undefinedforundefinedsomeundefined$\mathcal{B}_U \subseteq \mathcal{B}$.undefinedThenundefined$\cup_{U \in \mathcal{U}} U = \cup_{U \in \mathcal{U}} \left(\cup_{B \in \mathcal{B}_U} B\right) = \cup_{B \in \cup_{U \in \mathcal{U}} \mathcal{B}_U} B$.undefinedSinceundefined$\cup_{U \in \mathcal{U}} \mathcal{B}_U \subseteq \mathcal{B}$,undefinedweundefinedhaveundefined$\cup_{U \in \mathcal{U}} U \in \mathcal{T}(\mathcal{B})$
+\end{itemize}
+
+
+\item \textbf{Propertyundefined3:undefinedClosedundefinedunderundefinedfiniteundefinedintersections}
+
+\begin{itemize}
+\item Byundefinedinductionundefinedonundefinedtheundefinednumberundefined$n$undefinedofundefinedsets.
+\item \textbf{Baseundefinedcase}undefined($n=1$):undefinedTrivial,undefined$U \in \mathcal{T}(\mathcal{B})$.
+\item \textbf{Inductiveundefinedstep}:undefinedAssumeundefined$U_1 \cap \cdots \cap U_n \in \mathcal{T}(\mathcal{B})$undefinedforundefinedanyundefined$n$undefinedsetsundefinedinundefined$\mathcal{T}(\mathcal{B})$.
+Forundefined$n+1$undefinedsets,undefinedwriteundefined$(U_1 \cap \cdots \cap U_n) \cap U_{n+1}$.undefinedByundefinedinductionundefinedhypothesis,undefined$U_1 \cap \cdots \cap U_n = \cup_{i \in I}(a_i, b_i)$
+forundefinedsomeundefinedcountableundefinedcollectionundefinedofundefinedopenundefinedintervals.undefinedThen
+
+\begin{equation}
+(U_1 \cap \cdots \cap U_n) \cap U_{n+1} = \left(\cup_{i \in I}(a_i, b_i)\right) \cap U_{n+1} = \cup_{i \in I}((a_i, b_i) \cap U_{n+1})
+\end{equation}
+
+
+Eachundefined$(a_i, b_i) \cap U_{n+1}$undefinedisundefinedanundefinedintersectionundefinedofundefinedanundefinedopenundefinedintervalundefinedwithundefinedaundefinedunionundefinedofundefinedopenundefinedintervals,undefinedwhichundefinedis
+aundefinedfiniteundefinedunionundefinedofundefinedopenundefinedintervalsundefined(orundefinedempty).undefinedHenceundefined$(U_1 \cap \cdots \cap U_{n+1}) \in \mathcal{T}(\mathcal{B})$.
+\end{itemize}
+\end{itemize}
+
+Thereforeundefined$\mathcal{T}(\mathcal{B})$undefinedisundefinedaundefinedtopologyundefinedonundefined$\mathbb{R}$.
+
+
+\bigskip
+\centerline{\rule{13cm}{0.4pt}}
+\bigskip
+
+\begin{enumerate}[resume]
+\item Supposeundefined$\mathcal B' \subseteq \mathcal B$undefinedand
+
+\begin{equation}
+U=\bigcup_{B\in \mathcal B'} B
+\end{equation}
+
+
+whereundefined$\mathcal B'$undefinedcanundefinedbeundefineduncountable.undefinedWeundefinedwouldundefinedlikeundefinedtoundefinedshowundefined$\exists \mathcal B''$undefinedthatundefinedisundefinedcountableundefinedsuchundefinedthat
+
+\begin{equation}
+U=\bigcup_{B\in \mathcal B^{''}} B
+\end{equation}
+
+
+Weundefinednowundefinedshowundefinedaundefinedspecficundefinedwayundefinedtoundefinedconstructundefined$\mathcal B''$undefinedfromundefined$\mathcal B'$.undefinedDefine:
+
+\begin{equation}
+\mathcal B_x = \{(a,b)\in \mathcal B' : x\in (a,b)\}
+\end{equation}
+
+
+Clearlyundefined$\mathcal B_x \subseteq \mathcal B'$.undefinedNowundefinedproceedundefinedwithundefinedtheundefinedfollowingundefinedprocedure(anundefined``infiniteundefinedalgorithm'')onundefinedtheundefinedconstructionundefinedofundefined$\mathcal B''$
+\end{enumerate}
+
+\begin{mystthmalgorithm}{}{algorithm-measure-2}\textbf{Input}:undefinedAundefinedpotentiallyundefineduncountableundefinedsetundefinedofundefinedopenundefinedintervalsundefined$\mathcal B'$undefinedsuchundefinedthatundefined$\cup \mathcal B'=U$
+
+\textbf{Output}:undefinedAundefinedcountableundefinedsetundefinedofundefinedopenundefinedintervalsundefined$\mathcal B''$undefinedsuchundefinedthatundefined$\cup \mathcal B''=U$
+
+\begin{enumerate}
+\item $\mathcal B'' = \varnothing$
+\item \textbf{While}undefined$\exists x\in U$,undefinedundefined$x\notin \cup \mathcal B''$undefined:
+
+\begin{enumerate}
+\item Computeundefined$(c,d)=\bigcup_{B\in \mathcal B_x} B$undefinedwhereundefined$c,d$undefinedisundefinedinundefinedextendedundefinedrealundefinednumberundefinedsystem.
+\item \textbf{If}undefined$c,d\in \mathbb{R}$:
+
+\begin{enumerate}
+\item $\mathcal{B}_x'=\{(c,d)\}$
+\end{enumerate}
+
+
+\item \textbf{Elseundefinedif}undefined$c\in \mathbb{R}, d=\infty$:
+
+\begin{enumerate}
+\item $\mathcal{B}_x'\gets \{(c,[c])\}\cup \{[c],[c]+j\}_{j=1}^{\infty}$
+\end{enumerate}
+
+
+\item \textbf{Else}
+Otherundefinedcasesundefinedfollowsundefinedasundefined(3)
+\item $\mathcal B'' = \mathcal B'' \cup \mathcal B_x '$
+\end{enumerate}
+
+
+\item \textbf{Return}undefined$\mathcal B''$
+\end{enumerate}
+
+\end{mystthmalgorithm}
+whereundefined$[c]$undefinedpicksundefinedtheundefinedclosesundefinedintegerundefinedtowardsundefinedtheundefinedrightundefinedofundefinedtheundefinedrealundefinedaxis.
+Noteundefinedweundefinedimplicitlyundefinedinvokedundefinedtheundefinedclaimundefinedbelowundefinedinundefinedcomputingundefined$(c,d)$:
+
+\begin{itemize}
+\item $\boxed{\textbf{Cliam 1}}$undefinedTheundefinedunionundefinedofundefinedarbitraryundefinedfamilyundefinedofundefinedopenundefinedintervalsundefinedcontainingundefined$x\in \mathbb{R}$undefinedisundefinedaundefined\textit{generalizedundefinedopenundefinedinterval}
+
+\begin{equation}
+\bigcup_{B\in \mathcal B_x} B\in \{(c,d): c,d\in \mathbb{R}\cup \{\infty, -\infty\}\}
+\end{equation}
+
+\begin{itemize}
+\item Iundefinedclaimundefinedtheundefinedunionundefinedisundefinedjustundefined$(c,d)$undefinedwhereundefined$c=\inf \{a:(a,b)\in \mathcal B_x\}$undefinedandundefined$d=\sup \{b:(a,b)\in \mathcal B_x\}$undefinedwhereundefinedweundefinedallowundefined$\infty$undefinedandundefined$-\infty$.undefinedClearlyundefined$(c,d)$undefinedcoversundefined$\cup \mathcal B_x$.undefinedItundefinedsufficeundefinedtoundefinedshowundefined$\cup \mathcal B_x$undefinedcoversundefined$(c,d)$.undefinedSupposeundefined$\exists y \in (c,d)$undefinedandundefined$y\notin \cup \mathcal B_x$.undefinedThisundefinedmeansundefined$\cup \mathcal B_x$undefinedhasundefinedaundefinedholeundefinedandundefinedthereundefinedmustundefinedexistsundefinedaundefinedpairundefinedofundefinedopenundefinedintervalundefinedinundefined$\mathcal B_x$undefinedthatundefinedisundefineddisjoint,undefinedcontradictingundefinedthatundefinedallundefinedopenundefinedintervalsundefinedinundefined$\mathcal B_x$undefinedcontainsundefined$x$(inundefinedthatundefinedcaseundefinednoundefinedpairundefinedshouldundefinedbeundefineddisjoint).
+\end{itemize}
+\end{itemize}
+
+Nowundefinedwhat'sundefinedleftundefinedtoundefinedshowundefinedisundefined(1)undefinedOnlyundefinedcountableundefinednumberundefinedofundefined$\mathcal B_x'$undefinedisundefinedneeded.undefined(2)undefinedeachundefined$\mathcal B_x'$undefinedisundefinedcountable.undefinedTheundefinedlaterundefinedisundefinedobviousundefinedbyundefinedconstruction.undefinedTheundefinedformerundefinedcanundefinedbeundefinedarguedundefinedbyundefinedcountabilityundefinedofundefined$\mathbb{Q}$.undefinedPickundefinedaundefined$q\in \mathbb{Q}$undefinedinundefinedoneundefinedofundefinedtheundefinedopenundefinedintervalundefinedofundefined$\mathcal B_x'$,undefinedthisundefinedisundefinedalwaysundefinedpossibleundefinedbyundefineddensityundefinedofundefinedrationals.undefinedSupposeundefineduncountableundefined$\mathcal B_x'$undefinedisundefinedneededundefinedtoundefinedcoverundefined$\cup \mathcal B''$undefinedthenundefined$U=\cup \mathcal B''$undefinedwouldundefinedcontainundefineduncountableundefinednumberundefinedofundefinedrationals.undefinedThisundefinedfinishesundefinedtheundefinedproof.
+
+
+\bigskip
+\centerline{\rule{13cm}{0.4pt}}
+\bigskip
+
+\begin{enumerate}[resume]
+\item Byundefineddefinition,undefined$\mathcal B_{\mathbb{R}}$undefinedisundefinedtheundefinedsmallestundefined$\sigma$-algebraundefinedcontainingundefined$\mathcal T(\mathcal B)$.undefinedThereforeundefinedtheundefinedinclusionundefinedholdsundefinedbyundefinedconstruction.
+\end{enumerate}
+
+
+\bigskip
+\centerline{\rule{13cm}{0.4pt}}
+\bigskip
+
+\begin{enumerate}[resume]
+\item Weundefinedonlyundefinedneedundefinedtoundefinedshowundefined(b),undefined(c),undefinedandundefined(e)undefinedsinceundefined(a)undefinedandundefined(d)undefinedareundefinedgeneralizedundefinedopen
+intervalsundefinedandundefinedareundefinedactuallyundefinedshownundefinedbyundefined(5).
+\end{enumerate}
+
+\textbf{Caseundefined(b):undefinedClosedundefinedintervals}undefined$\mathcal{E}_2 = \{[a,b]: a < b\}$
+
+\begin{itemize}
+\item $\mathcal{M}(\mathcal{E}_2) \subseteq \mathcal{B}_\mathbb{R}$:undefinedNoteundefinedthatundefined$[a,b] = \cap_{j=1}^{\infty}(a -1/j, b+1/j)$
+isundefinedaundefinedcountableundefinedintersectionundefinedofundefinedopenundefinedintervals,undefinedsoundefined$\mathcal{E}_2 \subset \mathcal{B}_\mathbb{R}$.
+\item $\mathcal{B}_\mathbb{R} \subseteq \mathcal{M}(\mathcal{E}_2)$:undefined$(a,b) = \cup_{j=1}^{\infty}[a+1/j, b -1/j]$
+isundefinedaundefinedcountableundefinedunionundefinedofundefinedclosedundefinedintervals,undefinedsoundefined$\mathcal{B} \subset \mathcal{M}(\mathcal{E}_2)$undefinedandundefinedhence
+$\mathcal{B}_\mathbb{R} = \mathcal{M}(\mathcal{B}) \subset \mathcal{M}(\mathcal{E}_2)$.
+\end{itemize}
+
+\textbf{Caseundefined(c):undefinedHalf-openundefinedintervals}undefined$\mathcal{E}_3 = \{(a,b]: a < b\}$
+
+\begin{itemize}
+\item $\mathcal{M}(\mathcal{E}_3) \subseteq \mathcal{B}_\mathbb{R}$:undefined$(a,b] = (a,b) \cup \{b\}$undefinedwhereundefined$(a,b) \in \mathcal{B}_\mathbb{R}$
+andundefined$\{b\} = \cap_{j=1}^{\infty}(b -1/j, b+1/j) \in \mathcal{B}_\mathbb{R}$.
+\item $\mathcal{B}_\mathbb{R} \subseteq \mathcal{M}(\mathcal{E}_3)$:undefined$(a,b) = \cup_{j=1}^{\infty}(a, b -1/j]$
+isundefinedaundefinedcountableundefinedunionundefinedofundefinedhalf-openundefinedintervals,undefinedsoundefined$\mathcal{B} \subset \mathcal{M}(\mathcal{E}_3)$undefinedandundefinedhence
+$\mathcal{B}_\mathbb{R} \subset \mathcal{M}(\mathcal{E}_3)$.
+\end{itemize}
+
+\textbf{Caseundefined(e):undefinedClosedundefinedrays}undefined$\mathcal{E}_7 = \{[a,\infty): a \in \mathbb{R}\}$
+
+\begin{itemize}
+\item $\mathcal{M}(\mathcal{E}_7) \subseteq \mathcal{B}_\mathbb{R}$:undefined$[a,\infty) = \cap_{j=1}^{\infty}(a -1/j, \infty)$
+isundefinedaundefinedcountableundefinedintersectionundefinedofundefinedopenundefinedraysundefined(generalizedundefinedopenundefinedintervals),undefinedsoundefined$\mathcal{E}_7 \subset \mathcal{B}_\mathbb{R}$.
+\item $\mathcal{B}_\mathbb{R} \subseteq \mathcal{M}(\mathcal{E}_7)$:undefined$(a,b) = (a,\infty) \cap ( -\infty,b)$undefinedwhere
+$(a,\infty) = \cup_{j=1}^{\infty}[a+1/j,\infty)$undefinedandundefined$( -\infty,b) = \mathbb{R} \setminus [b,\infty)$undefinedareundefinedinundefined$\mathcal{M}(\mathcal{E}_7)$,
+soundefined$\mathcal{B} \subset \mathcal{M}(\mathcal{E}_7)$undefinedandundefinedhenceundefined$\mathcal{B}_\mathbb{R} \subset \mathcal{M}(\mathcal{E}_7)$.
+\end{itemize}
+
+Casesundefined(c'),undefined(e')undefinedfollowundefinedbyundefinedsymmetry.
+
+
+\bigskip
+\centerline{\rule{13cm}{0.4pt}}
+\bigskip
+
+\begin{enumerate}[resume]
+\item Weundefinedonlyundefinedneedundefinedtoundefinedshow
+
+\begin{equation}
+\begin{aligned}
+\mathcal B &\subseteq \mathcal M(\mathcal T(\mathcal B)) \\
+\mathcal T(\mathcal B) &\subseteq \mathcal M( \mathcal B)
+\end{aligned}
+\end{equation}
+\end{enumerate}
+
+\begin{itemize}
+\item Theundefinedformerundefinedisundefinedtrivialundefinedsinceundefined$\mathcal B \subseteq \mathcal T(\mathcal B)\subseteq \mathcal M(\mathcal T(\mathcal B)$
+\item Theundefinedlaterundefinedcanundefinedbeundefinedshownundefinedusingundefined(2).undefined$\mathcal M(\mathcal B)$undefinedcontainsundefinedallundefinedcountableundefinedunionsundefinedofundefinedopenundefinedintervalsundefined$\mathcal B$undefinedwhileundefined$\mathcal T(\mathcal B)$undefinedcontainsundefinedarbitraryundefinedunion.undefined(2)undefinedbridgesundefinedtheundefinedgapundefinedbyundefinedclaimingundefinedtheundefinedarbitraryundefinedunionundefinedcanundefinedactuallyundefinedbeundefinedreplacedundefinedbyundefinedcountableundefinedunion.
+\end{itemize}
+
+\end{mystsolution}
+\subsubsection{ConstructionundefinedofundefinedMeasure}
+
+\paragraph{Theundefinedbigundefinedpicture}
+
+Theundefinedgeneralundefinedideaundefinedofundefinedconstructingundefinedmeasureundefinedis,undefinedinundefinedcrudeundefinedterms:
+
+\begin{enumerate}
+\item Findundefinedaundefinedcollectionundefinedofundefinedsetundefinedthatundefinedhasundefinedaundefinedclearundefinednotionundefinedofundefinedsize
+\item Makeundefinedtheundefinedcollectionundefinedclosedundefinedinundefinedfiniteundefinedsetundefinedoperationsundefinedbyundefinedgeneratingundefinedanundefinedalgebraundefinedonundefinedtheundefinedcollection.
+\item Approximateundefinedarbitraryundefinedsubsetsundefinedusingundefinedelementundefinedinundefinedtheundefinedalgebra,undefinedhenceundefinedgetundefinedaundefinednotionundefinedofundefinedsizeundefinedonundefinedarbtiraryundefinedsubsets
+\item Makeundefinedtheundefinednotionundefinedofundefinedsizeundefinedtruelyundefinedaundefinedmeasureundefinedbyundefinedrestrictingundefinedtoundefinedaundefinedspecialundefinedcollectionundefinedofundefinedsubset.
+\end{enumerate}
+
+Moreundefinedconcretelyundefinedtheundefinedcollectionundefinedofundefinedsetundefinedwithundefinedclearundefinednotionundefinedofundefinedsizeundefinedneedundefinedtoundefinedhaveundefinedaundefinedcertainundefinedstructureundefinedcalledundefined\textit{elementaryundefinedcollectionundefinedofundefinedset}(denotedundefinedbyundefined$\mathcal E$).undefinedundefined\textit{Elementaryundefinedcollection}undefinedhasundefinedaundefinedspecialundefinedproperty:undefineditundefinedcanundefinedbeundefinedpromotedundefinedtoundefinedanundefinedalgebraundefined$\mathcal A$undefinedbyundefineddisjointundefinedunion.undefinedNowundefinedtheundefinednotionundefinedofundefinedsizeundefinedonundefined$\mathcal E$undefinedcanundefinedbeundefinedextenededundefinedtoundefinedtheundefinedalgebraundefined$\mathcal A$,undefinedcreatingundefinedaundefinedso-calledundefined\textit{pre-measure}undefinedwhichundefinedpossessundefined\textit{countableundefinedadditivity}undefinedonundefined$\mathcal A$.undefinedThenundefinedtheundefinedprocessundefinedofundefinedapproximatingundefinedarbitraryundefinedsetundefinedusingundefinedelementaryundefinedclass
+isundefinedcalledundefinedtheundefinedconstructionundefinedofundefinedanundefined\textit{outer-measure}.undefinedDuringundefinedtheundefinedprocess,undefinedweundefinedloosesundefined\textit{countableundefinedadditivity}undefinedasundefineditundefinedisundefinedreducedundefinedtoundefined\textit{countableundefinedsubadditivity}.undefinedFinallyundefinedweundefinedobtainundefinedaundefinedtrueundefined\textit{measure}undefinedbyundefinedrestrictingundefinedtheundefined\textit{outer-measure}undefinedonundefinedaundefinedspecialundefinedcollectionundefinedofundefinedsubsetundefinedcalledundefinedtheundefined\textit{Caratheoryundefined$\sigma$-algebra}.
+
+Observeundefinedhowundefinedtheundefinednotionundefinedofundefinedsizeundefinedripens:
+\begin{equation}
+\begin{aligned}
+\text{Stage 1: $\boxed{|\cdot|:\mathcal E \to \mathbb{R}^+}$} 
+&\longrightarrow \text{Stage 2: $\boxed{\mu_0: \mathcal A \to  \mathbb{R}^+}$} \\ 
+&\longrightarrow \text{Stage 3: $\boxed{\mu^* : P(X)\to \mathbb{R}^+}$} \\ 
+&\longrightarrow \text{Stage 4: $\boxed{\mu: S \to \mathbb{R}^{+}}$}
+\end{aligned}
+\end{equation}
+
+\begin{enumerate}
+\item \textit{Stageundefined1undefinedtoundefined2}:undefinedExpandundefinedtheundefineddomainundefinedtoundefinedensuresundefinedclosednessundefinedandundefinedobtainsundefined\textit{countable-additivity};undefinedLacksundefinedtheundefinedabilityundefinedtoundefinedtakeundefinedarbtiraryundefinedsubsetundefinedasundefinedinput
+\item \textit{Stageundefined2undefinedtoundefined3}:undefinedExpandundefinedtheundefineddomainundefinedtoundefinedarbitrayundefinedsubsetundefinedbutundefinedasundefinedaundefinedcostundefined\textit{countableundefinedadditivity}undefineddeterioatesundefinedtoundefined\textit{countableundefinedsubadditivity}.
+\item \textit{Stageundefined3undefinedtoundefined4}:undefinedShrinkundefinedtheundefineddomain;undefinedThisundefinedisundefinednowundefinedaundefined\textbf{completeundefinedmeasure}
+\end{enumerate}
+
+\paragraph{Elementaryundefinedcollectionundefinedandundefinedpre-measure}
+
+\begin{mystthmdefinition}{ElementaryundefinedCollectionundefinedofundefinedset}{definition-measure-3}Anundefined\textbf{elementaryundefinedcollection}undefinedofundefinedsetundefinedisundefinedaundefinedcollectionundefinedofundefinedsetundefined$\mathcal E \in P(X)$undefinedsuchundefinedthat:
+
+\begin{enumerate}
+\item \textbf{(Containsundefinednull)}undefined$\varnothing \in \mathcal E$
+\item \textbf{(Closedundefinedunderundefinedintersection)}undefinedIfundefined$E,F\in \mathcal E$undefinedthenundefined$E\cap F\in \mathcal E$
+\item \textbf{(Closedundefinedbyundefineddisjointundefinedunionundefinedunderundefinedcomplement)}undefinedIfundefined$F\in \mathcal E$undefinedthenundefinedexistsundefineddisjointundefinedsubsetsundefined$E_j\in \mathcal E$undefinedsuchundefinedthatundefined$F^c = \cup_j E$
+\end{enumerate}
+
+\end{mystthmdefinition}
+\paragraph{OuterundefinedMeasure}
+
+Soundefinedhowundefineddoundefinedweundefinedactuallyundefinedconstructundefinedmeasuresundefinednoundefinedmatterundefinedwhatundefinedsetundefinedweundefinedareundefinedworkingundefinedon?(Thoughundefinedinundefinedthisundefinedbookundefinedweundefinedareundefinedreallyundefinedinterestedundefinedinundefinedjustundefined$\mathbb{R}^n$).undefinedAundefinedgeneralundefinedguidlineundefinedis:
+
+\begin{enumerate}
+\item Findundefinedsomeundefined\textit{elementaryundefinedset}undefined$\mathcal{E}$undefinedwhereundefinedpremeasureundefinedisundefineddefinedundefinedonundefinedtheundefineddisjointundefineduniontundefinedofundefined$\mathcal{E}$.
+\item Defineundefinedtheundefinedmeasureundefinedofundefinedarbitraryundefinedsubsetundefined$A\in P(X)$undefinedasundefinedtheundefinedtheundefinedsizeundefinedofundefined``smallest''undefinedcoverundefinedofundefined$A$undefinedusingundefinedtheundefinedelementaryundefinedset:
+\end{enumerate}
+\begin{equation}
+\label{omfml}
+\inf \left\{\sum_{\nu=1}^{\infty} \rho(E_{\nu}): E_{\nu}\in \mathcal{E}, A\subset \bigcup_{\nu=1}^{\infty} E_{\nu}\right\}
+\end{equation}
+Moreundefinedgenerallyundefinedweundefinedcanundefineddefineundefinedanundefined\textit{outerundefinedmeasure}undefinedasundefinedfollows:
+
+\begin{mystthmdefinition}{OuterundefinedMeasure}{omdf}\label{omdf}Anundefinedouterundefinedmeasureundefinedonundefinedanundefinednon-emptyundefinedsetundefined$X$undefinedisundefinedaundefinedfunctionundefined$\mu^* : P(X)\to [0,\infty]$undefinedsuchundefinedthat:
+
+\begin{itemize}
+\item $\mu^*(\varnothing)=0$
+\item Ifundefined$A\subset B$,undefinedthenundefined$\mu^*(A)<\mu^*(B)$
+\item $\mu^*(\cup_{\nu}A_{\nu})\leq \sum_{\nu} \mu^* (A_{\nu })$
+\end{itemize}
+
+\end{mystthmdefinition}
+Weundefinednoteundefinedthatundefinedpropertyundefined(2),(3)undefinedareundefinedbothundefinedderivedundefinedpropertiesundefinedofundefinedmeasure.undefinedSoundefinedweundefinedcanundefinedthinkundefinedtheundefineddefinitionundefinedofundefinedouterundefinedmeasureundefinedasundefinedaundefinedrelaxationundefinedofundefinedmeasure:undefinedtakeundefinedoutundefinedcountableundefinedadditvityundefinedandundefinedaddsundefinedbackundefinedtwoundefinedderivedundefinedproperty.undefinedInundefinedaddition,undefinedundefinedWeundefinednoteundefinedthatundefined(\ref{omfml})undefinedobeysundefinedDefinition~\ref{omdf}
+
+\begin{mystadmonition}{mystAmber}{Exercise}Showundefinedthatundefined(\ref{omfml})undefinedindeedundefineddefinesundefinedanundefinedouterundefinedmeasureundefinedDefinition~\ref{omdf}.
+
+\end{mystadmonition}
+Howundefineddoundefinedweundefinedthenundefinedobtainundefinedmeasureundefinedfromundefinedouterundefinedmeasure?undefinedWeundefinednoteundefinedthatundefinedwhatundefinedouterundefinedmeasureundefinedlacksundefinedisundefinedfiniteundefinedadditivity,undefinedsoundefinedweundefinedcanundefinedfurtherundefinedask,undefinedisundefinedthereundefinedaundefinedcollectionundefinedofundefinedsubsetundefined$\mathcal {M}\subset P(X)$undefinedsuchundefinedthatundefined$\mu^*$undefinedisundefinedactuallyundefinedfiniteyundefinedadditive?undefinedTheundefinedanswerundefinedisundefinedactuallyundefinedYES!undefinedHoweverundefinedthisundefinedseemsundefinedratherundefinedarbitrary:
+\begin{equation}
+\mathcal M = \{A\subset X: \mu^*(F)=\mu^*(F-A)+\mu^*(A\cap F), \forall F \subset X\}
+\end{equation}
+Weundefinedcallundefinedelementsundefinedofundefined$\mathcal M$undefined\textbf{$\mu^*$-measureable}.undefinedInundefinedplainundefinedEnglish,undefinedthisundefinedsayingundefined$A$undefinedcanundefined``splitundefinedmeasure''undefinedarbitraryundefined$F\subset X$undefinedbyundefinedmeasuringundefinedtheundefinedintersectionundefinedandundefinedtheundefinedcomplementundefinedseparetlyundefinedandundefinedaddundefinedthemundefinedtogether.
+
+\begin{mystthmtheorem}{Carathéodory'sundefinedTheorem}{theorem-measure-4}Ifundefined$\mu^*$undefinedisundefinedanundefinedouterundefinedmeasureundefinedofundefined$X$undefinedthen
+
+\begin{enumerate}
+\item theundefinedcollectionundefinedofundefined\textbf{$\mu^*$-measureable}undefinedsets:
+
+\begin{equation}
+\mathcal M = \{A\subset X: \mu^*(F)=\mu^*(A^c \cap F)+\mu^*(A\cap F), \forall F \subset X\}
+\end{equation}
+
+
+isundefinedaundefined$\sigma$-algebra.
+
+
+\item $\mu^*|_{\mathcal M}$undefinedisundefinedaundefined\textbf{completeundefinedmeasure}
+\end{enumerate}
+
+\end{mystthmtheorem}
+Weundefinedfirstundefinedshowundefinedaundefinedsmallundefinedlemma:
+
+\begin{mystthmlemma}{$\mathcal M$undefinedisundefinedclosedundefinedunderundefinedfiniteundefinedunionundefinedandundefined$\mu^{*}$undefinedisundefinedfinitelyundefinedadditiveundefinedonundefined$\mathcal M$}{lemma-measure-5}Letundefined$\mu^{*}$undefinedbeundefinedanundefinedouterundefinedmeasure:
+
+\begin{enumerate}
+\item Supposeundefined$A,B\in \mathcal M$undefinedthenundefined
+
+\begin{equation}
+A\cup B\in \mathcal M
+\end{equation}
+
+
+\item Supposeundefined$A,B\in \mathcal M$,undefined$A\cap B=\varnothing$undefined
+
+\begin{equation}
+\mu^{*}(A \cup B) = \mu^*(A)+\mu^*(B)
+\end{equation}
+\end{enumerate}
+
+\end{mystthmlemma}
+\begin{mystthmproof}{proofundefinedofundefinedlemma}{proof-measure-6}1.(\textbf{$\mathcal M$undefinedisundefinedclosedundefinedunderundefinedfiniteundefinedunion})undefinedItundefinedsufficeundefinedtoundefinedshowundefinedthatundefined$A \cup B$undefinedsplitundefinedmeasureundefinedeveryundefinedsubsetundefinedinundefined$X$.undefinedThatundefinedis,undefined$\forall F\subset X$
+\begin{equation}
+\mu^*(F)=\mu^*(F\cap(A\cup B)) + \mu^*(F\cap(A\cup B)^c)
+\end{equation}
+Sinceundefined$\mu^*$undefinedhasundefinedsubadditivityundefinedbyundefineddefinition,undefinedweundefinedonlyundefinedneedundefinedtoundefinedshow:
+\begin{equation}
+\mu^*(F)\geq \underbrace{\textcolor{red}{\mu^*(F\cap(A\cup B))} + \textcolor{blue}{\mu^*(F\cap(A\cup B)^c)}}_{I}
+\end{equation}
+whereundefinedweundefineddenotedundefinedtheundefinedquantityundefinedtoundefinedbeundefinedboundedundefinedasundefined$I$.undefinedNowundefinednoteundefinedthatundefinedweundefinedcanundefinedexpandundefinedtheundefinedtwoundefinedtermundefinedagainundefinedbyundefinedsubadditivityundefinedtoundefinedget:
+\begin{equation}
+\textcolor{red}{\mu^*(F\cap A \cap B) + \mu^*(F\cap A \cap B^c)+\mu^*(F\cap A^c \cap B)} + \textcolor{blue}{\mu^*(F\cap A^c \cap B^c)}\geq I
+\end{equation}
+Nowundefinedweundefinednoteundefinedthatundefined$B\in \mathcal M$undefinedhenceundefined$B$undefinedcanundefinedsplitundefinedmeasureundefinedanyundefinedset,undefinedincludingundefined$F\cap A\subset X$undefinedandundefined$F\cap A^c \subset X$.undefinedHence:
+\begin{equation}
+\mu^*(F\cap A) +\mu^*(F \cap A^c)\geq I
+\end{equation}
+Butundefined$A \in \mathcal M$undefinedtherefore:
+\begin{equation}
+\mu^*(F)\geq I
+\end{equation}
+
+2.(\textbf{$\mu^{*}$undefinedisundefinedfinitelyundefinedadditiveundefinedonundefined$\mathcal M$})
+Firstundefineduseundefinedthatundefined$A\in \mathcal M$
+\begin{equation}
+\begin{aligned}
+\mu^*(A\cup B) &= \mu^*((A\cup B)\cap A) +  \mu^*((A\cup B)\cap A^c) \\
+&= \mu^*(A\cup (A\cap B))  +  \mu^*(A^c \cap B)
+\end{aligned}
+\end{equation}
+Nowundefineduseundefineddisjointnessundefinedtoundefinedconclude:undefined$A\cap B=\varnothing, A^c \cap B = B$undefinedhence:
+\begin{equation}
+\begin{aligned}
+\mu^*(A\cup (A\cap B))  +  \mu^*(A^c \cap B) &= \mu^*(A)+\mu^*(B)
+\end{aligned}
+\end{equation}
+
+\end{mystthmproof}
+\begin{mystthmproof}{proofundefinedofundefinedCarathéodory}{proof-measure-7}Weundefinedonlyundefinedneedundefinedtoundefinedupgradeundefined``finite''undefinedtoundefined``countable''undefinedinundefinedtheundefinedpreviousundefinedargument.
+
+\end{mystthmproof}
+\subsubsection{Casestudy:undefinedLebesgue-StieltjesundefinedMeasure}
+
+Theundefinedmostundefinedusefulundefinedsetundefinedthatundefinedweundefinedwouldundefinedlikeundefinedtoundefinedequipundefinedaundefinedmeasureundefinedwithundefinedis,undefinedunarguably,undefinedtheundefinedrealundefinednumbersundefined$\mathbb{R}$.
+
+\paragraph{StartingundefinedPoint:undefinedTheundefinedhalf-intervals}
+
+Recallundefinedthatundefinedweundefinedwouldundefinedstartundefinedwithundefinedanundefinedelementaryundefinedcollectionundefinedthatundefinedhasundefinedaundefinedclearundefinednotionundefinedofundefinedsize.undefinedWeundefineddefineundefinedtheundefined\textbf{h-intervals}:
+\begin{equation}
+H=\{(a,b]:a<b, a,b\in \mathbb{R}\}
+\end{equation}
+
+Weundefineddefineundefinedaundefinedterminologyundefinedhere:
+
+\begin{mystthmdefinition}{BorelundefinedSets}{definition-measure-8}Letundefined$X$undefinedanyundefinedmetricundefinedspace,undefinedtheundefined$\sigma$-algebraundefinedgenereatedundefinedbyundefinedtheundefinedfamilyundefinedofundefinedopenundefinedsetsundefinedinundefined$X$undefinedisundefinedcalledundefinedtheundefined\textbf{Borelundefined$\sigma$-algebra},undefineddenotedundefinedbyundefined$\mathcal B_{X}$
+
+\end{mystthmdefinition}
+\begin{mystexercise}{h-intervalsundefinedgenerateundefined$\mathcal B_{\mathbb{R}}$}{exercise-epyhghjtjy}\label{exercise-epYhghjTJy}\label{exercise-epyhghjtjy}Checkundefined$H$undefinedisundefinedanundefinedelementaryundefinedsetundefinedandundefinedsoundefineditundefinedgeneratesundefinedanundefinedalgebraundefined$\mathcal A$.undefinedFurthermore,undefinedshowundefinedthatundefinedtheundefined$\sigma$-algebraundefinedgeneratedundefinedbyundefined$\mathcal A$undefinedisundefinedundefinedundefined$\mathcal B_{\mathbb{R}}$
+
+\end{mystexercise}
+Anotherundefinedterminology:
+
+\begin{mystthmdefinition}{ElementaryundefinedDecomposition}{definition-measure-9}Supposeundefined$A\in \mathcal A$,undefinedsinceundefined$\mathcal A=\mathcal M(H)$undefinedweundefinedcanundefinedfindundefinedfiniteundefineddisjointundefinedh-intervalsundefined$\{I_j\}_{j=1}^N=\{(a_j,b_j]_j\}_{j=1}^N$undefinedsuchundefinedthat:
+\begin{equation}
+A=\bigcup_{j=1}^N I_j
+\end{equation}
+Thenundefined$\{I_j\}$undefinedisundefinedanundefined\textbf{elementaryundefineddecomposition}undefinedofundefined$A$.
+
+\end{mystthmdefinition}
+Weundefineddefineundefinedsizeundefinedonundefined$H$undefinedasundefinedfollows:
+
+\begin{mystadmonition}{mystBlue}{NotionundefinedofundefinedSizeundefinedonundefinedh-intervals}Letundefined$F:\mathbb{R}\to\mathbb{R}$undefinedbeundefinedincreasingundefinedandundefinedright-continous,undefinedletundefined$(a,b]\in H$,undefinedthen:
+\begin{equation}
+|(a,b]|=F(b)-F(a)
+\end{equation}
+Noteundefinedwhenundefined$F(x)=x$,undefinedweundefinedgetundefinedtheundefinedcommonundefinednotionundefinedofundefinedlengthundefinedofundefinedinterval.
+
+\end{mystadmonition}
+Theundefinednextundefinedstepundefinedisundefinedtoundefinedextendundefinedthisundefinednotionundefinedofundefinedsizeundefinedtoundefined$\mathcal A=\mathcal M(H)$.
+
+\paragraph{Stepundefined1:undefinedConstructionundefinedofundefinedaundefinedpremeasure}
+
+Nowundefinedweundefinedhaveundefinedanundefinedalgebraundefined$\mathcal A$undefinedwhereundefinedelementsundefinedofundefinedtheundefinedalgebraundefined$A\in \mathcal A$undefinedhasundefinedanundefinedelementaryundefineddecompositionundefined$A=\{I_j\}$undefinedtoundefinedh-intervalsundefined$I=(a_j,b_j]$,undefinedwhichundefinedisundefinedequippedundefinedwithundefinedaundefinednotionundefinedofundefinedsizeundefined$b_j -a_j$.undefinedAundefinednaturalundefinedwayundefinedtoundefineddefineundefinedtheundefinednotionundefinedofundefinedsizeundefinedforundefined$A$undefinedisundefinedhence:
+\begin{equation}
+\mu_0(A) = \sum_{j=1}^N |I_j| =\sum_{j=1}^N F(b_j)-F(a_j)
+\end{equation}
+Weundefinedclaimundefinedthatundefined$\mu_0$undefinedisundefinedactuallyundefinedaundefined\textit{pre-measure}undefinedonundefined$\mathcal A$.
+
+\begin{mystthmproposition}{}{proposition-measure-10}Letundefined$F:\mathbb{R}\to\mathbb{R}$undefinedtoundefinedbeundefinedaundefinedright-continuous,undefinedincreasingundefinedfunction.undefinedDefineundefined$\mu_0$undefinedas
+\begin{equation}
+\begin{aligned}
+\mu_0 : \mathcal A &\to \mathbb{R} \\
+\bigcup_{j=1}^N A &\mapsto \sum_{j=1}^N [F(b_j)-F(a_j)]
+\end{aligned}
+\end{equation}
+whereundefined$\{I_j\}=\{(a_j,b_j]\}$undefinedisundefinedanundefinedelementaryundefineddecomposition.undefinedThenundefined$\mu_0$undefinedisundefinedaundefinedpremeasureundefinedonundefined$\mathcal A$.
+
+\end{mystthmproposition}
+\begin{mystthmproof}{$\mu_0$undefinedisundefinedaundefinedpre-measure}{proof-measure-11}Weundefinedfirstundefinedneedundefinedtoundefinedshowundefinedthatundefined$\mu_0$undefinedisundefinedactuallyundefinedwell-defined\footnote{Noteundefinedthatundefinedinundefineddefinitingundefinedaundefinednotionundefinedofundefinedsizeundefined$\mu_0$undefinedonundefined$A\in \mathcal A$,undefinedweundefinedrequiresundefined$A$undefinedtoundefinedhaveundefinedaundefinedconcreteundefinedrepresentationundefined$\cup_j I_j$.undefinedIfundefinedtheundefinedresultundefinedisundefinedindependentundefinedon
+howundefinedweundefinedchooseundefinedthisundefinedrepresentation(i.e.undefineddifferentundefinedelementaryundefineddecomposition$\{I_j\}$),undefinedthenundefinedthisundefinednotionundefinedofundefinedsizeundefinedisundefinedindeedundefinedfundamentallyundefinedcorrect.undefinedOtherwiseundefinedifundefined$\mu_0$undefinedisundefineddependentundefinedonundefinedhowundefinedweundefinedchooseundefinedrepresentation,undefinedthenundefineditundefinedisundefinednotundefinedaundefinedcredibeundefinednotionundefinedofundefinedsize.undefinedSuchundefined``representationalundefinedinvariance''undefinedisundefinedcalledundefined\textit{well-definedness}undefinedinundefinedmathematics.}.undefinedThenundefinedweundefinedillustrate:
+
+\begin{enumerate}
+\item Emptyundefinedsetundefinedhasundefinedzeroundefinedmeasure
+\item Non-negativity
+\item Finiteundefinedadditivity
+\item Countableundefinedadditivity
+whereundefinedonlyundefined$(1),(2),(4)$undefinedisundefinedtruelyundefinedrequired.undefinedButundefined$(3)$undefinedisundefinedusedundefinedinundefinedtheundefinedproofundefinedofundefined$(4)$.
+\end{enumerate}
+
+\end{mystthmproof}

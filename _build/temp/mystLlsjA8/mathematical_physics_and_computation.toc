@@ -1,0 +1,99 @@
+\contentsline {section}{\numberline {0.1}Linear Operator}{1}{section.0.1}%
+\contentsline {subsection}{\numberline {0.1.1}Finite-dimensional Vector Space}{1}{subsection.0.1.1}%
+\contentsline {subsubsection}{Linear Operators}{2}{section*.2}%
+\contentsline {paragraph}{Change of basis}{2}{section*.3}%
+\contentsline {subparagraph}{Contravariant Transformation}{2}{section*.4}%
+\contentsline {paragraph}{Triangularization}{2}{section*.5}%
+\contentsline {subsubsection}{Inner Product Space}{3}{section*.6}%
+\contentsline {paragraph}{The identity operator and the Kroncker's Delta}{3}{section*.7}%
+\contentsline {subsection}{\numberline {0.1.2}Infinite-dimensional Vector Space}{5}{subsection.0.1.2}%
+\contentsline {subsubsection}{Function Spaces}{6}{section*.8}%
+\contentsline {paragraph}{$L^p$ Space}{6}{section*.9}%
+\contentsline {paragraph}{Linear Operators}{6}{section*.10}%
+\contentsline {paragraph}{The Uniform Boundedness Theorem}{7}{section*.11}%
+\contentsline {subparagraph}{Baire Category Theorem}{7}{section*.12}%
+\contentsline {subsubsection}{Linear Differential Operator}{8}{section*.13}%
+\contentsline {paragraph}{The Formal Linear Differential Operator}{8}{section*.14}%
+\contentsline {subparagraph}{Nullspace of formal operator}{8}{section*.15}%
+\contentsline {subparagraph}{The Bootstrapping Lemma}{8}{section*.16}%
+\contentsline {subparagraph}{Nullspace of $L$ is an $n$-dimensional subspace of $C^{\infty }$}{9}{section*.17}%
+\contentsline {paragraph}{Linear Independence: Wronskian}{9}{section*.18}%
+\contentsline {paragraph}{Solving $Ly=0$ with constant coefficients}{9}{section*.19}%
+\contentsline {paragraph}{$Ly=0$ with general $a_\nu (x)$}{10}{equation.0.1.44}%
+\contentsline {subsubsection}{Inner Product Space}{11}{section*.21}%
+\contentsline {paragraph}{Distribution and Test Functions}{11}{section*.22}%
+\contentsline {subparagraph}{Continous Indexing}{11}{section*.23}%
+\contentsline {subparagraph}{Duality Pairing}{11}{section*.24}%
+\contentsline {subparagraph}{Exercises}{13}{equation.0.1.56}%
+\contentsline {paragraph}{Formal adjoint}{13}{section*.27}%
+\contentsline {paragraph}{Concrete Adjoint}{13}{section*.28}%
+\contentsline {subparagraph}{The Sturm-Liouville Operator}{13}{section*.29}%
+\contentsline {subparagraph}{A Discrete Analog}{13}{section*.30}%
+\contentsline {section}{\numberline {0.2}Calculus of Variation}{18}{section.0.2}%
+\contentsline {subsection}{\numberline {0.2.1}Euler-Lagrange Equation}{19}{subsection.0.2.1}%
+\contentsline {subsubsection}{Differential Equation from Physics}{19}{section*.32}%
+\contentsline {subsubsection}{Functional : A global optimization objective}{19}{section*.33}%
+\contentsline {subsubsection}{Euler-Lagrange Equation}{20}{section*.35}%
+\contentsline {subsubsection}{Discretized Euler-Lagrange Equation}{21}{section*.36}%
+\contentsline {subsubsection}{First Integral}{21}{section*.37}%
+\contentsline {subsubsection}{Exercises}{22}{section*.38}%
+\contentsline {paragraph}{Euler-Lagrange Equation for Multiple Independent Variables}{22}{section*.39}%
+\contentsline {paragraph}{Fermat's Principle }{22}{section*.40}%
+\contentsline {paragraph}{Drums and Membranes }{24}{section*.41}%
+\contentsline {subsection}{\numberline {0.2.2}Generalizations}{26}{subsection.0.2.2}%
+\contentsline {subsubsection}{Multiple Constraint}{26}{section*.42}%
+\contentsline {subsubsection}{Variable Endpoints}{26}{section*.43}%
+\contentsline {subsubsection}{Constraint Optimization}{26}{section*.44}%
+\contentsline {subsubsection}{Exercises}{26}{section*.45}%
+\contentsline {subparagraph}{Problem 0}{26}{section*.47}%
+\contentsline {subparagraph}{Problem 1}{27}{section*.48}%
+\contentsline {paragraph}{Elastic Rods}{29}{figure.caption.51}%
+\contentsline {section}{\numberline {0.3}Function Space}{31}{section.0.3}%
+\contentsline {subsection}{\numberline {0.3.1}C\_\{2{\textbackslash }pi\} Space}{32}{subsection.0.3.1}%
+\contentsline {subsubsection}{Fourier Basis $e^{ikt}$}{32}{section*.52}%
+\contentsline {subsubsection}{Convergence of Fourier Series}{32}{section*.53}%
+\contentsline {paragraph}{Theoretical Framework: The Overall Idea}{32}{section*.54}%
+\contentsline {paragraph}{Convergence in Abel's Sense}{33}{figure.caption.57}%
+\contentsline {paragraph}{Algebra}{36}{section*.58}%
+\contentsline {section}{\numberline {0.4}Measure Theory}{37}{section.0.4}%
+\contentsline {subsection}{\numberline {0.4.1}Measure}{38}{subsection.0.4.1}%
+\contentsline {paragraph}{$\sigma $-Algebra}{38}{section*.59}%
+\contentsline {subparagraph}{Motivation}{38}{section*.60}%
+\contentsline {subsubsection}{Construction of Measure}{41}{section*.61}%
+\contentsline {paragraph}{The big picture}{41}{section*.62}%
+\contentsline {paragraph}{Elementary collection and pre-measure}{42}{section*.63}%
+\contentsline {paragraph}{Outer Measure}{42}{section*.64}%
+\contentsline {subsubsection}{Casestudy: Lebesgue-Stieltjes Measure}{43}{section*.65}%
+\contentsline {paragraph}{Starting Point: The half-intervals}{43}{section*.66}%
+\contentsline {paragraph}{Step 1: Construction of a premeasure}{44}{section*.67}%
+\contentsline {subsection}{\numberline {0.4.2}Measurable Functions}{45}{subsection.0.4.2}%
+\contentsline {section}{\numberline {0.5}Partial Differential Euqations}{46}{section.0.5}%
+\contentsline {subsection}{\numberline {0.5.1}Introduction}{46}{subsection.0.5.1}%
+\contentsline {subsubsection}{Definition}{47}{section*.68}%
+\contentsline {subsection}{\numberline {0.5.2}Elementary Methods}{48}{subsection.0.5.2}%
+\contentsline {subsubsection}{Conservation Laws}{49}{section*.69}%
+\contentsline {paragraph}{The Method of Characteristics}{49}{section*.70}%
+\contentsline {subparagraph}{Integral Surface}{49}{section*.71}%
+\contentsline {paragraph}{The Finite Volume Method}{49}{section*.73}%
+\contentsline {subparagraph}{Hyperbolic Conservation Law}{50}{section*.74}%
+\contentsline {subparagraph}{The idea behind finite volume}{51}{section*.75}%
+\contentsline {subsubsection}{Wave Equation}{52}{section*.76}%
+\contentsline {paragraph}{The Vibrating String}{52}{section*.77}%
+\contentsline {subparagraph}{The Lagrangian Way}{52}{section*.78}%
+\contentsline {subsubsection}{Poisson Equation}{53}{section*.79}%
+\contentsline {paragraph}{2D Poisson Equation}{53}{section*.80}%
+\contentsline {paragraph}{Spectral Method}{53}{section*.81}%
+\contentsline {paragraph}{Finite-Element Method(FEM)}{53}{section*.82}%
+\contentsline {subparagraph}{The Tent Function}{53}{section*.83}%
+\contentsline {subparagraph}{Viualizing the Tent Basis}{53}{section*.84}%
+\contentsline {section}{\numberline {0.6}Complex Variable}{55}{section.0.6}%
+\contentsline {subsection}{\numberline {0.6.1}Analytical Function}{56}{subsection.0.6.1}%
+\contentsline {subsubsection}{Real Derivative and Complex Derivative}{56}{section*.85}%
+\contentsline {subsubsection}{Cauchy-Riemann Condition}{57}{section*.86}%
+\contentsline {subsubsection}{Analytical Function}{59}{section*.87}%
+\contentsline {subsection}{\numberline {0.6.2}Complex Integrals}{61}{subsection.0.6.2}%
+\contentsline {section}{\numberline {0.7}Miscellaneous}{62}{section.0.7}%
+\contentsline {subsection}{\numberline {0.7.1}Baisc Numerics}{62}{subsection.0.7.1}%
+\contentsline {subsubsection}{Least Square}{63}{section*.88}%
+\contentsline {subsection}{\numberline {0.7.2}Classical Experiments in Physics}{64}{subsection.0.7.2}%
+\contentsline {subsubsection}{Stern-Gerlach Experiment}{65}{section*.89}%

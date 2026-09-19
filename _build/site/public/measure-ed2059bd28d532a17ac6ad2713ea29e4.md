@@ -1,0 +1,553 @@
+# Measure 
+
+Measure and integration theory develops the necessary tool for solving PDEs and stochastic processes. 
+
+## $\sigma$-Algebra 
+### Motivation
+In physics, the task of finiding "volume" is ubquitous. For instance in computing mass, charge, the integral would resemble:
+$$
+\int (\cdot ) dV 
+$$
+In some sense, this $dV$ is a function $dV:E\to \mathbb{R}$ which computes the volume of $E\subset \mathbb{R}^n$, a tiny control volume we are interested in.  It would be very natural to ask for this function to satisfy:
+
+:::{prf:definition} Measure
+Suppose $X$ is a set. Let $\mu: A \to \mathbb{R}$ where $A\in P(X)$ such that:
+- $$\mu(\varnothing)=0 $$
+- **(countable additivity)** $E_1,E_2,....$ is a countable inifnite sequence of disjoint, then:
+$$
+\mu(\cup_j E_j)=\sum_j \mu(E_j)
+$$
+Then we call $\mu$ a measure. 
+:::
+
+The question would be, when can we find such a function. Trivially we can obtain such property by sending every $A$ to $0$. However, for more practical purposes of modeling the world, we would like nicer properties. In particular, let's consider this compeletly reasonable demand on $\mathbb{R}^n$.
+
+:::{prf:example} Measure on $\mathbb{R}^n$ and Vitali's Set
+:::
+
+
+:::{exercise} Open Set as a Topology [^hw_mineyev]
+:label: open_set_as_a_topology
+1. Let $\mathcal{B}$ be the family of all open intervals in $\mathbb{R}$, i.e. subsets of the form$$(a, b) := \{c \in \mathbb{R} \mid a < c < b\}$$for all $a, b \in \mathbb{R}$ with $a < b$. Let $\mathcal{T}(\mathcal{B})$ be the family of all arbitrary unions of elements in $\mathcal{B}$, i.e.,$$\mathcal{T}(\mathcal{B}) := \left\{ \bigcup_{B \in \mathcal{B}'} B \mathrel{\Big\vert{}} \mathcal{B}' \subseteq \mathcal{B} \right\}$$Prove that $\mathcal{T}(\mathcal{B})$ is a topology on $\mathbb{R}$. (This "$\mathcal{B}$" stands for a "base" = "basis" of a topology.)
+   
+2. For $\mathcal{B}$ and $\mathcal{T}(\mathcal{B})$ as above and any $U \in \mathcal{T}(\mathcal{B})$ (i.e., any open set), prove that there exists a countable family $\mathcal{B}'' \subseteq \mathcal{B}$ (of open intervals) such that $U = \bigcup_{B \in \mathcal{B}''} B$. (Hint: it might help to prove first that the union of any family of open intervals containing a given $x \in \mathbb{R}$ is a generalized open interval in the sense that it is of the form $(a, b)$, $(-\infty, a)$ or $(a, \infty)$ for some $a, b \in \mathbb{R}$. Or do this any other way.)
+
+3. For $\mathcal{T}(\mathcal{B})$ as above, prove that $\mathcal{T}(\mathcal{B}) \subseteq \mathcal{B}_{\mathbb{R}}$, the Borel $\sigma$-algebra on $\mathbb{R}$. (This "$\mathcal{B}$", confusingly, stands for "Borel".)
+4.  Use the above to give a full proof of Proposition 1.2 on p. 22 in [F].
+5.   Also deduce that $\mathcal{M}(\mathcal{B}) = \mathcal{M}(\mathcal{T}(\mathcal{B})) = \mathcal{B}_{\mathbb{R}}$.
+:::
+
+
+:::{solution} open_set_as_a_topology
+:class: dropdown
+1. We prove that $\mathcal{T}(\mathcal{B})$ is a topology on $\mathbb{R}$.
+
+- **Property 1: $\emptyset, \mathbb{R} \in \mathcal{T}(\mathcal{B})$**
+  - $\emptyset = \cup_{B \in \emptyset} B$ (empty union), so $\emptyset \in \mathcal{T}(\mathcal{B})$
+  - $\mathbb{R} = (-\infty, \infty)$ is a generalized open interval, hence $\mathbb{R} \in \mathcal{T}(\mathcal{B})$. More explicitly, we can cover it by $\cup_{a=0}^{\infty} \{(a,a+1),(-a-1,-a)\}$
+
+- **Property 2: Closed under arbitrary unions**
+  - Let $\mathcal{U} \subseteq \mathcal{T}(\mathcal{B})$ be an arbitrary collection of sets in $\mathcal{T}(\mathcal{B})$. For each $U \in \mathcal{U}$, we have $U = \cup_{B \in \mathcal{B}_U} B$ for some $\mathcal{B}_U \subseteq \mathcal{B}$. Then $\cup_{U \in \mathcal{U}} U = \cup_{U \in \mathcal{U}} \left(\cup_{B \in \mathcal{B}_U} B\right) = \cup_{B \in \cup_{U \in \mathcal{U}} \mathcal{B}_U} B$. Since $\cup_{U \in \mathcal{U}} \mathcal{B}_U \subseteq \mathcal{B}$, we have $\cup_{U \in \mathcal{U}} U \in \mathcal{T}(\mathcal{B})$
+
+- **Property 3: Closed under finite intersections**
+  - By induction on the number $n$ of sets.
+  - **Base case** ($n=1$): Trivial, $U \in \mathcal{T}(\mathcal{B})$.
+  - **Inductive step**: Assume $U_1 \cap \cdots \cap U_n \in \mathcal{T}(\mathcal{B})$ for any $n$ sets in $\mathcal{T}(\mathcal{B})$. 
+    For $n+1$ sets, write $(U_1 \cap \cdots \cap U_n) \cap U_{n+1}$. By induction hypothesis, $U_1 \cap \cdots \cap U_n = \cup_{i \in I}(a_i, b_i)$ 
+    for some countable collection of open intervals. Then 
+    $$(U_1 \cap \cdots \cap U_n) \cap U_{n+1} = \left(\cup_{i \in I}(a_i, b_i)\right) \cap U_{n+1} = \cup_{i \in I}((a_i, b_i) \cap U_{n+1})$$
+    Each $(a_i, b_i) \cap U_{n+1}$ is an intersection of an open interval with a union of open intervals, which is 
+    a finite union of open intervals (or empty). Hence $(U_1 \cap \cdots \cap U_{n+1}) \in \mathcal{T}(\mathcal{B})$.
+
+Therefore $\mathcal{T}(\mathcal{B})$ is a topology on $\mathbb{R}$.
+
+---
+
+2. Suppose $\mathcal B' \subseteq \mathcal B$ and 
+$$
+U=\bigcup_{B\in \mathcal B'} B
+$$
+where $\mathcal B'$ can be uncountable. We would like to show $\exists \mathcal B''$ that is countable such that 
+$$
+U=\bigcup_{B\in \mathcal B^{''}} B
+$$
+We now show a specfic way to construct $\mathcal B''$ from $\mathcal B'$. Define:
+$$
+\mathcal B_x = \{(a,b)\in \mathcal B' : x\in (a,b)\}
+$$
+Clearly $\mathcal B_x \subseteq \mathcal B'$. Now proceed with the following procedure(an "infinite algorithm")on the construction of $\mathcal B''$
+```{prf:algorithm}
+**Input**: A potentially uncountable set of open intervals $\mathcal B'$ such that $\cup \mathcal B'=U$
+
+**Output**: A countable set of open intervals $\mathcal B''$ such that $\cup \mathcal B''=U$
+1. $\mathcal B'' = \varnothing$
+2. **While** $\exists x\in U$,  $x\notin \cup \mathcal B''$ : 
+    1. Compute $(c,d)=\bigcup_{B\in \mathcal B_x} B$ where $c,d$ is in extended real number system.
+    2. **If** $c,d\in \mathbb{R}$:
+        1.  $\mathcal{B}_x'=\{(c,d)\}$
+    3. **Else if** $c\in \mathbb{R}, d=\infty$:
+        1. $\mathcal{B}_x'\gets \{(c,[c])\}\cup \{[c],[c]+j\}_{j=1}^{\infty}$
+    4. **Else** 
+        Other cases follows as (3)
+    5. $\mathcal B'' = \mathcal B'' \cup \mathcal B_x '$
+
+3. **Return** $\mathcal B''$
+```
+where $[c]$ picks the closes integer towards the right of the real axis. 
+Note we implicitly invoked the claim below in computing $(c,d)$:
+- $\boxed{\textbf{Cliam 1}}$ The union of arbitrary family of open intervals containing $x\in \mathbb{R}$ is a *generalized open interval* 
+  $$\bigcup_{B\in \mathcal B_x} B\in \{(c,d): c,d\in \mathbb{R}\cup \{\infty, -\infty\}\}$$
+  - I claim the union is just $(c,d)$ where $c=\inf \{a:(a,b)\in \mathcal B_x\}$ and $d=\sup \{b:(a,b)\in \mathcal B_x\}$ where we allow $\infty$ and $-\infty$. Clearly $(c,d)$ covers $\cup \mathcal B_x$. It suffice to show $\cup \mathcal B_x $ covers $(c,d)$. Suppose $\exists y \in (c,d)$ and $y\notin \cup \mathcal B_x$. This means $\cup \mathcal B_x$ has a hole and there must exists a pair of open interval in $\mathcal B_x$ that is disjoint, contradicting that all open intervals in $\mathcal B_x$ contains $x$(in that case no pair should be disjoint).
+
+Now what's left to show is (1) Only countable number of $\mathcal B_x'$ is needed. (2) each $\mathcal B_x'$ is countable. The later is obvious by construction. The former can be argued by countability of $\mathbb{Q}$. Pick a $q\in \mathbb{Q}$ in one of the open interval of $\mathcal B_x'$, this is always possible by density of rationals. Suppose uncountable $\mathcal B_x'$ is needed to cover $\cup \mathcal B''$ then $U=\cup \mathcal B''$ would contain uncountable number of rationals. This finishes the proof.
+
+---
+
+3. By definition, $\mathcal B_{\mathbb{R}}$ is the smallest $\sigma$-algebra containing $\mathcal T(\mathcal B)$. Therefore the inclusion holds by construction.
+   
+--- 
+4. We only need to show (b), (c), and (e) since (a) and (d) are generalized open 
+   intervals and are actually shown by (5).
+
+**Case (b): Closed intervals** $\mathcal{E}_2 = \{[a,b]: a < b\}$
+- $\mathcal{M}(\mathcal{E}_2) \subseteq \mathcal{B}_\mathbb{R}$: Note that $[a,b] = \cap_{j=1}^{\infty}(a-1/j, b+1/j)$ 
+  is a countable intersection of open intervals, so $\mathcal{E}_2 \subset \mathcal{B}_\mathbb{R}$.
+- $\mathcal{B}_\mathbb{R} \subseteq \mathcal{M}(\mathcal{E}_2)$: $(a,b) = \cup_{j=1}^{\infty}[a+1/j, b-1/j]$ 
+  is a countable union of closed intervals, so $\mathcal{B} \subset \mathcal{M}(\mathcal{E}_2)$ and hence 
+  $\mathcal{B}_\mathbb{R} = \mathcal{M}(\mathcal{B}) \subset \mathcal{M}(\mathcal{E}_2)$.
+
+**Case (c): Half-open intervals** $\mathcal{E}_3 = \{(a,b]: a < b\}$
+- $\mathcal{M}(\mathcal{E}_3) \subseteq \mathcal{B}_\mathbb{R}$: $(a,b] = (a,b) \cup \{b\}$ where $(a,b) \in \mathcal{B}_\mathbb{R}$ 
+  and $\{b\} = \cap_{j=1}^{\infty}(b-1/j, b+1/j) \in \mathcal{B}_\mathbb{R}$.
+- $\mathcal{B}_\mathbb{R} \subseteq \mathcal{M}(\mathcal{E}_3)$: $(a,b) = \cup_{j=1}^{\infty}(a, b-1/j]$ 
+  is a countable union of half-open intervals, so $\mathcal{B} \subset \mathcal{M}(\mathcal{E}_3)$ and hence 
+  $\mathcal{B}_\mathbb{R} \subset \mathcal{M}(\mathcal{E}_3)$.
+
+**Case (e): Closed rays** $\mathcal{E}_7 = \{[a,\infty): a \in \mathbb{R}\}$
+- $\mathcal{M}(\mathcal{E}_7) \subseteq \mathcal{B}_\mathbb{R}$: $[a,\infty) = \cap_{j=1}^{\infty}(a-1/j, \infty)$ 
+  is a countable intersection of open rays (generalized open intervals), so $\mathcal{E}_7 \subset \mathcal{B}_\mathbb{R}$.
+- $\mathcal{B}_\mathbb{R} \subseteq \mathcal{M}(\mathcal{E}_7)$: $(a,b) = (a,\infty) \cap (-\infty,b)$ where 
+  $(a,\infty) = \cup_{j=1}^{\infty}[a+1/j,\infty)$ and $(-\infty,b) = \mathbb{R} \setminus [b,\infty)$ are in $\mathcal{M}(\mathcal{E}_7)$, 
+  so $\mathcal{B} \subset \mathcal{M}(\mathcal{E}_7)$ and hence $\mathcal{B}_\mathbb{R} \subset \mathcal{M}(\mathcal{E}_7)$.
+
+Cases (c'), (e') follow by symmetry.
+
+ 
+--- 
+5. We only need to show 
+$$
+\mathcal B &\subseteq \mathcal M(\mathcal T(\mathcal B)) \\
+\mathcal T(\mathcal B) &\subseteq \mathcal M( \mathcal B)
+$$
+- The former is trivial since $\mathcal B \subseteq \mathcal T(\mathcal B)\subseteq \mathcal M(\mathcal T(\mathcal B)$
+- The later can be shown using (2). $\mathcal M(\mathcal B)$ contains all countable unions of open intervals $\mathcal B$ while $\mathcal T(\mathcal B)$ contains arbitrary union. (2) bridges the gap by claiming the arbitrary union can actually be replaced by countable union. 
+:::
+
+# Construction of Measure
+
+## The big picture
+The general idea of constructing measure is, in crude terms:
+1. Find a collection of set that has a clear notion of size 
+2. Approximate arbitrary subsets using element in the elementary set, hence get a notion of size on arbtirary subsets 
+3. Make the notion of size truely a measure by restricting to a special collection of subset.
+
+Observe how the notion of size ripens:
+:::{math}
+:label: workflow_from_elementary_set
+\text{Stage 1: $\boxed{|\cdot|:\mathcal E \to \mathbb{R}^+}$} 
+&\longrightarrow \text{Stage 2: $\boxed{\mu^* : P(X)\to \mathbb{R}^+}$} \\ 
+&\longrightarrow \text{Stage 3: $\boxed{\mu: \mathcal M|_{\mu^*} \to \mathbb{R}^{+}}$}
+:::
+1. *Stage 1 to 2*: Create a notion of size on arbitrary sets $A\subset P(X)$ by approximating them using "building blocks"$(A\in \mathcal E)$ which has a notion of size $|\cdot |$. This scarifices additivity and we instead of countable sub-additivity
+2. *Stage 2 to 3*: Shrink the domain by restrict to a particular family $\mathcal M |_{\mu^*}\subset P(X)$. This gives us *countable additivity* and $\mu$ is now a **complete measure**
+
+:::{prf:example} 
+Concretely, think $\mathcal E$ as the set of all open rectangles in $\mathbb{R}^2$:
+$$
+\mathcal E= \{(a,b)\times (c,d) | a<b,c<d; a,b,c,d\in \mathbb{R}\}
+$$
+These clearly "canonical" notion of size, namingly: $$|A|=(d-c)(b-a)$$ 
+Now using these as "building blocks", we can measure arbitrary sets $E\in P(\mathbb{R}^2)$, for instance, a unit circle. 
+Here is a quick numerical demo for approximating a unit circle denoted by $E$ with squares on a grid. The resolution $n$ is defined as the number of intervals in $(0,1)$. 
+```{figure} media/outer_measure_of_unit_circle.png 
+```
+As we take finer and finer squares, we approach a limit(or the liminf). This number can be used as a notion of size for the set $E$. This motivates the definition of *outer measure*.
+
+```{tip} How did we compute that?
+:class: dropdown 
+A simple way is to count grid points that is inside the unit circle. A quick `julia` implementation gives the above plot:
+```{code-cell} julia
+function compute_area_of_circle(n)
+    cover::Int = 0
+    for i in -n:n
+        for j in -n:n
+            if ((i/n)^2 + (j/n)^2) < 1
+                if i == 0 && j == 0
+                    cover += 4
+                elseif i == 0 || j == 0 
+                    cover += 2
+                else 
+                    cover += 1
+                end 
+            end
+        end
+    end
+    return cover * (1/n)^2
+end 
+```
+
+:::
+
+
+## Outer Measure
+So how do we actually construct measures no matter what set we are working on?(Though in this book we are really interested in just $\mathbb{R}^n$). A general guidline is:
+1. Find some *elementary set* $\mathcal{E}$ where premeasure is defined on the disjoint uniont of $\mathcal{E}$.
+2. Define the measure of arbitrary subset $A\in P(X)$ as the the size of "smallest" cover of $A $ using the elementary set:
+:::{math}
+:label: omfml
+\inf \left\{\sum_{\nu=1}^{\infty} \rho(E_{\nu}): E_{\nu}\in \mathcal{E}, A\subset \bigcup_{\nu=1}^{\infty} E_{\nu}\right\}
+:::
+More generally we can define an *outer measure* as follows:
+:::{prf:definition} Outer Measure
+:label: omdf
+An outer measure on an non-empty set $X$ is a function $\mu^* : P(X)\to [0,\infty]$ such that:
+- $\mu^*(\varnothing)=0$
+- If $A\subset B$, then $\mu^*(A)<\mu^*(B)$
+- $\mu^*(\cup_{\nu}A_{\nu})\leq \sum_{\nu} \mu^* (A_{\nu })$
+:::
+We note that property (2),(3) are both derived properties of measure. So we can think the definition of outer measure as a relaxation of measure: take out countable additvity and adds back two derived property. In addition,  We note that [](omfml) obeys [](omdf)
+:::{attention} Exercise
+Show that [](omfml) indeed defines an outer measure [](omdf).
+:::
+
+## Carathéodory Family $\mathcal M_{\mu^*}$
+How do we then obtain measure from outer measure? We note that what outer measure lacks is finite additivity, so we can further ask, is there a collection of subset $\mathcal {M}\subset P(X)$ such that $\mu^*$ is actually finitey additive? The answer is actually YES! However this seems rather arbitrary:
+$$
+\mathcal M = \{A\subset X: \mu^*(F)=\mu^*(F-A)+\mu^*(A\cap F), \forall F \subset X\}
+$$
+We call elements of $\mathcal M$ **$\mu^*$-measureable**. In plain English, this saying $A$ can "split measure" arbitrary $F\subset X$ by measuring the intersection and the complement separetly and add them together. 
+:::{prf:theorem} Carathéodory's Theorem
+If $\mu^*$ is an outer measure of $X$ then 
+1. the collection of **$\mu^*$-measureable** sets:
+$$
+\mathcal M = \{A\subset X: \mu^*(F)=\mu^*(A^c \cap F)+\mu^*(A\cap F), \forall F \subset X\}
+$$
+is a $\sigma$-algebra. 
+1. $\mu^*|_{\mathcal M}$ is a **complete measure**
+:::
+
+
+## Premeasure and The Extension Theorem
+THe workflow {eq}`workflow_from_elementary_set` is already very promising except one key issue:
+:::{attention} Carathéodary Family can be Small 
+What if $\mathcal M_{\mu^*}$ is trivial or very samll? 
+:::
+The next theorem prevents this by starting with an *algebra* $\mathcal A$ instead of just a plain family of sets $\mathcal E$.  The plain notion of size on $\mathcal E$ is replaced by the so-called *premeasure*.
+
+:::{prf:definition} Premeasure
+Suppose $\mathcal A\subset \mathcal P(X)$ is an algebra, a function $\mu_0 : \mathcal A\to [0,\infty]$ is a **premeasure** if
+1. $\mu_0(\varnothing)=0$
+2. Let $\{A_j\}_1^{\infty}$ is a sequence of disjoint sets in $\mathcal A$. Given $\bigcup_1^{\infty} A_j \in \mathcal A$ then 
+$$
+\mu_0 \left( \bigcup_1^{\infty}\right) = \sum_{1}^{\infty} \mu_0(A_j)
+$$
+:::
+
+:::{exercise} Completeness of $\mathcal M_{\mu^*}$[^hw_mineyev]
+:label: completeness_of_mathcal_m_mu
+A measure $\mu$ on a $\sigma$-algebra $\mathcal{M}$ is complete if$$\forall N \in \mathcal{M} \quad \forall N' \subseteq N \quad (\mu(N) = 0 \Rightarrow N' \in \mathcal{M}).$$Let $\mu^*$ be an outer measure on a set $X$. Prove that the measure on $\mathcal{M}_{\mu^*}$ induced by $\mu^*$ by the Carathéodory construction is complete. (The proof of Carathéodory theorem in the book does not explain this well, write a detailed proof.)
+:::
+
+:::{solution} completeness_of_mathcal_m_mu
+:class: dropdown
+```{prf:proof} 
+Note that $\mu(N)=0\Longrightarrow \mu(N')=0$. $\forall E\subseteq X$, by subadditivity:
+$$
+\mu^*(E) \leq \mu^*(E\cap N') + \mu^*(E\cap N'^c)
+$$
+By monotoncity and positivity of $\mu^*$ we have $\mu^*(E\cap N')=0$(since $E\cap N' \subseteq N'$ so $\mu^*(E\cap N')\leq 0$). But again by monotonicity $\mu^*(E\cap N'^c) \leq \mu^*(E)$ hence we have:
+$$
+\mu^*(E) \leq \mu^*(E\cap N') + \mu^*(E\cap N'^c) \leq \mu^*(E)
+$$
+Hence:
+$$
+\mu^*(E) = \mu^*(E\cap N') + \mu^*(E\cap N'^c)
+$$
+As desired.
+```
+:::
+
+:::{exercise} 
+:label: folland_problem_18
+Let $\mathcal{A} \subset \mathcal{P}(X)$ be an algebra, $\mathcal{A}_\sigma$ the collection of countable unions of sets in $\mathcal{A}$, and $\mathcal{A}_{\sigma\delta}$ the collection of countable intersections of sets in $\mathcal{A}_\sigma$. Let $\mu_0$ be a premeasure on $\mathcal{A}$ and $\mu^*$ the induced outer measure.
+1. For any $E \subset X$ and $\epsilon > 0$ there exists $A \in \mathcal{A}_\sigma$ with $E \subset A$ and $\mu^*(A) \le \mu^*(E) + \epsilon$.
+2. If $\mu^*(E) < \infty$, then $E$ is $\mu^*$-measurable iff there exists $B \in \mathcal{A}_{\sigma\delta}$ with $E \subset B$ and $\mu^*(B \setminus E) = 0$.
+3. If $\mu_0$ is $\sigma$-finite, the restriction $\mu^*(E) < \infty$ in (2) is superfluous.
+:::
+
+:::{solution} folland_problem_18
+:class: dropdown
+1.This is just the definition of outer measure(namingly, infimum). Note since 
+$$
+\mu^*(E)= \inf C
+$$
+where
+$$
+C= \left\{\sum \mu_0(A_j) | A=\cup A_j\in \mathcal A_{\sigma}, E\subset A \right\}
+$$
+Hence $\exists c\in C$ such that $c < \mu^*(E)+\epsilon$ by the definition of infimum. Now the map between open covers and their area is clearly surjective by construction:
+$$
+\{A\in \mathcal A_{\sigma} : E\subset A\} &\to \mathbb{R} \\
+A &\mapsto \underbrace{\sum_j \mu_0(A_j)}_{\mu^*(A)}
+$$
+hence we can find $A\in A_{\sigma}$ that correponds to $c$.
+
+2. $(\Longrightarrow)$ Suppose $E$ is $\mu^*$-measurable. Now by (1), for each $n$ we can find $A_n\in \mathcal A_{\sigma}$ with $E\subset A_n$ and $\mu^*(A_n)\leq \mu^*(E)+\frac1n$. The $A_n$ need not be decreasing, so replace them by $\tilde A_n:=\bigcap_{k=1}^n A_k$; since $\mathcal A_\sigma$ is closed under finite intersections (intersection distributes over the countable unions defining each $A_k$), $\tilde A_n\in\mathcal A_\sigma$, and now $\tilde A_n$ is a decreasing sequence with $E\subset \tilde A_n\subset A_n$, so still $\mu^*(E)\leq \mu^*(\tilde A_n)\leq \mu^*(A_n)\leq \mu^*(E)+\frac1n$. Define:
+$$
+B:=\bigcap_{n}\tilde A_{n} = \bigcap_n A_n \in \mathcal A_{\sigma \delta}
+$$
+By construction $E\subset B$. Since $\tilde A_n \in \mathcal A_\sigma \subset \mathcal M_{\mu^*}$ is a decreasing sequence with $\mu^*(\tilde A_1)\leq \mu^*(E)+1<\infty$, *continuity-from-above* on $\mathcal M_{\mu^*}$ gives:
+$$
+\mu^*(B)=\lim_{n \to \infty}\mu^*(\tilde A_n)=\mu^*(E)
+$$
+Now use that $E$ is $\mu^*$-measurable, testing it against $B$: since $E\subset B$,
+$$
+\mu^*(B) = \mu^*(B\cap E)+\mu^*(B\cap E^c) = \mu^*(E) + \mu^*(B\setminus E)
+$$
+Combining with $\mu^*(B)=\mu^*(E)<\infty$ and subtracting the finite common value $\mu^*(E)$ from both sides gives $\mu^*(B\setminus E)=0$, as desired.
+
+$(\Longleftarrow)$ Suppose there exists $B\in \mathcal A_{\sigma \delta}$ such that $E\subset B$ and $\mu^*(B\setminus E)=0$. Note any $B\in \mathcal A_{\sigma \delta}$ is $\mu^*$-measurable since $\mathcal A \subset \mathcal M_{\mu^*}$(by *extension theorem*).
+We would like for all $F\subset X$
+$$
+\mu^*(F) \geq  \mu^*(F\cap E) +\mu^*(F \cap E^c)
+$$
+But now $E\subset B$ hence:
+$$
+\mu^*(F) &= \mu^*(F\cap B) + \mu^*(F\cap B^c) \\ 
+&\geq  \mu^*(F\cap E) + \mu^*(F\cap B^c)
+$$
+Note all we need now is $\mu^*(F \cap B^c) \geq  \mu^*(F\cap E^c)$. 
+
+But now $$
+\mu^*(F\cap E^c) = \mu^*(F\cap (B^c \cup (B\cap E^c))) \leq \mu^*(F\cap B^c)  + \mu^*(F\cap (B\cap E^c))$$
+ 
+Again, by monotonicity and the assumption
+$$
+\mu^*(F\cap (B\cap E^c))\leq \mu^*(B\cap E^c) = 0
+$$
+Therefore
+$
+\mu^*(F \cap B^c) \geq  \mu^*(F\cap E^c)
+$. As desired. 
+
+
+3. Suppose $\mu_0$ is $\sigma$-finite then $\exists \{X_n\}$, $\mu_0(X_n)<\infty$ such that $X = \cup_n X_n $. Now define $E_n= X_n\cap E$, we can apply (2) to each $E_n$(There existss $B_n\in \mathcal A_{\sigma\delta}$ satisfying the property iff $E_n\in \mathcal M$). 
+   
+($\Longrightarrow$)  Say we already have desired set $B_n$ for each $E_n$ (each $B_n\in \mathcal A_{\sigma\delta}$, $E_n\subset B_n$, $\mu^*(B_n\setminus E_n)=0$)[^union-caveat]. Take the union $B=\cup_n B_n$; it covers $E$ since $E_n \subset B_n$ and $E=\cup_n E_n$. It also satisfies the null-excess property: since $E_n \subset E$ we have $B_n\setminus E \subset B_n \setminus E_n$ for each $n$, so $B\setminus E = \bigcup_n(B_n\setminus E) \subset \bigcup_n(B_n\setminus E_n)$, and by countable subadditivity:
+$$
+\mu^*(B\setminus E) \leq \sum_n \mu^*(B_n\setminus E_n) = \sum_n 0 = 0
+$$
+
+($\Longleftarrow$) Suppose there is such $B$ for $E$ (possibly of infinite outer-measure). Define $E_n = X_n\cap E$ as before, and now also $B_n := X_n \cap B \in \mathcal A_{\sigma\delta}$ (intersecting with $X_n \in \mathcal A$ preserves membership in $\mathcal A_{\sigma\delta}$). Then $E_n \subset B_n$, and
+$$
+\mu^*(B_n\setminus E_n) = \mu^*\big(X_n\cap(B\setminus E)\big) \leq \mu^*(B\setminus E) = 0
+$$
+Since $\mu^*(E_n)\leq \mu_0(X_n)<\infty$, part (2) applies to $E_n$ and gives $E_n \in \mathcal M$. Now we want to show $E \in \mathcal M$ but this is trivial as $\mathcal M$ is a $\sigma$-algebra closed under countable union and $E= \cup_n E_n$
+:::
+
+
+:::{exercise} 
+:label: folland_19
+Let $\mu^*$ be an outer measure on $X$ induced from a finite premeasure $\mu_0$. If $E \subset X$, define the inner measure of $E$ to be $\mu_*(E) = \mu_0(X) - \mu^*(E^c)$. Then $E$ is $\mu^*$-measurable iff $\mu^*(E) = \mu_*(E)$
+:::
+
+:::{solution} folland_19
+:class: dropdown
+$(\Longrightarrow)$ Suppose $E$ is $\mu^*$-measurable. Then so is $E^c$, and since $X=E\sqcup E^c \in \mathcal A$, additivity gives $\mu_0(X)=\mu^*(X)=\mu^*(E)+\mu^*(E^c)$, i.e. $\mu^*(E)=\mu_*(E)$.
+
+$(\Longleftarrow)$ Suppose $\mu^*(E)+\mu^*(E^c)=\mu_0(X)=\mu^*(X)<\infty$. Fix $\epsilon>0$; by [](folland_problem_18) part (1), pick $A,A'\in \mathcal A_\sigma\subset \mathcal M_{\mu^*}$ with $E\subset A$, $E^c\subset A'$, $\mu^*(A)\leq \mu^*(E)+\epsilon$, $\mu^*(A')\leq \mu^*(E^c)+\epsilon$. Then $A\cup A'=X$, so
+$$
+\mu^*(X)+\mu^*(A\cap A') = \mu^*(A)+\mu^*(A') \leq \mu^*(X)+2\epsilon \implies \mu^*(A\cap A')\leq 2\epsilon
+$$
+Since $A\setminus E \subset A\cap A'$, $\mu^*(A\setminus E)\leq 2\epsilon$. Taking $\epsilon=\frac1n$ gives $A_n\supset E$ with $\mu^*(A_n\setminus E)\leq \frac2n$; let $B:=\bigcap_n A_n\in \mathcal M_{\mu^*}$. Then $E\subset B$ and $\mu^*(B\setminus E)\leq \mu^*(A_n\setminus E)\to 0$, so $\mu^*(B\setminus E)=0$.
+
+This is exactly the hypothesis of the $(\Longleftarrow)$ direction of [](folland_problem_18) part (2) (only measurability of $B$ was used there, not $B\in\mathcal A_{\sigma\delta}$), which concludes $E$ is $\mu^*$-measurable. As desired.
+:::
+
+The following exercise is assumed everywhere in mathematics and is not directly related to outer measure. But they are invokded multiple times, for instance, in subadditivity of outer measure. 
+
+:::{exercise} Order invariance for Series of Positive Terms [^hw_mineyev]
+:label: order_invariance_for_series_of_positive_terms
+1. Prove that any generalized series with summands in $[0, \infty]$ can be summed in any order. Specifically, if $a_j \in [0, \infty]$ for $j \in \mathbb{N} = \{1, 2, 3, \dots\}$, then for any bijection $\mathbb{N} \to \mathbb{N},\ j \mapsto k_j$, the equality $\sum_{j=1}^\infty a_j = \sum_{j=1}^\infty a_{k_j}$ holds. (That is, a nonnegative generalized series can be summed in any order.)
+
+
+2. Prove that any two generalized series with summands in $[0, \infty]$ can be summed as one series. Specifically, if $a_j, b_j \in [0, \infty]$ for $j \in \mathbb{N}$, then the equality $\sum_{j=1}^\infty a_j + \sum_{j=1}^\infty b_j = \sum_{j=1}^\infty (a_j + b_j)$ holds.
+:::
+
+:::{solution} order_invariance_for_series_of_positive_terms
+:class: dropdown 
+1. We first make a claim 
+$$
+\sum_{j\in \mathbb{N}}a_j = \sup_J \sum_{j\in J} a_j
+$$
+where $J\subset \mathbb{N}, |J|<\infty$. 
+
+- To show $\sum_{j\in \mathbb{N}} a_j  \leq \sup \sum_{j\in J} a_j $: 
+$$
+\sum_{j\in \mathbb{N}}a_j=\lim_{N\to\infty} \sum_{j=1}^N a_j \leq \sup \sum_{j\in J} a_j 
+$$
+
+- To show $\sum_{j\in \mathbb{N}} a_j  \geq \sup \sum_{j\in J} a_j $, we first note $\forall J$ as above:
+$$
+\sum_{j\in \mathbb{N}} a_j = \sup_m s_m \geq s_{\max J} \geq  \sum_{j\in J} a_j
+$$
+Now $\sup$ perserves non-strict inequality so we can take $\sup$ on both sides to get:
+$$
+\sup_{J} \sum_{j\in \mathbb{N}} a_j =  \sum_{j\in \mathbb{N}} a_j \geq  \sup_J \sum_{j\in J} a_j
+$$
+as desired.
+Now (1) becomes trivial since $\forall J$ defined as above, suppose we define:
+$$
+k(J)=\{k(j): j\in J\}
+$$
+now by the claim $$
+\sum_{j\in \mathbb{N}} a_{k(j)} = \sup_{J} \sum_{j\in J'} a_j  = \sup_{J} \sum_{j\in k(J)} a_j 
+$$
+where the last equality follows as $J'$ is also in the set $\{J\subset N: |J|<\infty\}$.
+
+--- 
+
+1. We first make a claim:
+For monotone non-decreasing sequences $s_n, t_n$:
+$$
+\sup(s_n + t_n) = \sup s_n + \sup t_n 
+$$
+- $\sup(s_n + t_n) \leq \sup s_n + \sup t_n $ is true since $\forall m, s_m + t_m \leq \sup s_n + \sup t_n$ and taking $\sup_m$ on both sides get us desired.
+- $\sup(s_n + t_n) \geq \sup s_n + \sup t_n $ can be shown by arguing $\forall \epsilon > 0$,
+$$
+\sup(s_n + t_n) \geq \sup s_n + \sup t_n - \epsilon
+$$
+Denote $s=\sup s_n, t = \sup t_n$. By definition of supremum, we can pick $N_1, N_2$ such that $s_{N_1} > s - \epsilon/2$ and $t_{N_2} > t - \epsilon/2$. Let $N=\max(N_1,N_2)$; since $s_n, t_n$ are non-decreasing, $\forall n \geq N$ we have $s_n \geq s_{N_1} > s-\epsilon/2$ and $t_n \geq t_{N_2} > t-\epsilon/2$, hence:
+$$
+s_n + t_n >  s + t - \epsilon 
+$$
+Taking $\sup_n$ on the left gives $\sup(s_n+t_n) \geq s+t-\epsilon = \sup s_n + \sup t_n - \epsilon$. As desired, since $\epsilon>0$ was arbitrary. (2) then easily follows by taking the claim in (1) and then let 
+$$
+s_n &=\sum_{j=1}^n a_j \\
+t_n &=\sum_{j=1}^m b_j
+$$
+Apply the above claim gets desired.
+:::
+
+
+# Casestudy: Lebesgue-Stieltjes Measure
+The most useful set that we would like to equip a measure with is, unarguably, the real numbers $\mathbb{R}$. 
+## Starting Point: The half-intervals 
+Recall that we would start with an elementary collection that has a clear notion of size. We define the **h-intervals**:
+$$
+H=\{(a,b]:a<b, a,b\in \mathbb{R}\}
+$$
+
+We define a terminology here:
+:::{prf:definition} Borel Sets
+Let $X$ any metric space, the $\sigma$-algebra genereated by the family of open sets in $X$ is called the **Borel $\sigma$-algebra**, denoted by $\mathcal B_{X}$
+:::
+
+:::{exercise} h-intervals generate $\mathcal B_{\mathbb{R}}$
+Check $H$ is an elementary set and so it generates an algebra $\mathcal A$. Furthermore, show that the $\sigma$-algebra generated by $\mathcal A$ is   $\mathcal B_{\mathbb{R}}$
+:::
+
+Another terminology:
+:::{prf:definition} Elementary Decomposition
+Suppose $A\in \mathcal A$, since $\mathcal A=\mathcal M(H)$ we can find finite disjoint h-intervals $\{I_j\}_{j=1}^N=\{(a_j,b_j]_j\}_{j=1}^N$ such that:
+$$
+A=\bigcup_{j=1}^N I_j
+$$
+Then $\{I_j\}$ is an **elementary decomposition** of $A$.
+:::
+
+
+We define size on $H$ as follows:
+:::{note} Notion of Size on h-intervals
+Let $F:\mathbb{R}\to\mathbb{R}$ be increasing and right-continous, let $(a,b]\in H$, then:
+$$
+|(a,b]|=F(b)-F(a)
+$$
+Note when $F(x)=x$, we get the common notion of length of interval. 
+:::
+
+The next step is to extend this notion of size to $\mathcal A=\mathcal M(H)$. 
+## Step 1: Construction of a premeasure 
+Now we have an algebra $\mathcal A$ where elements of the algebra $A\in \mathcal A$ has an elementary decomposition $A=\{I_j\}$ to h-intervals $I=(a_j,b_j]$, which is equipped with a notion of size $b_j-a_j$. A natural way to define the notion of size for $A$ is hence:
+$$
+\mu_0(A) = \sum_{j=1}^N |I_j| =\sum_{j=1}^N F(b_j)-F(a_j)
+$$
+We claim that $\mu_0$ is actually a *pre-measure* on $\mathcal A$.
+:::{prf:proposition}
+Let $F:\mathbb{R}\to\mathbb{R}$ to be a right-continuous, increasing function. Define $\mu_0$ as 
+$$
+\mu_0 : \mathcal A &\to \mathbb{R} \\
+\bigcup_{j=1}^N A &\mapsto \sum_{j=1}^N [F(b_j)-F(a_j)]
+$$
+where $\{I_j\}=\{(a_j,b_j]\}$ is an elementary decomposition. Then $\mu_0$ is a premeasure on $\mathcal A$.
+:::
+
+:::{prf:proof} $\mu_0$ is a pre-measure
+We first need to show that $\mu_0$ is actually well-defined[^well-defined]. Then we illustrate:
+1. Empty set has zero measure 
+2. Non-negativity 
+3. Finite additivity 
+4. Countable additivity
+where only $(1),(2),(4)$ is truely required. But $(3)$ is used in the proof of $(4)$.
+:::
+
+
+:::{exercise}
+:label: lebesgue outer measure of closed interval
+Prove directly from the definition of Lebesgue outer measure $m^*$ that $m^*([a,b]) = b - a$. (Here $m^*$ is officially defined as in the textbook using h-intervals $(a,b]$.) (The inequality $\le$ is easy; for $\ge$ use compactness.) 
+:::
+
+:::{solution} lebesgue outer measure of closed interval
+Recall that:
+$$
+m^*([a,b])=\inf\left\{\sum_{j=1}^{\infty} b_j - a_j {\Huge |} [a,b]=\bigcup (a_j, b_j] \right\}
+$$
+- For $\leq$ it suffices to find one cover $A=\cup (a_j,b_j] $ with $\sum b_j - a_j \leq b-a$. We note $\forall \epsilon > 0$,  $(a-\epsilon/2,b]$ would cover $[a,b]$ and 
+$$
+\inf\left\{\sum_{j=1}^{\infty} b_j - a_j {\Huge |} [a,b]=\bigcup (a_j, b_j] \right\} \leq b - a + \epsilon/2  \leq b-a -\epsilon
+$$
+where the first inequality follows since $(a-\epsilon/2, b)$ is in the set of $A$ we are taking infimum over. 
+- For $\geq$ we need to show for all cover $A$ as above, $\forall \epsilon>0$,
+$$
+\epsilon + \sum_{j=1}^{\infty} (b_j - a_j)  \geq b-a 
+$$
+Let $A=\cup A_j, A_j=(a_j,b_j]$ be an arbitary, potentially infinite cover. Consider $A'_j=(a_j,b_j+\frac{\epsilon}{2^j})$,  clearly $[a,b]\subset \cup A'_j $. By compactness, we can pick a finite subcover:
+$$
+[a,b]=\bigcup_{k=1}^n (a_{{j_k}},b_{{j_k}}+\delta_{j_k})
+$$
+where $\delta_{j_k} \leq \epsilon / 2^{j_k}$. Denote $c_k = a_{j_k}, d_k = b_{j_k}+\delta_{j_k}$. We have $[a,b]=\bigcup_{k=1}^n (c_k, d_k)$. Note since implies $d_n>b, c_n < a$.
+Without loss of generality, we can assume $d_{k+1}> c_k$. Hence:
+$$
+\sum_{k=1}^n (d_j - c_j) &= d_n - c_1 + \sum_{k=1}^{n-1}(d_k-c_{k+1}) \\
+&\geq d_n - c_1 \\ 
+&\geq b - a
+$$
+It remains to show $$\epsilon + \sum_{j=1}^{\infty} (b_j - a_j) \geq \sum_k d_k - c_k$$ but 
+$$
+\sum_k (d_k - c_k) \leq \sum_{k=1}^n (b_{j_k} + \epsilon / 2^{j_k}-a_{j_k}) 
+$$
+
+
+
+:::
+
+
+
+
+
+
+
+[^union-caveat]: Strictly, $\mathcal A_{\sigma\delta}$ need not be closed under *countable* unions (only finite ones) — the analogous fact for $G_\delta$ sets in $\mathbb R$ fails: $\mathbb Q=\bigcup_q \{q\}$ is a countable union of $G_\delta$ singletons yet is not itself $G_\delta$. So $B=\cup_n B_n$ below should be read as living in $\mathcal M_{\mu^*}$ (a genuine $\sigma$-algebra), which is all that is actually used afterward.
+[^well-defined]: Note that in definiting a notion of size $\mu_0$ on $A\in \mathcal A$, we requires $A$ to have a concrete representation $\cup_j I_j$. If the result is independent on 
+how we choose this representation(i.e. different elementary decomposition$\{I_j\}$), then this notion of size is indeed fundamentally correct. Otherwise if $\mu_0$ is dependent on how we choose representation, then it is not a credibe notion of size. Such "representational invariance" is called *well-definedness* in mathematics. 
+[^hw_mineyev]: This problem is selected from *Professor Igor Mineyev*'s homework from MATH 540(Real Analysis) in Fall 2026 at UIUC.

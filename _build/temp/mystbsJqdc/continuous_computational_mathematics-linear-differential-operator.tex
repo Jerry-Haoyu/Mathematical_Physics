@@ -1,0 +1,204 @@
+\subsubsection{Linear Differential Operator}
+
+\paragraph{The Formal Linear Differential Operator}
+
+We define the differentian opeartor as:
+
+\begin{mystthmdefinition}{Differentiation Opeartor}{definition-lineardifferentialoperator-1}Let $D:L^2[a,b]\to L^2[a,b]$ be the mapping defined by:
+\begin{equation}
+D(u)=\frac{d}{dx}u
+\end{equation}
+for all $u\in L^2[a,b]$
+
+\end{mystthmdefinition}
+Now we can define the \textit{formal linear operator} by some opeartor algebra:
+
+\begin{mystthmdefinition}{Formal linear differential operator}{definition-lineardifferentialoperator-2}Let $p(x)$ be any polynomial over $\mathbb{C}$ of positive degree:
+\begin{equation}
+p(x)=a_\nu x^\nu
+\end{equation}
+where $a_{\nu}$ are functions of $x$. Define $L:=p(D)$ as the \textbf{formal linear differential operator} that correspond to the \textbf{auxillary polynomial $p$}:
+\begin{equation}
+L=a_\nu D^{\nu}
+\end{equation}
+The \textbf{order} of $L$ is given by the order of $p$.
+
+\end{mystthmdefinition}
+We call it \textit{formal} since we want to contrast with \textit{concrete} linear differential opeartor which is a formal opeartor endorsed with boundary conditions(This convention is used in \textit{Mathematical Physics by Michael Stone and Paul Goldbart}). We can think of the difference between them as:
+
+\begin{itemize}
+\item The \textbf{nullspace of formal opeartor} is the space of general solution of homogenous diffferential equation
+\item The \textbf{nullspace of concrete operator} is the space of particular solution to homogenous differential equation with boundary conditions
+\end{itemize}
+
+We'll explore the nullspace of formal operators with a bit more detail now.
+
+\subparagraph{Nullspace of formal operator}
+
+We first observe something very nice about solutions to homogenous differential equations: they belong to $C^{\infty}$(infinitely differentiable).
+
+\subparagraph{The Bootstrapping Lemma}
+
+\begin{mystthmlemma}{}{lemma-lineardifferentialoperator-3}Let $L$ be a formal operator of order $n$. Suppose the coefficients of the auxillary polynomial are $k$ times continously differentiable($a_{\nu}\in C^k$) then $\forall y\in \mathrm{Null}(L)$, $y$ is at least $k+n$ times contiously differentiable.
+
+\end{mystthmlemma}
+\begin{mystthmproof}{}{proof-lineardifferentialoperator-4}Suppose $y\in \mathrm{Null}(L)$, note trivially $y\in C^n$. Then:
+\begin{equation}
+\begin{aligned}
+a_0y+a_1y^{(1)}+a_2y^{(2)}...+a_n y^{(n)} &=0 \\
+y^{(n)} &= -(b_0y+b_1y^{(1)}+b_2y^{(2)}...\underbrace{b_{n-1}{y}^{n-1}}_{\in C^{\min(k, 1)}})
+\end{aligned}
+\end{equation}
+Where $b_{\nu}=a_{\nu}/a_{n}$. Now $b_{\nu}\in C^k$ by closedness under polynomial division. Also $y^{(\nu)} \in C^{n -\nu}$ hence the R.H.S is at least one time continously differentiable(the bottle neck being $a_{n -1}y^{(n -1)} \in C^{\min(k, 1)}$). Therefore $y^{(n)}\in C^1$. But this implies $y\in C^{n+1}$ hence we repeat the above argument to get $y^{(\nu)}\in C^{n+1 -\nu}$. The R.H.S has the bottleneck $a_{n -1}y^{(n -1)}\in C^{\min(k, n+1 -(n -1))}=C^{\min(k, 2)}$. We can repeat this procedure $m$ times and yield that $y^{(n)}\in C^{\min(k, m)}$. This means the best we can get is $y^{(n)}\in C^k$ or $y\in C^{n+k}$(after which the coeficient becomes the bottleneck).
+
+\end{mystthmproof}
+\begin{mystthmcorollary}{}{corollary-lineardifferentialoperator-5}If the coefficients are in $C^{\infty}$ then $y\in \mathrm{Null}(L)$ are in $C^{\infty}$.
+
+\end{mystthmcorollary}
+\subparagraph{Nullspace of $L$ is an $n$-dimensional subspace of $C^{\infty}$}
+
+\paragraph{Linear Independence: Wronskian}
+
+\paragraph{Solving $Ly=0$ with constant coefficients}
+
+\paragraph{$Ly=0$ with general $a_\nu(x)$}
+
+\begin{mystexercise}{1-dimensional Scattering Problem}{1dscat}\label{1dscat}Consider the 1d Schrodinger equation:
+\begin{equation}
+-\frac{d^2\psi}{dx^2}+V\psi = E\psi
+\end{equation}
+This is an eigenvalue problem of the operator $H= -\frac{d^2}{dx^2}+V$:
+\begin{equation}
+H\psi = E\psi
+\end{equation}
+Where $V$ has finite support $[ -a, a], a\in \mathbb{R}$. Denote:
+
+\begin{enumerate}
+\item $L:=\{x\in \mathbb{R}:x< -a\}$
+\item $R:=\{x\in \mathbb{R}:x>a\}$
+\end{enumerate}
+
+\textbf{Problems}:
+
+\begin{enumerate}
+\item Show that in $L,R$, the general solution to the formal operator $H -E$ where $E=k^2$ is:
+
+\begin{equation}
+\begin{aligned}
+\psi_k &=A\exp(ikx)+B\exp(-ikx) \quad x\in L  \\
+\psi_k &=C\exp(ikx)+D\exp(-ikx) \quad x\in R
+\end{aligned}
+\end{equation}
+
+
+\item Now consider two asymptotic boundary condition:
+
+\begin{equation}
+\begin{cases}
+\Pi_L: D=0, x\to \infty \\
+\Pi_R: C=0, x\to -\infty
+\end{cases}
+\end{equation}
+
+
+where $\Pi_L$ depicts a left-incident wave with no incoming wave from the right and $\Pi_R$ is the opposite. Show that the solution(in $L,R$) for the BC $\Pi_1$ and $k>0$ is:
+
+\begin{equation}
+\begin{aligned}
+\psi_k^L(x) = \begin{cases}
+\exp(ikx)+ r_L(k)\exp(-ikx) & x\in L \\
+t_L(k)\exp(ikx) & x\in R
+\end{cases}
+\end{aligned}
+\end{equation}
+
+
+Similarily, for $\Pi_2$, $k<0$:
+
+\begin{equation}
+\begin{aligned}
+\psi_k^R(x)=\begin{cases}
+t_R(k)\exp(ikx)& x\in L \\
+\exp(ikx) + r_R(k)\exp(-ikx) & x\in R
+\end{cases}
+\end{aligned}
+\end{equation}
+
+
+where $t, r$ denotes the \textit{transmission} and \textit{reflection} coefficient.
+
+
+\item Note that $\psi_k^*$ is also a solution. Use properties of Wronskian to shwo that:
+
+\begin{equation}
+|t_{L/R}|^2 + |r_{L/R}|^2=1
+\end{equation}
+\end{enumerate}
+
+\end{mystexercise}
+\begin{mystsolution}{Solution to Exercise~\ref{1dscat}}\begin{enumerate}
+\item Fix a $k$. Consider the basis $\psi_k^L, {\psi_k^L}^*$. Form the Wronskian in $L$:
+
+\begin{equation}
+\begin{aligned}
+W_L=\begin{vmatrix}
+\exp(ikx)+r_L\exp(-ikx) &   \exp(-ikx)+r_L^*\exp(ikx) \\
+ik\exp(ikx)-ikr_L\exp(-ikx) & -ik\exp(-ikx)+ikr_L^*\exp(ikx)
+\end{vmatrix}
+\end{aligned}
+\end{equation}
+
+
+Evaluate the determinant:
+
+\begin{equation}
+\begin{aligned}
+W_L &= (-ik)\cancel{-ikr_L\exp(-2ikx) + ikr_L\exp(2ikx)}+ik|r_L|^2  \\
+&-[ik\cancel{-ikr_K\exp(-2ikx)+ikr_L\exp(2ikx)}-ik|r_L|^2]  \\
+&= 2ik(|r_L|^2-1)
+\end{aligned}
+\end{equation}
+
+
+Next form Wronskian in $R$:
+
+\begin{equation}
+\begin{aligned}
+W_R = \begin{vmatrix}
+t_L\exp(ikx) & t_L\exp(-ikx) \\
+ikt_L\exp(ikx) & -ikt_L\exp(-ikx) 
+\end{vmatrix} = -2ik|t_L|^2
+\end{aligned}
+\end{equation}
+
+
+Since we would expect $W_R=W_L=0$, henece:
+
+\begin{equation}
+\begin{aligned}
+W_R-W_L&=0 \\
+2ik(|r_L|^2+|t_L|^2-1) &=0
+\end{aligned}
+\end{equation}
+
+
+Since $k>0$ we get as desired.
+\end{enumerate}
+
+4.Fix $k$. We repeat the same procedure with $\{\psi_k^L,\psi_{( -k)}^R\}$. We evaluate $W_L$:
+\begin{equation}
+\begin{aligned}
+W_L &= \begin{vmatrix}
+\exp(ikx)+r_L(k)\exp(-ikx) & t_R(-k)\exp(-ikx) \\
+ik\exp(ikx)-ikr_L(k)\exp(-ikx) & -ikt_R(-k)\exp(-ikx)
+\end{vmatrix} \\
+&= -2ikt_R(-k)
+\end{aligned}
+\end{equation}
+Similarily,
+\begin{equation}
+W_R = -2ikt_L(k)
+\end{equation}
+Again, $W_L=W_R=0$ so we get as desired.
+
+\end{mystsolution}

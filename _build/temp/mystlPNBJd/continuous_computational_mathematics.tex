@@ -1,0 +1,267 @@
+% Created with jtex v.1.0.20
+\documentclass[a4paper,11pt,oneside]{book}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{natbib}
+\usepackage{xcolor}
+\usepackage{changepage}
+\usepackage{framed}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage[most]{tcolorbox}
+\bibliographystyle{abbrvnat}
+
+% Make list items more compact
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%  imports  %%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\hypersetup{
+  colorlinks,
+  linkcolor={black},
+  citecolor={black},
+  urlcolor={black}
+}
+
+% Style quotes
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+\definecolor{quoteshade}{rgb}{0.95, 0.95, 1}
+\renewenvironment{quote}{%
+  \def\FrameCommand{%
+    \hspace{1pt}%
+    {\color{darkblue}\vrule width 2pt}%
+    {\color{quoteshade}\vrule width 4pt}%
+    \colorbox{quoteshade}%
+  }%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}%
+  \noindent\hspace{-8pt}% disable indenting first paragraph
+  \begin{adjustwidth}{0pt}{0pt}% adjust as needed
+  \vspace{2pt}\vspace{2pt}%
+}
+{%
+  \vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+% ==========================================================================
+% Colored callout / theorem boxes
+% --------------------------------------------------------------------------
+% Mirrors the site's `.myst-exercise` / `.myst-proof` / `.myst-admonition`
+% components (colored left accent, tinted header bar) so the PDF and the
+% website read as the same book. Colors approximate the Tailwind palette the
+% theme uses (bg-*-50 / border-*-600) and the kind -> color mapping matches
+% the theme's defaults (see book-theme's proof.js / admonition.js):
+%   proof, algorithm            -> gray
+%   lemma, conjecture, theorem  -> purple
+%   observation, assumption,
+%     axiom                     -> amber
+%   criterion, corollary,
+%     property                  -> orange
+%   example                     -> green
+%   remark                      -> red
+%   definition, proposition     -> blue
+%   note, important             -> blue
+%   tip, hint, seealso          -> green
+%   attention, caution, warning -> amber
+%   danger, error               -> red
+% Exercise/solution keep their own custom accent (set in _static/custom.css)
+% rather than the site's default blue/gray, per earlier styling choice.
+\definecolor{mystBlue}{HTML}{2563EB}
+\definecolor{mystGreen}{HTML}{16A34A}
+\definecolor{mystAmber}{HTML}{D97706}
+\definecolor{mystRed}{HTML}{DC2626}
+\definecolor{mystPurple}{HTML}{9333EA}
+\definecolor{mystOrange}{HTML}{EA580C}
+\definecolor{mystGray}{HTML}{64748B}
+\definecolor{mystExerciseAccent}{HTML}{C2740A}
+\definecolor{mystSolutionAccent}{HTML}{0F766E}
+
+% CSS names that show up verbatim in a handful of equations but aren't in
+% xcolor's base 19-color set, plus a couple of KaTeX-only operators.
+\definecolor{orchid}{HTML}{DA70D6}
+\providecommand{\argmin}{\operatorname*{arg\,min}}
+\providecommand{\argmax}{\operatorname*{arg\,max}}
+
+% All the colored boxes below share this look (colored left-ish accent via
+% the frame, tinted body, tinted+bordered title bar). It's inlined into each
+% \newtcbtheorem/\newtcolorbox call rather than factored into a `\tcbset`
+% named style: a pgfkeys style whose own definition contains "#1" cannot be
+% referenced (`mystbox=<color>`) from *inside* another macro's argument that
+% tcolorbox itself `\def`-captures (as `\newtcbtheorem`'s style argument is)
+% — the style's literal "#1" leaks into that `\def` and TeX rejects it with
+% "Illegal parameter number in definition of \pgfkeyscurrentkey".
+%
+% \mystdefinetheorem{<env name>}{<display name>}{<color>}{<label prefix>}
+% Declares a numbered, colored box (used for exercises and every `prf:`
+% kind). Numbering resets per chapter (`[number within=section]`, matching
+% \section's "Chapter <Roman>" redefinition below) and is a real LaTeX
+% counter, so \ref{<prefix>:<id>} and \label work normally.
+\newcommand{\mystdefinetheorem}[4]{%
+  \newtcbtheorem[number within=section]{#1}{#2}{%
+    enhanced, breakable, theorem style=plain apart,
+    colback=#3!5, colframe=#3,
+    colbacktitle=#3!15, coltitle=#3!70!black,
+    fonttitle=\bfseries, boxrule=0.4pt, left=2mm, right=2mm,
+    before skip=10pt, after skip=10pt,
+  }{#4}%
+}
+
+\mystdefinetheorem{mystexercise}{Exercise}{mystExerciseAccent}{exercise}
+
+\mystdefinetheorem{mystthmtheorem}{Theorem}{mystPurple}{theorem}
+\mystdefinetheorem{mystthmlemma}{Lemma}{mystPurple}{lemma}
+\mystdefinetheorem{mystthmconjecture}{Conjecture}{mystPurple}{conjecture}
+\mystdefinetheorem{mystthmproof}{Proof}{mystGray}{proof}
+\mystdefinetheorem{mystthmalgorithm}{Algorithm}{mystGray}{algorithm}
+\mystdefinetheorem{mystthmobservation}{Observation}{mystAmber}{observation}
+\mystdefinetheorem{mystthmassumption}{Assumption}{mystAmber}{assumption}
+\mystdefinetheorem{mystthmaxiom}{Axiom}{mystAmber}{axiom}
+\mystdefinetheorem{mystthmcriterion}{Criterion}{mystOrange}{criterion}
+\mystdefinetheorem{mystthmcorollary}{Corollary}{mystOrange}{corollary}
+\mystdefinetheorem{mystthmproperty}{Property}{mystOrange}{property}
+\mystdefinetheorem{mystthmexample}{Example}{mystGreen}{example}
+\mystdefinetheorem{mystthmremark}{Remark}{mystRed}{remark}
+\mystdefinetheorem{mystthmdefinition}{Definition}{mystBlue}{definition}
+\mystdefinetheorem{mystthmproposition}{Proposition}{mystBlue}{proposition}
+
+% Solutions aren't independently numbered (they cross-reference the exercise
+% they belong to), so this stays a plain, non-theorem colored box; its title
+% ("Solution to Exercise N") is built by the exporter and passed in directly.
+\newtcolorbox{mystsolution}[1]{
+  enhanced, breakable, colback=mystSolutionAccent!5, colframe=mystSolutionAccent,
+  colbacktitle=mystSolutionAccent!15, coltitle=mystSolutionAccent!70!black,
+  fonttitle=\bfseries, boxrule=0.4pt, left=2mm, right=2mm,
+  before skip=10pt, after skip=10pt, title={#1},
+}
+
+% Generic admonition box: \begin{mystadmonition}{mystBlue}{Note} ... \end
+\newtcolorbox{mystadmonition}[2]{
+  enhanced, breakable, colback=#1!5, colframe=#1,
+  colbacktitle=#1!15, coltitle=#1!70!black,
+  fonttitle=\bfseries, boxrule=0.4pt, left=2mm, right=2mm,
+  before skip=10pt, after skip=10pt, title={#2},
+}
+
+% Code blocks: a plain neutral box (no title bar) around the verbatim body.
+\newtcolorbox{mystcodebox}{
+  enhanced, breakable, colback=black!3, colframe=black!25,
+  boxrule=0.4pt, left=2mm, right=2mm, before skip=10pt, after skip=10pt,
+}
+
+% ==========================================================================
+% Chapter headings
+% --------------------------------------------------------------------------
+% The project's top-level table-of-contents groups (e.g. "Calculus of
+% Variation") compile to \section (not \chapter — see myst-to-tex's heading
+% depth mapping), so by default they show as small numbered run-in headings
+% like "0.2 Calculus of Variation" (the "0." is the never-incremented
+% \chapter counter). Restyle \section as a centered "Chapter <roman>" page
+% instead, and drop the leftover chapter-number prefix from \thesection so
+% nested numbering reads "II.1" rather than "0.2.1".
+\makeatletter
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\section}[1]{%
+  \clearpage
+  \refstepcounter{section}%
+  \phantomsection
+  \addcontentsline{toc}{section}{\protect\numberline{\Roman{section}}#1}%
+  \begingroup
+    \centering
+    \vspace*{2.5cm}
+    {\Large\scshape Chapter \Roman{section}}\\[1em]
+    {\huge\bfseries #1}\par
+    \vspace{2cm}
+  \endgroup
+}
+\makeatother
+
+\title{\Huge \textbf{Continuous Computation}}
+\author{\textsc{Haoyu Tang}}
+
+\begin{document}
+\sloppy
+
+\frontmatter
+\maketitle
+
+\tableofcontents
+% \listoffigures
+% \listoftables
+
+\mainmatter
+
+% \include{preface.tex}
+% \include{acknowledgements.tex}
+
+\section{Measure Theory}
+
+\include{continuous_computational_mathematics-measure}
+
+\include{continuous_computational_mathematics-measurable-functions}
+
+\section{Vector Space}
+
+\subsection{Finite-dimensional Vector Space}
+
+\include{continuous_computational_mathematics-linear-operators}
+
+\include{continuous_computational_mathematics-inner-product-space}
+
+\subsection{Infinite-dimensional Vector Space}
+
+\include{continuous_computational_mathematics-linear-operators-1}
+
+\include{continuous_computational_mathematics-linear-differential-operator}
+
+\include{continuous_computational_mathematics-hilbert-space}
+
+\section{Calculus of Variation}
+
+\include{continuous_computational_mathematics-euler-lagrange-equation}
+
+\include{continuous_computational_mathematics-generalizations}
+
+\section{Partial Differential Euqations}
+
+\subsection{Introduction}
+
+\include{continuous_computational_mathematics-introduction}
+
+\subsection{Elementary Methods}
+
+\include{continuous_computational_mathematics-conservation-laws}
+
+\include{continuous_computational_mathematics-wave-equation}
+
+\include{continuous_computational_mathematics-poisson-equation}
+
+\section{Complex Variable}
+
+\include{continuous_computational_mathematics-analytical-function}
+
+\include{continuous_computational_mathematics-complex-integrals}
+
+\section{Miscellaneous}
+
+\subsection{Baisc Numerics}
+
+\include{continuous_computational_mathematics-least-square}
+
+\subsection{Classical Experiments in Physics}
+
+\include{continuous_computational_mathematics-stern-gerlach-experiment}
+
+
+
+
+
+\end{document}

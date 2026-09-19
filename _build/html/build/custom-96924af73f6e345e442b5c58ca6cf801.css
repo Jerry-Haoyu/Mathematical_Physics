@@ -1,0 +1,17 @@
+/* Remove "Made with MyST" footer */
+.myst-made-with-myst {
+    display: none !important;
+}
+/* Global override for ALL exercises - forcing high priority */
+div.exercise.admonition {
+    background-color: rgba(0, 123, 255, 0.04) !important;
+    border-left-color: #ffae00 !important;
+    border-color: #f29b0f !important;
+}
+
+/* Forces style updates specifically onto the header section */
+div.exercise.admonition .admonition-title, 
+div.exercise.admonition p.admonition-title {
+    background-color: rgba(245, 157, 5, 0.12) !important;
+    color: #f2c80a !important;
+}

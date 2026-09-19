@@ -1,0 +1,79 @@
+\subsubsection{Poisson Equation}
+
+\begin{mystadmonition}{mystGreen}{InteractiveundefinedVisualizationundefined!}Thisundefinednotebookundefinedcontainundefinedinteractiveundefinedvisualizationundefinedthatundefinedneedsundefinedbinderundefinedconnection.undefinedPleaseundefinedclickundefinedtheundefined\textbf{powerundefinedbuttonundefinedonundefinedtheundefinedtopundefinedrightundefinedcorner}undefinedbeforeundefinedyouundefinedstartundefinedreadingundefined!undefinedEstablishingundefinedtheundefinedconnectionundefinedandundefinedbuildingundefinedtheundefinedcontainerundefinedtakesundefinedaundefinedwhile,undefinedsoundefinedclickingundefineditundefinedbeforeundefinedyouundefinedreadundefinedwouldundefinedmakeundefinedsureundefinedtheundefinedinteractiveundefinedcodeundefinedtoundefinedbeundefinedreadyundefinedtoundefinedrunundefinedwhenundefinedyouundefinedscrollundefinedonundefinedtoundefinedthem.
+
+\end{mystadmonition}
+\paragraph{2DundefinedPoissonundefinedEquation}
+
+Letundefined$\Omega \subset \mathbb{R}^2$,undefinedweundefinedconsiderundefinedtheundefinedPoissonundefinedequationundefinedwithundefinedhomogenousundefinedboundaryundefinedcondition:
+
+\begin{mystthmdefinition}{2DundefinedPoissonundefinedEquationundefinedwithundefinedHomogenousundefinedBoundaryundefinedCondition}{definition-poissonequation-1}\begin{equation}
+\label{2dpoihb}
+\begin{aligned}
+-\Delta u &= f(x,y) \qquad (x,y)\in \Omega \\
+  u(x,y) &= 0 \qquad (x,y)\in \Gamma_1 \\
+  \frac{\partial u}{\partial \nu}(x,y) &= 0 \qquad (x,y)\in \Gamma_1
+\end{aligned}
+\end{equation}
+
+\end{mystthmdefinition}
+whereundefined$\Gamma_1\cup \Gamma_2 = \partial \Omega$undefinedsuchundefinedthatundefinedbothundefined$\Gamma_1, \Gamma_2$undefinedisundefinedmeasure-zero.undefined$\nu$undefinedisundefinedtheundefinedoutwardundefinednormalundefinedvector.
+
+\paragraph{SpectralundefinedMethod}
+
+Letundefined
+\begin{equation}
+u(x,y)=\sum_{-\infty<p,q<\infty} a_{pq}  \exp(i(px +qy))
+\end{equation}
+Whichundefinedhas:
+\begin{equation}
+\Delta u = \sum_{-\infty<p,q<\infty} a_{pq}
+\end{equation}
+Alsoundefinedletundefinedtheundefinedfourierundefinedtransformundefinedofundefined$f(x,y)$undefinedbeundefined$\mathcal F (f(x,y))=F(p,q)$.
+
+\paragraph{Finite-ElementundefinedMethod(FEM)}
+
+\subparagraph{TheundefinedTentundefinedFunction}
+
+Weundefinedconsiderundefinedthe
+
+\subparagraph{ViualizingundefinedtheundefinedTentundefinedBasis}
+
+\begin{mystadmonition}{mystGreen}{Tip}Ifundefinedyouundefinedhaveundefinednotundefineddoundefinedso,undefinedclickundefinedtheundefinedpowerundefinedbuttonundefinedonundefinedtheundefinedtopundefinedrightundefinedcorner.
+Afterundefinedeverythingundefinedbuildsundefinedup,undefinedyouundefinedcanundefinedclickundefinedtheundefinedstartundefinedbuttonundefined.undefinedYouundefinedshouldundefinedseeundefinedtwoundefinedslidersundefinedshowingundefinedupundefinedbelow.
+
+\begin{itemize}
+\item Theundefinedresolutionundefinedsliderundefineddeterminesundefinedhowundefined``dense''undefinedtheseundefinedtentundefinedbasisundefinedareundefinedinundefinedfillingundefinedtheundefineddomain.undefinedLowerundefinedresolutionundefinedmeansundefinedlargerundefinedandundefinedlessundefinedtentsundefinedandundefinedviceundefinedversa.
+\item Theundefinedpositionundefinedsliderundefinedletundefinedyouundefinedadjustundefinedwhichundefinedparticularundefinedbasisundefinedfunctionundefinedyouundefinedareundefinedwatching.undefinedInundefinedotherword,undefinedwhereundefinedtheundefined``tent''undefinedisundefinedlocatedundefinedinundefinedtheundefineddomainundefined$\Omega$
+\end{itemize}
+
+\end{mystadmonition}
+
+%  We define:
+% :::{prf:definition} Dirchlet Integral
+% Let $u\in C^2(\Omega), v\in C^{\infty}(\Omega)$, define the bilinear form on $H^1(\Omega)$ to be
+% $$
+% a(u,v) := \int_{\Omega}\nabla u \nabla v
+% $$
+% :::
+
+Weundefinedcanundefinedshowundefinedthat:
+
+\begin{mystthmproposition}{}{proposition-poissonequation-2}Supposeundefined$u \in C^2(\bar \Omega)$undefinedisundefinedaundefinedsolutionundefinedofundefined(\ref{2dpoihb}),undefinedthenundefined$\forall v \in H^1_{\Gamma_1}(\Omega)$,undefinedweundefinedhave:
+\begin{equation}
+\int_{\Omega}\nabla u \nabla v=\int_{\Omega} fv
+\end{equation}
+
+\end{mystthmproposition}
+\begin{mystthmproof}{}{proof-poissonequation-3}Weundefinedfirstundefinedshowundefined\textit{Green'sundefinedFormula}(changeundefinedofundefinedvariable):
+\begin{equation}
+\int_{\Omega}v \Delta u = \int_{\partial \Omega} v \frac{\partial u}{\partial \nu} - \int_{\Omega} \nabla u \nabla v
+\end{equation}
+
+\end{mystthmproof}
+Thisundefinedmotivatesundefinedusundefinedtoundefineddefineundefinedaundefinedsolutionundefinedinundefinedaundefinedweakerundefinedsense.undefinedSinceundefined$a(u,v)=(f,v)$undefinedisundefinedaundefinednecessaryundefinedconditionundefinedofundefined$u$,undefinedhowundefinedaboutundefinedmakingundefinedeveryundefined$u$undefinedthatundefinedsatisfiesundefinedthisundefinedequationundefinedaundefined``weakundefinedsolution''(orundefinedgeneralizedundefinedsolution)?
+
+Weundefinedfirstundefineddefineundefinedtheundefinedspaceundefinedthatundefinedourundefinedweakundefinedsolutionundefinedwouldundefinedreside:
+\begin{equation}
+H^1_{\Gamma_1}(\Omega)=\{f\in H^1(\Omega): f=0 \text{ on } \Gamma_1 \}
+\end{equation}

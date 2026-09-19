@@ -1,0 +1,27 @@
+\subsubsection{Least Square}
+
+Supposeundefinedweundefinedhaveundefinedaundefineddatasetundefined$\mathcal D = [(x_1,y_1),...,(x_n, y_n)]$,undefinedandundefinedbyundefinedsomeundefinedpriorundefinedknowledgeundefinedweundefinedknowundefinedthereundefinedexistsundefinedsomeundefinedrelationshipundefined$y=kx + b$undefinedinundefinedtheundefineddataset,undefinedtheundefinedquestionundefinedis,undefinedhowundefinedtoundefinedfindundefinedthisundefinedparticularundefinedrelationshipundefined?
+
+Inundefinedotherword,undefinedweundefinedwouldundefinedlikeundefined$(k,b)$undefinedtoundefinedbeundefinedableundefinedtoundefinedpredictundefined$y$undefinedbasedundefinedonundefined$x$undefinedthatundefinedbestundefinedadhereundefinedtoundefinedtheundefinedrelationshipundefinedimpliedundefinedbyundefinedtheundefineddatasetundefined$\mathcal D$.undefinedTheundefined$L_2$undefinederrorundefinedofundefinedthisundefinedpredictorundefinedwithundefinedrespectundefinedtoundefined$\mathcal D$undefinedis:
+\begin{equation}
+\mathcal J =\sum_i (y_i-(kx_i+b))^2
+\end{equation}
+Theundefinedproblemundefinedisundefinednowundefinedtoundefinedfindundefined$\argmin_{k,b} \mathcal J$.undefinedWeundefinedknowundefinedthatundefinedweundefinedcanundefinedreformulateundefinedthisundefinedinundefinedmatrixundefinedlanguage:
+\begin{equation}
+\begin{pmatrix}
+1 & x_1 \\
+1 & x_2 \\
+\vdots &\vdots \\
+1 & x_n \\
+\end{pmatrix}
+\begin{pmatrix}
+b \\ k
+\end{pmatrix}
+\cong 
+\begin{pmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{pmatrix}
+\end{equation}

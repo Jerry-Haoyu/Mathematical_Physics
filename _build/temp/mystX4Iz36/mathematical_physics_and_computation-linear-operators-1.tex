@@ -1,0 +1,115 @@
+\subsubsection{Function Spaces}
+
+\paragraph{$L^p$undefinedSpace}
+
+\begin{mystthmdefinition}{$L^p$undefinedspace}{definition-linearoperators-1}Letundefined$(X,\Sigma, \mu)$undefinedbeundefinedaundefinedmeasureundefinedspaceundefinedandundefined$1\leq p\leq \infty$.undefinedTheundefinedspaceundefined$L^p(X,\mu)$undefinedisundefinedtheundefinedsetundefinedofundefinedallundefinedmeasurableundefinedfunctionsundefinedfromundefined$X$undefinedtoundefined$\mathbb{R}$undefinedorundefined$\mathbb{C}$undefinedsuchundefinedthatundefined$\int_X |f(x)|^p d\mu < \infty$.
+
+\begin{itemize}
+\item Noteundefined$L^p$undefinedisundefinedaundefined\textit{normedundefinedspace}undefinedwithundefinednorm:
+
+\begin{equation}
+\|f\|_{L_p}=\left(\int_X |f|^p d\mu\right)^{1/p}
+\end{equation}
+
+
+$p$undefinedcanundefinedbeundefinedtheundefinedsymbolundefined$\infty$undefinedwithundefinedtheundefinednormundefineddefinedundefinedas:
+
+\begin{equation}
+\|f\|_{L_{\infty}} = \inf\{C\in \mathbb{R}_{\geq 0} : |f(x)|<C, \forall x\}
+\end{equation}
+
+
+\item Itundefinedisundefined\textit{complete},undefinedhenceundefineditundefinedisundefinedaundefinedBanachundefinedSpace
+\end{itemize}
+
+\end{mystthmdefinition}
+\paragraph{LinearundefinedOperators}
+
+\begin{mystthmdefinition}{LinearundefinedOperators}{definition-linearoperators-2}Letundefined$T$undefinedbeundefinedaundefinedmapundefinedbetwenundefinedtwoundefinednormedundefinedspaceundefined$X$undefinedandundefined$Y$.undefined$T$undefinedisundefinedlinearundefinedif:
+\begin{equation}
+T(x+\lambda y) = T(x) +\lambda T(y)
+\end{equation}
+$\forall x,y \in X, \lambda \in K$
+
+\end{mystthmdefinition}
+Ifundefinedweundefinedconsiderundefinedlinearundefinedfunctionsundefined$f:\mathbb{R}\to \mathbb{R}$,undefineditundefinedseemsundefinedcontinuityundefinedisundefinedfreeundefinedsinceundefinedweundefinedcanundefinedalwaysundefinedwriteundefined$T(x)=kx$undefinedhence:
+\begin{equation}
+\|T(x)-T(x_0)\|=\|k(x-x_0)\|=k\|x-x_0\|
+\end{equation}
+soundefinedweundefinedcanundefinedeasilyundefinedfindundefinedaundefineddeltaundefinedballundefinedofundefinedradiusundefined$\frac{\epsilon}{k}$undefinedgivenundefinedanundefinedepsilonundefinedballundefinedsuchundefinedthatundefinedtheundefineddeltaundefinedballundefinedisundefinedmappedundefinedintoundefinedtheundefinedepsilonundefinedball.undefinedMoreundefinedgenerallyundefinedweundefinedcanundefineddefineundefinedboundedundefinedoperatorundefinedtoundefinedmakeundefinedtheundefinedaboveundefinedlogicundefinedwork:
+
+\begin{mystthmdefinition}{BoundedundefinedOperators}{definition-linearoperators-3}Letundefined$T$undefinedbeundefinedaundefinedmapundefinedbetwenundefinedtwoundefinednormedundefinedspaceundefined$X$undefinedandundefined$Y$.undefined$T$undefinedisundefinedboundedundefinedifundefined$\exists C>0$:
+\begin{equation}
+\|T(x)\|_Y\leq C\|x\|_X
+\end{equation}
+$\forall x \in X$
+
+\end{mystthmdefinition}
+\begin{mystthmproposition}{ContinuousundefinedandundefinedBoundedundefinedareundefinedequivalentundefinedforundefinedLinearundefinedOperator}{proposition-linearoperators-4}Theundefinedfollowingundefinedareundefinedequivalent:
+
+\begin{enumerate}
+\item Ifundefined$X$undefinedandundefined$Y$undefinedareundefinednormedundefinedspacesundefinedandundefined$T:X\to Y$undefinedisundefinedaundefinedlinearundefinedmapundefinedwhichundefinedisundefinedcontinuousundefinedfromundefined$X$undefinedtoundefined$Y$
+\item $T$undefinedisundefinedbounded
+\end{enumerate}
+
+\end{mystthmproposition}
+\begin{mystthmproof}{}{proof-linearoperators-5}\begin{itemize}
+\item Supposeundefined$T$undefinedisundefined\textbf{linearundefinedandundefinedbounded},undefined$\forall x_0 \in X$,undefined$\forall \epsilon > 0$,undefinedconsiderundefinedtheundefinedopenundefinedballundefinedaroundundefined$x_0$undefinedwithundefinedradiusundefined$\epsilon$undefined$B_{\epsilon}^o$.undefinedThenundefined$\forall x\in B_{\epsilon}^o$:
+\begin{equation}
+\begin{aligned}
+\|T(x)-T(x_0)\| &= \|T(x-x_0)\| \\
+&\leq C\|x-x_0\|
+\end{aligned}
+\end{equation}
+Nowundefinedtoundefinedmakeundefined$C\|x -x_0\|<\epsilon$,undefinedweundefinedneedundefined$\|x -x_0\|<\frac{\epsilon}{C}$.undefinedHenceundefined$\delta(\epsilon)=\frac{\epsilon}{C}$
+
+
+\item Supposeundefined$T$undefinedisundefined\textbf{linearundefinedandundefinedcontinous}.undefinedThenundefinedinundefinedparticularundefined$T$undefinedisundefinedcontinousundefinedatundefined$x=0$.undefinedWeundefinedcanundefinedfindundefinedaundefined$\delta >0$undefinedsuchundefinedthatundefined$\|x\| < \delta \Rightarrow \|T(x)\| < 1$.undefinedNowundefinedtoundefinedcontrolundefinedarbitraryundefined$x\in X$,undefinedweundefinedcanundefinedrewriteundefined$x$undefinedas
+\begin{equation}
+x=\left(\frac{2}{\delta }\right)\|x\|\left(\frac{\delta x}{2\|x\|}\right)=C\|x\|x'
+\end{equation}
+Noteundefined$\|x'\|=\frac{\delta }{2}\|x\|<\delta$undefinedhenceundefined$\|T(x')\|\leq 1$.undefinedByundefinedlinearityundefined$T(x)=T(C\|x\|x')=C\|x\|T(x')$.undefinedThus:
+\begin{equation}
+\|T(x)\|_Y=C\|x\|\|T(x')\|\leq C\|x\|
+\end{equation}
+\end{itemize}
+
+\end{mystthmproof}
+Itundefinedturnsundefinedoutundefinedallundefinedfinite-dimensionalundefinedlinearundefinedoperatorundefinedareundefinedbounded.undefinedHowever,undefinedinfinite-dimensionalundefinedlinearundefinedoperatorundefinedcanundefinedeasilyundefinedbeundefinedunbounded.
+
+\begin{mystthmexample}{UnboundedundefinedOpeartor}{example-linearoperators-6}Considerundefinedtheundefined\textbf{differentialundefinedoperator}undefined$\frac{d}{dx}: C^{\infty}[0,2\pi]\to C^{\infty}[0,2\pi]$
+Considerundefinedtheundefinedfamilyundefined$f_n=\sin(nx)$.undefinedNow
+\begin{equation}
+\begin{aligned}
+\|f_n\|^2_{L_2} &=\int_0^{2\pi}\sin^2(nx)dx \\
+&=\int_0^{2\pi}\frac{1-\cos(2x)}{2}dx \\
+&=\pi
+\end{aligned}
+\end{equation}
+Howeverundefined$\frac{df_n}{dx}=n\cos(nx)$undefinedand:
+\begin{equation}
+\begin{aligned}
+\|f'_n\|^2_{L_2}&= \int_0^{2\pi} n^2\cos^2(nx)dx \\
+&=n^2\int_0^{2\pi}\frac{1+\cos(2x)}{2} dx \\
+&= n^2\pi
+\end{aligned}
+\end{equation}
+Henceundefinedtheundefinedoperatorundefined$\frac{d}{dx}$undefinedisundefinednotundefinedboundedundefinedsinceundefinedsupposeundefinedthereundefinedisundefinedsuchundefined$C$:
+\begin{equation}
+\|f'\|^2 \leq C\|f\|^2
+\end{equation}
+Weundefinedcanundefinedalwaysundefinedpickundefined$n$,undefined$n^2 >C$undefinedsuchundefinedthatundefined$n^2\pi =\|f_n'\|>C\|f_n\|^2=C\pi$.
+
+\end{mystthmexample}
+\paragraph{TheundefinedUniformundefinedBoundednessundefinedTheorem}
+
+\subparagraph{BaireundefinedCategoryundefinedTheorem}
+
+\begin{mystthmtheorem}{BaireundefinedCategoryundefinedTheorem}{theorem-linearoperators-7}Letundefined$X$undefinedbeundefinedaundefined\textbf{completeundefinedmetricundefinedspace}undefinedthen:
+
+\begin{enumerate}
+\item Openundefineddenseundefinedsubsetsundefinedofundefined$X$undefinedisundefinedclosedundefinedunderundefined\textit{countableundefinedunion}
+\item $X$undefinedisundefinednotundefinedaundefinedcountableundefinedunionundefinedofundefinednowhereundefineddenseundefinedset
+\end{enumerate}
+
+\end{mystthmtheorem}

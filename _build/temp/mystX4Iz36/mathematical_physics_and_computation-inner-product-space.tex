@@ -1,0 +1,103 @@
+\subsubsection{Inner Product Space}
+
+\textit{Note:Theundefineddevelopmentundefinedofundefinedconceptsundefinedneedundefinedtoundefinedkeepundefinedextensionundefinedtoundefinedinfiniteundefinedanalogundefinedinundefinedmind}
+
+\paragraph{TheundefinedidentityundefinedoperatorundefinedandundefinedtheundefinedKroncker'sundefinedDelta}
+
+Letundefined$V$undefinedbeundefinedaundefinedvectorundefinedspaceundefinedendorsedundefinedwithundefinedanundefinedinnerundefinedproductundefined$\langle\cdot| \cdot \rangle$undefinedofundefineddimensionundefined$n$undefinedandundefined$\beta = \{e_\nu\}$undefinedbeundefinedanundefinedorthonormalundefinedbasis.undefinedThenundefinedweundefinedcanundefinedcomputeundefinedtheundefinedinnerundefinedproductundefinedbetweenundefinedarbitraryundefined$x,y\in V$undefinedasundefinedfollows:
+\begin{equation}
+\begin{aligned}
+\langle x | y \rangle  &= \langle e_{\nu} | x \rangle^* \langle e_{\nu} | y\rangle \\ 
+&= \langle x | e_{\nu} \rangle \langle e_{\nu} | y\rangle \\
+&= \langle x \lvert |e_{\nu} \rangle \langle e_{\nu}|  \rvert y\rangle
+\end{aligned}
+\end{equation}
+Butundefined$\langle x | y \rangle = \langle x | I | y \rangle$,undefinedhenceundefinedweundefinedgetundefinedthat
+
+\begin{mystthmlemma}{Outer-productundefineddecompositionundefinedofundefinedtheundefinedidentityundefinedoperator}{lemma-innerproductspace-1}Letundefined$\{e_{\nu}\}$undefinedbeundefinedanundefinedorthonormalundefinedbasisundefinedforundefined$V$,undefinedthen:
+\begin{equation}
+|e_{\nu} \rangle \langle e_{\nu}|=I
+\end{equation}
+
+\end{mystthmlemma}
+\begin{mystadmonition}{mystGreen}{\emph{Help!}undefinedWhatundefinedisundefinedhappeningundefinedhere?}\textit{Stepundefined1}undefinedWeundefinedfirstundefinedrewriteundefinedinnerundefinedproductundefinedasundefinedaundefinedsumundefinedofundefinedcomponent-componentundefinedproduct.undefinedInundefined$\mathbb{C}^3$undefinedforundefinedinstance,
+\begin{equation}
+\begin{aligned}
+\langle x | y\rangle &= \sum_{\nu} (x^{\nu})^* y^{\nu} \\
+&= \sum_{\nu} \langle e_{\nu} | x \rangle^*  \langle e_{\nu} | y \rangle
+\end{aligned}
+\end{equation}
+Noteundefinedinundefinedtheundefinedlastundefinedstepundefinedweundefinedenvictedundefinedorthonormalityundefinedofundefined$\{e_\nu\}$.undefinedAdoptingundefinedEinsteinundefinednotaitonundefinedweundefinedgetundefinedtheundefinedfirstundefinedequality.
+
+\textit{Stepundefined2}undefinedWeundefinedareundefinedbasciallyundefinedwritingundefinedtwoundefinedconsecutiveundefinedinnerundefinedproductundefined$\langle x, \alpha \rangle \langle \beta, y \rangle$undefinedasundefinedaundefinedbilinearundefinedformundefined$\langle x, A y\rangle$undefinedwhereundefined$A=| \alpha \rangle \langle \beta |$.undefinedConsiderundefinedthisundefinedexampleundefinedinundefined$\mathbb{R^3}$:
+
+\begin{equation}
+\begin{aligned}
+\langle x, \alpha \rangle \langle \beta, y \rangle &=
+\begin{pmatrix}
+x^1 & x^2 & x^3
+\end{pmatrix}
+\begin{pmatrix}
+\alpha^1 \\ \alpha^2 \\ \alpha^3
+\end{pmatrix}
+\begin{pmatrix}
+\beta^1 & \beta^2 & \beta^3
+\end{pmatrix}
+\begin{pmatrix}
+y^1 \\ y^2 \\ y^3
+\end{pmatrix} \\
+&= 
+\begin{pmatrix}
+x^1 & x^2 & x^3
+\end{pmatrix}
+\begin{pmatrix}
+\alpha^1 \beta^1 & \cdots & \alpha^1\beta^3 \\
+\vdots & & \vdots \\
+\alpha^3 \beta^1 & \cdots & \alpha^3\beta^3
+\end{pmatrix}
+\begin{pmatrix}
+y^1 \\ y^2 \\ y^3
+\end{pmatrix} \\
+\end{aligned}
+\end{equation}
+
+Inundefinedotherword,undefinedweundefinedareundefinedjustundefinedinvokingundefinedassociativeundefinedlaw(whichundefinedholdsundefinedinundefinedvectorundefinedspace):
+\begin{equation}
+\begin{aligned}
+(x\alpha^T) (\beta y^T)&=x(\alpha^T \beta) y^T
+\end{aligned}
+\end{equation}
+whereundefinedtheundefinedouterundefinedproductundefined$\alpha^T \beta=A$.
+
+Weundefineddenoteundefinedbilinearundefinedformsundefined$x^TAy$undefinedinundefinedsandwichundefinednotations:undefined$\langle x |A|y\rangle$
+
+\textit{(Stepundefined3)}undefinedTheundefinedonlyundefinedpossbleundefinedopeartorundefinedtoundefinedbeundefinedsandwitchedundefinedwithoutundefinedchangingundefinedtheundefinedresult:
+\begin{equation}
+\begin{aligned}
+\langle x|Ay\rangle &= \langle x | y\rangle
+\end{aligned}
+\end{equation}
+isundefinedwhenundefined$A=I$.undefinedWeundefinedthereforeundefinedconcludeundefinedthatundefinedtheundefinedouterundefinedproductundefined$|e_{\nu}\rangle \langle e_{\nu}|$undefinedisundefinedtheundefinedidentity.undefinedInundefinedmathundefinednotation,undefinedthisundefinedisundefinedsaying:
+
+\begin{itemize}
+\item Forundefinedorthonormalundefinedbasisundefined$\{e_{\nu}\}$,undefinedweundefinedhave
+
+\begin{equation}
+\sum_{\nu=1}^n e_{\nu}e_{\nu}^T=I
+\end{equation}
+\end{itemize}
+
+\end{mystadmonition}
+Nowundefinedweundefinedconsiderundefinedrepresentingundefined$|x\rangle$undefinedinundefined$\beta$:
+\begin{equation}
+\begin{aligned}
+|x\rangle &= (|e_{\nu} \rangle \langle e_{\nu}|) |x\rangle \\
+&= |e_{\nu}\rangle \langle e_{\nu}|x\rangle
+\end{aligned}
+\end{equation}
+Nowundefinedconsiderundefinedtakingundefinedtheundefinedinnerundefinedproductundefinedwithundefinedanotherundefinedbasisundefined$e_{\mu}$:
+\begin{equation}
+\begin{aligned}
+\langle e_{\mu}|x\rangle  &=\langle e_{\mu}|e_{\nu}\rangle \langle e_{\nu}|x\rangle
+\end{aligned}
+\end{equation}

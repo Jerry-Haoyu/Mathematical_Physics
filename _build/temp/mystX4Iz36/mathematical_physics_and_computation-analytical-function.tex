@@ -1,0 +1,238 @@
+\subsection{Analytical Function}
+
+\subsubsection{RealundefinedDerivativeundefinedandundefinedComplexundefinedDerivative}
+
+Aundefinedcomplexundefinedfunctionundefined$f:\mathbb{C}\to \mathbb{C}$undefinedresembles,undefinedmoreundefinedorundefinedless,undefinedfunctionsundefinedlikeundefined$\mathbb{R}^2\to \mathbb{R}^2$.undefinedForundefinedinstance,undefinedtheundefinedcomplexundefinedexponentialundefined$f(z)=\exp(z)$undefinedwouldundefinedbeundefinedmoreundefinedorundefinedlessundefinedsimilarundefinedto
+\begin{equation}
+f\begin{pmatrix}
+        x \\
+        y
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        \exp(x)\cos(y) \\
+        \exp(x)\sin(y)
+    \end{pmatrix}
+\end{equation}
+
+Sinceundefinedtheundefinedcomplexundefinedversionundefinedcanundefinedbeundefinedrewrittenundefinedasundefined$\exp(z)=\exp(x+iy)=\exp(x)(\cos(y) + i\sin(y))$.
+
+However,undefinedthereundefineddoesundefinedexistundefinedcrucialundefineddifferencies.undefinedRecallundefinedforundefinedrealundefinedfunctionsundefined$(\mathbb{R}^2, \mathbb{R}^2)$,undefinedtheyundefinedareundefineddifferentiableundefinedifundefinedthereundefinedexistsundefinedaundefinedlinearundefinedtransformationundefined$A\in \mathcal L (\mathbb{R}^2, \mathbb{R}^2)$undefinedsuchundefinedthat:
+\begin{equation}
+\lim_{x\to x_0} \frac{\|f(x_0+h)-f(x_0) - Ah\|}{\|h\|}=0
+\end{equation}
+
+Ifundefinedsuchundefined$A$undefinedexistsundefinedthenundefineditundefinedmustundefinedequalundefinedtoundefinedtoundefinedtheundefined\textbf{Jacobian}undefined$Df(x_0)$undefineddefinedundefinedas:
+\begin{equation}
+\left(\frac{\partial f_i}{\partial x_j}(x_0)\right)_{ij} \in \mathbb{R}^{m\times n}
+\end{equation}
+
+Furthermore,undefinedtheundefinedsufficientundefinedconditionundefinedforundefinedthisundefinedlinearundefinedtransforamtionundefined$A$undefinedtoundefinedexistsundefinedisundefinedgivenundefinedbyundefinedtheundefinedfollowingundefinedtheorem:
+
+\begin{mystthmtheorem}{}{theorem-analyticalfunction-1}Ifundefined$f:\mathbb{R}^n\to \mathbb{R}^m$,undefinedthenundefined$Df(a)$undefinedeixstsundefinediffundefinedallundefined$D_jf^{i}(x_0)$undefinedexistundefinedinundefinedanundefinedopenundefinedsetundefinedcontainingundefined$x_0$undefinedandundefinedifundefinedeachundefinedfunctionundefined$D_jf^i$undefinedisundefinedcontinousundefinedatundefined$x_0$.
+Rmk.undefinedweundefinedcallundefinedsuchundefined$f$undefined\textbf{continouslyundefineddifferentiable}
+
+\end{mystthmtheorem}
+Complexundefinedderivative,undefinedonundefinedtheundefinedotherundefinedhand,undefinedisundefineddefinedundefinedas:
+
+\begin{mystthmdefinition}{}{definition-analyticalfunction-2}Letundefined$f:\mathbb{C} \to \mathbb{C}$undefinedbeundefinedaundefinedcomplexundefinedfunction.undefinedTheundefined\textbf{derivative}undefinedofundefined$f$undefinedatundefined$z_0$undefinedisundefineddefinedundefinedas
+\begin{equation}
+\frac{df}{dz}({z_0})= \lim_{\Delta z\to 0}\frac{f(z_0 + \Delta z) -f(z_0)}{\Delta z}
+\end{equation}
+Or,
+\begin{equation}
+\frac{df}{dz}({z_0})= \lim_{\Delta z\to 0}\frac{u(z+\Delta z) -u(z)}{\Delta z} + \lim_{\Delta z\to 0}\frac{v(z+\Delta z) -v(z)}{\Delta z} i
+\end{equation}
+whereundefined$u : \mathbb{C} \to \mathbb{R}$undefinedisundefinedtheundefinedrealundefinedpartundefinedofundefinedtheundefinedcomplexundefinedfunctionundefinedandundefined$v$undefinedbeingundefinedtheundefinedcomplexundefinedpart.
+
+\end{mystthmdefinition}
+Thisundefinedisundefined\textit{veryundefineddifferent}undefinedfromundefined$f:\mathbb{R}^2 \to \mathbb{R}^2$!undefinedForundefinedtheundefinedfollowingundefinedtwoundefinedreasons:
+
+\begin{mystadmonition}{mystRed}{Differenceundefined1:undefinedDivision}\label{division}Ifundefinedweundefinedinsistundefinedwriteundefinedtheundefinedsameundefineddefinitionundefinedforundefinedtheundefinedrealundefinedanalog(i.e.undefineddenoteundefinedaundefinedcomplexundefinednumberundefined$a+bi$undefinedasundefined$a \choose b$,undefined$f_1\leftrightarrow u, f_2\leftrightarrow v$),undefinedthenundefinedtheundefinedaboveundefineddefinitionundefinedwouldundefinedlookundefinedlike:
+\begin{equation}
+\lim_{(x,y)^T \to (x_0,y_0)^T}
+\begin{pmatrix}
+\frac{\partial f_1}{\partial (x, y)} \\
+\frac{\partial f_2}{\partial (x, y)}
+\end{pmatrix}
+\end{equation}
+Whichundefineddoesn'tundefinedmakeundefinedsenseundefinedatundefinedall(Althoughundefinedoneundefinedcouldundefinedargueundefined$\frac{\partial f_i}{\partial (x,y)}$undefinedisundefinedjustundefined$(\nabla f_i)^T$undefinedbutundefinedthat'sundefinedmerelyundefinedsymbolic.undefinedWhatundefinedwouldundefineddivisionundefinedbyundefinedaundefinedvectorundefinedmean?).
+
+\end{mystadmonition}
+\begin{mystadmonition}{mystRed}{Differenceundefined2undefined:undefinedMixingundefinedOfundefinedComponents}\label{mixing-of-components}Toundefinedmakeundefineditundefinedworse,undefinedevenundefinedifundefinedweundefinedpretendundefinedsuchundefinednotationundefinedisundefinedsensible,undefinedtheyundefinedareundefinedstillundefineddifferent.undefinedTheundefinedlimitundefinedofundefinedtheundefinedrealundefinedpartundefined$\lim_{\Delta z\to 0}\frac{u(z+\Delta z) -u(z)}{\Delta z}$(whichundefinedweundefinedhopedundefinedtoundefinedcorrespondundefinedtoundefined$\frac{\partial f_1}{\partial (x,y)}$)undefinedhasundefinedaundefinedcomplexundefinedpartundefinedandundefinedsimilarilyundefinedtheundefinedlimitundefinedofundefinedtheundefinedcomplexundefinedpartundefinedalsoundefinedhasundefinedaundefinedrealundefinedpart!undefinedThisundefinedmeansundefinedtheundefinedcomponentsundefinedareundefinednaturallyundefinedmixing.
+
+\end{mystadmonition}
+Soundefinedtheundefinedrealundefineddifferenceundefinedisundefinedthatundefinedcomplexundefinednumberundefinedshouldundefinedbeundefinedviewedundefinedasundefinedaundefinedwholeundefinedwhereundefineddivisionundefinedisundefinedwell-defined.undefinedForundefinedme,undefinedifundefinedIundefinedeverundefinedfoundundefineditundefinedhardundefinedtoundefinedconvinceundefinedmyselfundefined$\mathbb{R}^2 \to \mathbb{R}^2$undefinedisundefineddifferentundefinedfromundefined$\mathbb{C} \to \mathbb{C}$,undefinedIundefinedwouldundefinedtryundefinedtoundefinedanswerundefinedtheundefinedquestionundefined``whyundefinedcan'tundefinedweundefineduseundefined$(a,b)$undefinedtoundefineddenoteundefineda+bi''?.undefinedThisundefinedtendundefinedtoundefinedclearundefinedthingsundefinedup.
+
+Theundefinednextundefinedexampleundefinedillustrateundefinedthisundefinedkeyundefineddifference:
+
+\begin{mystthmexample}{Aundefinednotundefineddifferentiableundefinedcomplexundefinedfunctionundefinedwithundefineditsundefinedrealundefinedanalogundefineddifferentiable}{example-analyticalfunction-3}Considerundefined$f(x+iy)=x^2 + iy$.undefinedTheundefinedrealundefinedanalog(InteractiveundefinedPlotundefinedOfundefinedTheundefinedRealundefinedAnalog)undefinedis:
+\begin{equation}
+f\begin{pmatrix}
+x \\
+y
+\end{pmatrix}= 
+\begin{pmatrix}
+x^2 \\
+y
+\end{pmatrix}
+\end{equation}
+Thisundefinedfunctionundefinedisundefinedclearlyundefineddifferentiableundefinedsinceundefinedtheundefinedjacobianundefinedis:
+\begin{equation}
+\begin{pmatrix}
+2x & 0 \\
+0 & 1
+\end{pmatrix}
+\end{equation}
+whichundefinedclearlyundefinedcontinuous(component-wise)undefinedforundefinedallundefined$x,y$.
+
+However,undefinedthisundefinedisundefinednotundefinedtrueundefinedforundefinedtheundefinedcomplexundefinedanalog.undefinedWeundefinednowundefinedshowundefinedtheundefinedcomplexundefinedfunctionundefinedisundefinednotundefineddifferentiableundefinedatundefined$0\in \mathbb{C}$.
+
+Supposeundefineditundefinedis,undefinedthenundefinedtheundefinedtwoundefinedlimitsundefinedbelowundefinedshouldundefinedbeundefinedequalundefinedatundefined$0\in \mathbb{C}$:
+\begin{equation}
+\label{complex_derivative_limit}
+\lim_{\Delta x\to 0}\frac{f(x_0 + \Delta x + y_0i) -f(x_0 + y_0 i)}{\Delta x} = \lim_{\Delta y\to 0}\frac{f(x_0 + (y_0 +\Delta y)) -f(x_0 + y_0 i)}{i\Delta y }
+\end{equation}
+Butundefinedcomputingundefinedtheundefinedlimitundefinedtellsundefinedusundefinedthat:
+\begin{equation}
+2x_0 \neq 1
+\end{equation}
+Unlessundefined$x_0 = \frac{1}{2}$.undefinedHenceundefinedtheundefinedfunctionundefinedisundefinedonlyundefineddifferentiableundefinedonundefinedtheundefinedlineundefined$x_0=\frac12$.
+
+Oneundefinedmightundefinedask,undefineddoesn'tundefinedtheundefinedseemundefinedproblemundefinedexistsundefinedforundefinedtheundefinedrealundefinedanalog?undefinedIt'sundefinedquiteundefinedobviousundefinedtheundefinedanswerundefinedisundefinedno,undefinedsinceundefinedweundefinedneverundefinedcomputeundefinedaundefinedsingleundefinedlimitundefinedofundefinedaundefinedfiniteundefineddifference.
+
+Inundefinedaundefinedway,undefined$\mathbb{C} \to \mathbb{C}$undefinedisundefinedlikeundefined$\mathbb{R}\to \mathbb{R}$,undefinedweundefineddefineundefinedtheundefinedderivativeundefinedtoundefinedbeundefinedtheundefinedlimitundefinedofundefinedfiniteundefineddifference.undefinedYetundefinedtheundefinedlimits
+
+\begin{equation}
+\lim_{\Delta z\to 0}\frac{u(z+\Delta z) -u(z)}{\Delta z}, \lim_{\Delta z\to 0}\frac{v(z+\Delta z) -v(z)}{\Delta z}
+\end{equation}
+
+resemblesundefinedtheundefined$\mathbb{R}^2 \to \mathbb{R}$undefinedwhereundefinedweundefinedexpectundefinedtheundefinedresultundefinedtoundefinedbeundefinedindependentundefinedofundefineddirection.undefinedThat'sundefinedwhyundefinedtheundefinedrealundefinedanalogundefinedisundefinedfundamentallyundefineddifferentundefinedfromundefinedtheundefinedcomplexundefinedfunctionundefineditself.
+
+\end{mystthmexample}
+
+\subsubsection{Cauchy-RiemannundefinedCondition}
+
+Expandingundefined(\ref{complex_derivative_limit}),undefinedweundefinedwouldundefinedget:
+\begin{equation}
+\begin{aligned}
+\lim_{\Delta x\to 0} \frac{f(x_0+\Delta x + y_0i) - f(x_0+y_0i)}{\Delta x} &= \lim_{\Delta y\to 0} \frac{f(x_0 + (y_0+\Delta yi)) - f(x_0+y_0i)}{\Delta y} \\
+\lim_{\Delta x\to 0}\frac{u(x_0+\Delta x, y_0)-u(x_0,y_0)}{\Delta x} + i \frac{v(x_0+\Delta x, y_0)-v(x_0,y_0)}{\Delta x} &=  
+\lim_{\Delta y\to 0}\frac{u(x_0, y_0+\Delta y)-u(x_0,y_0)}{i\Delta y} + i \frac{v(x_0, y_0+\Delta y)-v(x_0,y_0)}{i\Delta y}\\
+\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x} &= -\frac{\partial u}{\partial y}i + \frac{\partial v}{\partial y}
+\end{aligned}
+\end{equation}
+Noteundefinedthatundefinedthisundefinedequationundefinedessentiallyundefinedunwindundefinedtheundefined``mixingundefinedofundefinedcomponents''undefinedweundefinedmentionedundefinedinundefinedDifferenceundefined2undefined:undefinedMixingundefinedOfundefinedComponents.undefinedHenceundefinedweundefinedget:
+
+\begin{equation}
+\label{cr}
+\boxed{\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \qquad 
+\frac{\partial v}{\partial x} =  - \frac{\partial u}{\partial y}}
+\end{equation}
+
+ThisundefinedisundefinedknownundefinedasundefinedtheundefinedCauchy-RiemannundefinedCondition(C-Rundefinedcondition).
+
+Let'sundefinedrecallundefinedwhatundefinedhadundefinedhappenedundefinedsoundefinedfar,undefinedweundefineddiscussedundefinedtheundefinedideaundefinedofundefinedcomplexundefinedderivativeundefinedbeingundefinedaundefinedlimitundefinedofundefinedfiniteundefineddifferenceundefinedleadingundefinedtoundefinedcomputingundefinedlimitsundefinedofundefinedtheundefinedformundefined$\mathbb{R}^2\to \mathbb{R}$(twoundefinedinput,undefinedoneundefinedoutput)undefinedwhichundefinedputsundefinedadditionalundefinedrestrictionundefinedonundefineddifferentiability.undefinedToundefinedbeundefinedmoreundefinedspecific,undefinedinundefinedorderundefinedforundefinedtheseundefinedlimitundefinedtoundefinedexists,undefinedtheundefinedvalueundefinedofundefinedtheundefinedlimitundefinedmustundefinedbeundefinedinvariantundefinedofundefineddirectionsundefinedapproachingundefinedtheundefinedpointundefinedofundefinedinterestundefined$x_0, y_0$.undefinedConsideringundefinedtheundefinedspecificundefineddirectionundefinedalongundefinedtheundefinedrealundefinedandundefinedcomplexundefinedaxisundefinedweundefinedgetundefinedtheundefinedso-calledundefinedCRundefinedcondition.
+
+WeundefinedhaveundefinedeffectivelyundefinedshownundefinedthatundefinedCRundefinedconditionundefinedisundefined\textit{necessary}undefinedforundefinedcomplexundefineddifferentiability.undefinedItundefinedturnsundefinedoutundefinedhowever,undefinedthatundefinedCRundefinedconditionundefinedisundefinedalsoundefined\textit{sufficient}.
+
+\begin{mystthmtheorem}{Cauchy-Riemann}{theorem-analyticalfunction-4}Aundefinedcomplexundefinedfunctionundefined$f:\mathbb{C} \to \mathbb{C}$undefinedisundefineddifferentiableundefinedatundefined$z_0=x_0+iy_0$undefinediffundefineditundefinedsatisfiesundefinedtheundefined\textit{Cauchy-Riemannundefinedcondition}:
+
+\begin{enumerate}
+\item $u,v\in C^1$(continouslyundefineddifferentiable)
+\item Theundefinedpartialundefinedderivativesundefinedsatisfy
+\begin{equation}
+\begin{aligned}
+\frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y} \\
+\frac{\partial u}{\partial y} &= -\frac{\partial v}{\partial x}
+\end{aligned}
+\end{equation}
+Inundefinedwhichundefinedcase,undefinedtheundefinedderivativeundefinedis:
+\begin{equation}
+\begin{aligned}
+\frac{\partial f}{\partial z} &= \frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x} \\
+&= \frac{\partial v}{\partial y} - i \frac{\partial u}{\partial y}
+\end{aligned}
+\end{equation}
+\end{enumerate}
+
+\end{mystthmtheorem}
+\begin{mystthmproof}{CRundefinedconditionundefinedisundefinedsufficient}{proof-analyticalfunction-5}Weundefinedneedundefinedtoundefinedshow,undefined$\forall \epsilon >0$,undefinedundefined$\exists \delta >0$undefinedsuchundefinedthatundefined$|\Delta z|<\delta$undefinedimpliesundefined:
+\begin{equation}
+\left| \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z} - \left(\frac{\partial u}{\partial x} + i\frac{\partial v}{\partial x}\right) \right| < \epsilon
+\end{equation}
+Weundefinedconsiderundefinedtheundefinedlinaerundefinedapproximationundefinedofundefined$f(z_0+\Delta z) -f(z_0)$undefinedaroundundefined$z_0$:
+\begin{equation}
+\begin{aligned}
+f(z_0+\Delta z)-f(z_0)&=\textcolor{blue}{u(x_0+\Delta x,y_0+\Delta y)-u(x_0,y_0)} + i[\textcolor{red}{v(x_0+\Delta x, y_0+\Delta y)-v(x_0,y_0)}]
+\\ &+ O(\Delta x^2) + iO(\Delta y^2) \\
+&= \textcolor{blue}{\frac{\partial u}{\partial x}\Delta x +\frac{\partial u}{\partial y} \Delta y} +i\left(\textcolor{red}{\frac{\partial v}{\partial x}\Delta x +\frac{\partial v}{\partial y}\Delta y} \right) \\ &+ O(\Delta x^2)+iO(\Delta y^2) \\
+&= \left(\textcolor{blue}{\frac{\partial u}{\partial x}}+i\textcolor{red}{\frac{\partial v}{\partial x}}\right)\Delta x+\left(\textcolor{blue}{\frac{\partial u}{\partial y}} + i\textcolor{red}{\frac{\partial v}{\partial y}}\right)\Delta y\\ &+ O(\Delta x^2)+iO(\Delta y^2) \\
+\end{aligned}
+\end{equation}
+Weundefinedneedundefinedtoundefinedexposeundefined$i\Delta y$,undefinedhenceundefinedweundefinedrewriteundefinedtheundefinedthirdundefinedtermundefinedinundefinedtheundefinedlastundefinedequationundefinedabove:
+\begin{equation}
+\left(\textcolor{blue}{\frac{\partial u}{\partial y}} + i\textcolor{red}{\frac{\partial v}{\partial y}}\right)\Delta y \longrightarrow \left(\textcolor{blue}{-\frac{\partial u}{\partial y}}i + \textcolor{red}{\frac{\partial v}{\partial y}}\right)i\Delta y
+\end{equation}
+Therefore:
+\begin{equation}
+\begin{aligned}
+f(z_0+\Delta z)-f(z_0) &=  \left(\textcolor{blue}{\frac{\partial u}{\partial x}}+i\textcolor{red}{\frac{\partial v}{\partial x}}\right)\Delta x+\left(\textcolor{blue}{-\frac{\partial u}{\partial y}}i + \textcolor{red}{\frac{\partial v}{\partial y}}\right)i\Delta y\\ &+ O(\Delta x^2)+iO(\Delta y^2)
+\end{aligned}
+\end{equation}
+NowundefinedapplyingundefinedCRundefinedcondition:
+\begin{equation}
+\begin{aligned}
+f(z_0+\Delta z)-f(z_0) &=  \left(\textcolor{blue}{\frac{\partial u}{\partial x}}+i\textcolor{red}{\frac{\partial v}{\partial x}}\right)\Delta x+\left(\textcolor{red}{\frac{\partial v}{\partial x}}i + \textcolor{blue}{\frac{\partial u}{\partial x}}\right)i\Delta y\\ &+ O(\Delta x^2)+iO(\Delta y^2)  \\
+&= \textcolor{blue}{\frac{\partial u}{\partial x}}\left(\Delta x + i\Delta y\right) + i\textcolor{red}{\frac{\partial v}{\partial x}}(\Delta x+i\Delta y)
+\\ &+ O(\Delta x^2)+iO(\Delta y^2) \\
+&= \left(\textcolor{blue}{\frac{\partial u}{\partial x}} + i\textcolor{red}{\frac{\partial v}{\partial x}}\right)\underbrace{(\Delta x +i\Delta y)}_{\Delta z}\\
+&+ \underbrace{O(\Delta x^2)+iO(\Delta y^2)}_{O(|\Delta z|\Delta z)} \\
+\end{aligned}
+\end{equation}
+Thereforeundefinedtheundefinedquotientundefinedis:
+\begin{equation}
+\frac{f(z_0+\Delta z)-f(z_0)}{\Delta z} =\textcolor{blue}{\frac{\partial u}{\partial x}} + i\textcolor{red}{\frac{\partial v}{\partial x} }+O(|\Delta z|)
+\end{equation}
+andundefinedthusundefinedtheundefinedquanityundefinedweundefinedwantundefinedtoundefinedcontrolundefinedis:
+\begin{equation}
+\left| \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z} - \left(\frac{\partial u}{\partial x} + i\frac{\partial v}{\partial x}\right) \right|=O(|\Delta z|)
+\end{equation}
+Byundefineddefinitionundefinedofundefinedbig-O,undefined$O(|\Delta z|)<C|\Delta z|$undefinedforundefined$|\Delta z|\in \mathbb{R}$.undefinedHenceundefined$\forall \epsilon >0$,undefinedweundefinedcanundefinedpickundefined$\delta =\frac{\epsilon}{C}$undefinedsuchundefinedthatundefined$O(|\Delta z|)<C\delta =\epsilon$
+
+\end{mystthmproof}
+\subsubsection{AnalyticalundefinedFunction}
+
+Nowundefinedweundefinedareundefinedreadyundefinedforundefinedtheundefineddefinitionundefinedofundefined\textbf{analyticundefinedfunction}.
+
+\begin{mystthmdefinition}{AnalyticundefinedFunctionundefinedonundefinedEntireundefinedFunction}{definition-analyticalfunction-6}\begin{itemize}
+\item Aundefinedcomplexundefinedfunctionundefined$f:\mathbb{C} \to \mathbb{C}$undefinedisundefined\textbf{analyticundefinedatundefined$z_0$}undefinedifundefineditundefinedisundefineddifferentiableundefinedatundefined$z$undefinedandundefinedaundefinedneighborhoodundefinedofundefined$z$.
+\item Aundefinedfunctionundefinedthatundefinedisundefineddifferentiableundefinedthourhgoutundefinedsomeundefinedopenundefinedsetundefined$\Omega \in \mathbb{C}$undefinedisundefined\textbf{analyticundefinedinundefined$\Omega$}
+\item Aundefinedfunctionundefinedthatundefinedisundefinedanalyticalundefinedthroughoutundefined$\mathbb{C}$undefinedisundefinedcalledundefined\textbf{entire}.
+\end{itemize}
+
+\end{mystthmdefinition}
+Analyticundefinedisundefinedaundefinedmuchundefinedmoreundefinedrestrictiveundefinedpropertyundefinedthanundefinedmerelyundefineddifferentiable(sinceundefineditundefinedrequiresundefineddifferentiabilityundefinedinundefinedtheundefinedneighborhood).undefinedForundefinedinstance,undefinedweundefinedcanundefinedeasilyundefinedconstructundefinedcomplexundefinedfunctionsundefinedthatundefinedisundefineddifferentiableundefinedonundefined\textit{infinitelyundefinedmanyundefinedpoints}undefinedinundefined$\mathbb{C}$undefinedbutundefinedanalyticundefined\textit{nowhere}.
+
+\begin{mystthmexample}{Differentiableundefinedonundefinedinfiniteundefinedmanyundefinedpointsundefinedbutundefinedanalyticundefinednowhere}{example-analyticalfunction-7}Supposeundefinedweundefinedwantundefinedtheundefinedfunctionundefinedtoundefinedbeundefineddifferentiableundefinedonundefined$y=x$undefinedandundefined$y= -x$.undefinedThenundefinedweundefinedcan,undefinedbyundefinedCR,undefinedlet:
+\begin{equation}
+\frac{\partial u}{\partial x} =2x, \frac{\partial v}{\partial y} = 2y
+\end{equation}
+and
+\begin{equation}
+\frac{\partial v}{\partial x} =-2x, \frac{\partial u}{\partial y} = 2y
+\end{equation}
+Aundefinedeasyundefinedchoiceundefinedwouldundefinedjustundefinedbe:
+\begin{equation}
+\begin{aligned}
+f&=x^2+y^2 +i(y^2-x^2) \\
+&= zz^*+i\left(\frac{z^2+{z^*}^2}{2}\right)
+\end{aligned}
+\end{equation}
+
+\end{mystthmexample}
+\begin{mystadmonition}{mystAmber}{QuickundefinedExercise}\label{ananowhere}Doundefinedyouundefinedseeundefinedwhyundefinedtheundefinedaboveundefinedfunctionundefinedisundefinedanalyticalundefinednowhere?
+
+\end{mystadmonition}
+\begin{mystadmonition}{mystGreen}{Solutionundefinedtoundefined\ref{ananowhere}}Everyundefinedopenundefinedsetundefinedinundefined$\mathbb{C}$undefinedcontainsundefined\textit{some}undefinedpointundefinednotundefinedonundefined$y=x$undefinedorundefined$y= -x$
+
+\end{mystadmonition}
