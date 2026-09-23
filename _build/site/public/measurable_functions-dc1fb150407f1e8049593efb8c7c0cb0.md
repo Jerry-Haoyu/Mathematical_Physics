@@ -10,7 +10,7 @@ Let $f : X \to \overline{\mathbb{R}}$. Prove that the following are equivalent:
 Then prove that if $f, g$ are measurable and real-valued, so are $f + g$ and $f g$
 :::
 
-:::{solution} Equivalent Definitions of Borel Measurable Functions
+:::{solution}
 :::
 
 [^hw_mineyev]: This problem is selected from *Professor Igor Mineyev*'s homework from MATH 540(Real Analysis) in Fall 2026 at UIUC.

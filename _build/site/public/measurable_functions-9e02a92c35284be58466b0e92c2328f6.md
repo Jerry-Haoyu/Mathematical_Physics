@@ -1,6 +1,6 @@
 # Measurable Functions 
 
-:::{exercise} Equivalent Definitions Mesurable Real Valued Functions [^hw_mineyev]
+:::{exercise} Equivalent Definitions Mesurable Real Valued Functions 
 :label: Equivalent Definitions of Borel Measurable Functions
 Let $f : X \to \overline{\mathbb{R}}$. Prove that the following are equivalent: 
 1. $\{x : f(x) > a\} \in \mathcal{M}$ for every $a \in \mathbb{R}$; 
@@ -8,9 +8,6 @@ Let $f : X \to \overline{\mathbb{R}}$. Prove that the following are equivalent:
 3. $f^{-1}(U) \in \mathcal{M}$ for every open $U \subseteq \mathbb{R}$. 
 
 Then prove that if $f, g$ are measurable and real-valued, so are $f + g$ and $f g$
-:::
-
-:::{solution} Equivalent Definitions of Borel Measurable Functions
 :::
 
 [^hw_mineyev]: This problem is selected from *Professor Igor Mineyev*'s homework from MATH 540(Real Analysis) in Fall 2026 at UIUC.

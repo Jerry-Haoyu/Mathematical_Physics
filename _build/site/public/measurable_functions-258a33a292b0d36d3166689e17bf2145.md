@@ -1,7 +1,7 @@
 # Measurable Functions 
 
-:::{exercise} Equivalent Definitions Mesurable Real Valued Functions [^hw_mineyev]
-:label: Equivalent Definitions of Borel Measurable Functions
+:::{exercise}
+:label: 
 Let $f : X \to \overline{\mathbb{R}}$. Prove that the following are equivalent: 
 1. $\{x : f(x) > a\} \in \mathcal{M}$ for every $a \in \mathbb{R}$; 
 2. $\{x : f(x) \ge a\} \in \mathcal{M}$ for every $a$; 
@@ -9,8 +9,3 @@ Let $f : X \to \overline{\mathbb{R}}$. Prove that the following are equivalent:
 
 Then prove that if $f, g$ are measurable and real-valued, so are $f + g$ and $f g$
 :::
-
-:::{solution} Equivalent Definitions of Borel Measurable Functions
-:::
-
-[^hw_mineyev]: This problem is selected from *Professor Igor Mineyev*'s homework from MATH 540(Real Analysis) in Fall 2026 at UIUC.
