@@ -1,4 +1,89 @@
 /* Remove "Made with MyST" footer */
 .myst-made-with-myst {
-    display: none !important;
+  display: none !important;
+}
+
+/* ==========================================================================
+   Exercise / solution blocks
+   --------------------------------------------------------------------------
+   mystmd renders both `{exercise}` and `{solution}` with the same component
+   (`.myst-exercise` > `.myst-exercise-header` > `.myst-exercise-title`), and
+   distinguishes them only by the Tailwind colour family on the header:
+   exercises default to blue, solutions to gray. The `:has()` rules below turn
+   that family into a `--accent` / `--tint` pair, so:
+
+     * changing the two palettes here restyles every block, and
+     * `:class: green` (or red / purple / orange / yellow) on an individual
+       directive still overrides the colour for that one block.
+
+   Keep the accents in sync with _ext/exercise-latex.mjs, which uses the same
+   two colours for the PDF export.
+   ========================================================================== */
+
+:root {
+  --exercise-accent: #c2740a;
+  --exercise-tint: rgba(194, 116, 10, 0.09);
+  --solution-accent: #0f766e;
+  --solution-tint: rgba(15, 118, 110, 0.09);
+}
+
+html.dark {
+  --exercise-accent: #e8a33d;
+  --exercise-tint: rgba(232, 163, 61, 0.16);
+  --solution-accent: #2dd4bf;
+  --solution-tint: rgba(45, 212, 191, 0.16);
+}
+
+/* Default: exercise = blue family, solution = gray family. */
+.myst-exercise:has(> [class*="bg-blue-50"]) {
+  --accent: var(--exercise-accent);
+  --tint: var(--exercise-tint);
+}
+
+.myst-exercise:has(> [class*="bg-gray-50"]) {
+  --accent: var(--solution-accent);
+  --tint: var(--solution-tint);
+}
+
+/* Per-block overrides, e.g. `:class: green` on a single directive. */
+.myst-exercise:has(> [class*="bg-green-50"]) {
+  --accent: #15803d;
+  --tint: rgba(21, 128, 61, 0.1);
+}
+
+.myst-exercise:has(> [class*="bg-red-50"]) {
+  --accent: #b91c1c;
+  --tint: rgba(185, 28, 28, 0.1);
+}
+
+.myst-exercise:has(> [class*="bg-purple-50"]) {
+  --accent: #7e22ce;
+  --tint: rgba(126, 34, 206, 0.1);
+}
+
+.myst-exercise:has(> [class*="bg-orange-50"]) {
+  --accent: #c2410c;
+  --tint: rgba(194, 65, 12, 0.1);
+}
+
+.myst-exercise:has(> [class*="bg-amber-50"]) {
+  --accent: #b45309;
+  --tint: rgba(180, 83, 9, 0.1);
+}
+
+.myst-exercise {
+  border-left: 4px solid var(--accent, #64748b) !important;
+  border-radius: 0 4px 4px 0;
+}
+
+.myst-exercise > .myst-exercise-header {
+  background-color: var(--tint, transparent) !important;
+  border-top-color: transparent !important;
+  border-bottom-color: var(--tint, transparent) !important;
+}
+
+.myst-exercise > .myst-exercise-header .myst-exercise-title,
+.myst-exercise > .myst-exercise-header .myst-exercise-title a {
+  color: var(--accent, inherit) !important;
+  font-weight: 600;
 }
